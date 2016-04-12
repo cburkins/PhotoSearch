@@ -15,7 +15,7 @@ This application doesn't actually search through all the EXIF tags, it's depende
 
 ## History
 
-I've been working on this program for years.  Very slowly.  It feels rather like I'm sitting on my front porch, and whittling on a stick. It's what I enjoy doing.
+I've been working on this program for years.  Very slowly.  It feels rather like I'm sitting on my front porch, and whittling on a stick.
 
 ## Dependencies
 
