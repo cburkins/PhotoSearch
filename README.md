@@ -19,6 +19,6 @@ I've been working on this program for years.  Very slowly.  It feels rather like
 
 ## Dependencies
 
-- jquery
+- jquery (included with code)
 - Python
 - JavaScript
