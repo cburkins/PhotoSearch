@@ -272,10 +272,19 @@ UpdateTotal = function() {
   
   
 // Create a JavaScript function that will be associated with People search field
-// This is an anonymous self-invoking function (i.e. a function without a name)
+// (function () <code>) creates a function, and return it to the parent scope (i.e. index.html)
+// $ sign is used to define/access jQuery
+// $ sign signifies that this is JavaScript
+// This is shorthand for the jQuery document ready event
+// So $() is the same as $( document ).ready()
+// So this code is run when the DOM (or document) is ready on the screen
+
+// This is also might be an anonymous self-invoking function (i.e. a function without a name)
 
 $(function() {
-	
+
+	// Select element of HTML with id of "people", and associate jQuery autocomplete function with it
+	// jQuery syntax is tail-made for selecting HTML elements and performing some action on the elements
 	$( "#people" ).autocomplete({
 		
 		// Define the list to be searched as the user is typing in the field
@@ -357,13 +366,7 @@ $(function() {
 // ----------------------------------------------------------------------------
 
 // Create a JavaScript function that will be associated with Places search field
-// jQuery syntax is tail-made for selecting HTML elements and performing some action on the elements
-// (function () <code>) creates a function, and return it to the parent scope (i.e. index.html)
-// What's the extra $ do ?
-// $ sign to define/access jQuery
-// I think this is shorthand for the jQuery document ready event
-// Yup.   $() is the same as $( document ).ready()
-// So this code is run when the DOM (or document) is ready
+
 $(function() {
 	
 	// Guessing here: Define the autocomplete function for the form input field with an id of "places"
