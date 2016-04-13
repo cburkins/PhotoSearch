@@ -25,11 +25,7 @@ Subroutines :
 
 // ----------------------------------------------------------------------------
 
-
-// ----------------------------------------------------------------------------
-
 /* 
-
 Description : Called each time a key is pressed in Year field on html form
 
 Input : event
@@ -94,7 +90,6 @@ function YearKeypress(event)
 	}
 
 	//	alert ("The Unicode key code of the released key: " + keyCode);
-
 	
 }
 
@@ -275,6 +270,8 @@ UpdateTotal = function() {
 
 // ----------------------------------------------------------------------------
 
+// This is a test function that looks for a field that has a div tag of "#tags"
+
   $(function() {
     var availableTags = [
       "ActionScript",
@@ -283,7 +280,7 @@ UpdateTotal = function() {
       "BASIC",
       "C",
       "C++",
-	  "Chad",
+      "Chad",
       "Clojure",
       "COBOL",
       "ColdFusion",
