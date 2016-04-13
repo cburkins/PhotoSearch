@@ -1,0 +1,65 @@
+
+<html>
+<head>
+
+<TITLE>test07.html</TITLE>
+
+</head>
+
+<body>
+
+<H3>Name : test07.html</H3>
+
+<!-- Don't forget, all PHP code is executed on the SERVER, not the CLIENT (Browser) -->
+
+<!-- First block of PHP code, test to see if there is a Wordpress user is logged in -->
+<?php
+echo "<PRE>";
+$path = '/home/users/web/b1406/ipw.burkinsc/public_html/family/';
+set_include_path(get_include_path() . PATH_SEPARATOR . $path);
+
+
+/* if this fails, it will output an error in the rendered html */
+require_once('wp-load.php');
+
+
+if (!is_user_logged_in()) {
+	echo "User is *not* logged in\n";
+}
+else {
+	echo "User is indeed logged in\n";
+}
+echo "</PRE>";
+?>
+
+
+<!-- Second block of PHP code, query for specific userid information such as username and email -->
+<?php global $current_user, $user_url;
+	echo "<PRE>";
+	get_currentuserinfo();
+
+	echo 'Username: ' . $current_user->user_login . "\n";
+	echo 'User email: ' . $current_user->user_email . "\n";
+	echo 'User first name: ' . $current_user->user_firstname . "\n";
+	echo 'User last name: ' . $current_user->user_lastname . "\n";
+	echo 'User display name: ' . $current_user->display_name . "\n";
+	echo 'User ID: ' . $current_user->ID . "\n";
+	echo 'User URL: ' . $current_user->user_url . "\n";
+	echo 'User password: ' . $current_user->user_pass . "\n";
+	echo 'User indenity: ' . $current_user->user_identity . "\n";
+	
+	echo "</PRE>";
+?>
+
+<H3> List of all Cookies</H3>
+<?php
+echo "<PRE>";
+print_r($_COOKIE);
+echo "</PRE>";
+?>
+
+
+</body>
+</html>
+
+<!-- ----------------------------------- End ----------------------------- -->

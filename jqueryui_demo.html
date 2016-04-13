@@ -1,0 +1,78 @@
+<html>
+<head>
+
+<!-- Load JQuery and JQueryUI Libs -->
+<script type="text/javascript" src="jquery-ui-1.8.9.custom/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
+
+<!-- Load Style sheet from JQueryUI -->
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.9.custom/css/ui-lightness/jquery-ui-1.8.9.custom.css">
+
+</head>
+
+<body>
+
+<script>
+
+	// Create a JavaScript function that will be associated with search field
+	$(function() {
+
+		// List of available things to search for in field
+		var availablePeople = [
+			"Chad Burkins",
+			"Meghan Burkins",
+			"Tom Burkins",
+			"Vicki Burkins",
+			"Tracey Kohl (Burkins)",
+			"Paul Kohl",
+			"Chris Betzler",
+			"Helen Betzler",
+			"Harold Betzler, Sr.",
+			"Bill Burkins Sr."
+		];
+		$( "#people" ).autocomplete({
+			
+			source: availablePeople,
+
+			// Mininum number of characters needed from user before search starts	
+			minLength:2,
+
+			// Function called when user selects item from drop-down list
+			select: function(event, ui) {
+	
+				// Clear the search field
+				$('#people').val("");
+				$('#autocomplete').val("");
+
+				// Create a row in table, and insert selected item
+				var x=document.getElementById('myTable').insertRow(0); 
+				x.setAttribute("id", ui.item.label); 
+				var y=x.insertCell(0);
+				var z=x.insertCell(1); 
+				y.innerHTML=ui.item.label; 
+				z.innerHTML="432";
+
+				// Not sure why this is here, maybe remove it ?
+				return(false);
+			}
+		});
+	});
+</script>
+
+<!-- Create text field for searching -->
+<div class="ui-widget">
+	<label for="people">People: </label>
+	<input id="people">
+</div>
+
+<!-- Create an empty table to store user-selected search items -->
+<br><br>
+<table id="myTable" border="1">
+</table>
+
+</body>
+</html>
+
+<!-- ----------------------------------- End ----------------------------- -->
+
+

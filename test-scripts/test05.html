@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!-- 
+
+   Name : test05.html
+Comment : This code tests to see if you can execute simple PHP code within an HTML file 
+
+-->
+
+
+<HTML>
+	<HEAD>
+	<TITLE>test05.html</TITLE>
+	</HEAD>
+ 
+	<BODY>
+		<H3>Name : test05.html<H3>
+		
+		<h3>This line is being printed by html code within and html file.  After this line, there should be a line which is printed by php</h3>
+		<h3>
+		<?php echo "This line is being printed by a piece of php code within an html file.  That means you likely have an .htaccess file in the root of your webserver which adds the php appliction type to files with the html extension"; ?>
+		</h3
+	</BODY>
+	
+	<!--
+	To make the above php code work in html being hosted by Hostgator, you need an .htaccess file with the following line in it
+
+	AddHandler application/x-httpd-php5 .html .htm
+	
+	
+	-->
+	
+</HTML>

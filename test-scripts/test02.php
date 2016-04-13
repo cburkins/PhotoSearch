@@ -1,0 +1,1 @@
+<?php echo "Super simple one line php script"; ?>

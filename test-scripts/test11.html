@@ -1,0 +1,25 @@
+<?php
+$wp_path = '/home/users/web/b1406/ipw.burkinsc/public_html/family';
+require_once($wp_path . '/wp-blog-header.php');
+if (!is_user_logged_in()) {
+	header('Location:  http://www.burkins.com/family/wp-login.php');
+	exit();
+}
+?>
+<html>
+<head>
+
+<TITLE>test10.html</TITLE>
+
+</head>
+
+<body>
+
+<H3>Name : test10.html</H3>
+
+If this is being printed, you successfully reached the body of the html, meaning the header didn't redirect you because you weren't logged in.
+
+</body>
+</html>
+
+<!-- ----------------------------------- End ----------------------------- -->

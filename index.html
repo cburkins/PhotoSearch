@@ -1,0 +1,172 @@
+<?php
+// $path = '/home/users/web/b1406/ipw.burkinsc/public_html/family/';
+$path = '/home3/cburkins/public_html/family/';
+set_include_path(get_include_path() . PATH_SEPARATOR . $path);
+
+// This is used if you're trying to use WordPress security to protect this file
+// require_once('wp-blog-header.php');
+//if (!is_user_logged_in()) {
+//    auth_redirect();
+//    exit();
+//}
+
+?>
+<html>
+<head>
+
+<!--
+===================================================================================================
+===================================================================================================
+
+This is the top-level file for the Picture Search functionality
+
+NOTE: If you're updating paths, also look in
+  - FS_common.py
+  - index.html
+  - show_pictures.py
+
+This html creates the HTML containing the following fields 
+	- People (id = People) : 
+	- Places (id = places) : 
+	- Events (id = events) : 
+	- Year (id = year) : 
+	- Picture Size 
+	- Rating
+
+Action : 
+	- Create the HTML form in this file
+	- Relies on family_search.js to 
+		- Capture key presses, and populate fields appropiately
+		- Does input verification while user is pressing keys (e.g. only an enter a legal four digit year)
+		- On pressing enter, it appends another "Keyword" hiddent field to form
+		- These hidden fields will be read by show_pictures.py
+	
+Exit Parameters : 
+	- Description : On submission, show_pictures.py is called
+	- picsize : visible field from radio button, meant to select the desired picture size
+	- Keyword : A series of hidden objects, each one denoting a desired keyword
+
+	
+Dependencies :
+	- JQuery : jquery-ui-1.8.9.custom/js/jquery-1.4.4.min.js
+	- JQuery UI Libs : jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js
+	- JQuery Style Sheet : jquery-ui-1.8.9.custom/css/ui-lightness/jquery-ui-1.8.9.custom.css
+	- Family Search JavaScript Callbacks : family_search.js
+	- Show Pictures Python Script : ./show_pictures.py
+	
+In the corresponding javascript file (family_search.js), I setup javascript callbacks for each of these fields
+
+===================================================================================================
+===================================================================================================
+	
+-->
+
+<!-- Load JQuery and JQueryUI Libs -->
+
+<script type="text/javascript" src="jquery-ui-1.8.9.custom/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
+
+
+<!-- Load Style sheet from JQueryUI -->
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.9.custom/css/ui-lightness/jquery-ui-1.8.9.custom.css">
+
+  
+<!-- Load the JavaScript for properly calling the JQuery-UI -->
+
+<!-- 
+<script type="text/javascript" src="family_search.js"></script>
+-->
+
+<script src="family_search.js"></script>
+
+  
+</head>
+
+<body onload=ClearForm()>
+
+
+<form name="familySearchForm" action="./show_pictures.py">
+
+<H2>Burkins Family Pictures (Beta)</H2>
+
+<br>
+
+<!-- Create text field for selecting people -->
+<div class="ui-widget">
+	<label for="people">People: </label>
+	<input id="people" size="30">
+</div>
+
+
+<!-- Create text field for selecting places -->
+<br>
+<div class="ui-widget">
+	<label for="places">Places: </label>
+	<input id="places" size="30">
+</div>
+
+
+<!-- Create text field for selecting events -->
+<br>
+<div class="ui-widget">
+	<label for="events">Events: </label>
+	<input id="events" size="30">
+</div>
+
+<!-- Create text field for entering a year(s) -->
+<br>
+<div class="ui-widget">
+	<label for="year">Year: </label>
+	<input id="year" type="text" STYLE="background-color: #FFFFFF" onkeypress="return YearKeypress(event)">
+	<font size=-1>&nbsp; &nbsp; &nbsp; Single year or range of years (e.g. 1972 or  1972-1974), be sure to hit &lt;enter&gt;</font>
+</div>
+
+<!-- Create text field for entering rating(s) -->
+<br>
+<div class="ui-widget">
+	<label for="rating">Rating: </label>
+	<input id="rating" type="text" STYLE="background-color: #FFFFFF" onkeypress="return RatingKeypress(event)">
+	<font size=-1>&nbsp; &nbsp; &nbsp; Single rating or range of ratings (e.g. 3 or  3-5), be sure to hit &lt;enter&gt;</font>
+</div>
+
+<!-- Create text field for selecting artist -->
+<br>
+<div class="ui-widget">
+	<label for="artist">Artist: </label>
+	<input id="artist" size="30">
+</div>
+
+<div class="ui-widget">
+  <label for="tags">Tags: </label>
+  <input id="tags">
+</div>
+
+
+<!-- Create an empty table to store user-selected search items -->
+<br><br>
+<table id="myTable" border="1">
+<TR><TD COLSPAN=2><b>Current Search Terms</b></TD></TR>
+<TR id="totalRow"><TD>Total Matching Pics</TD><TD>0</TD></TR>
+</table>
+
+<!-- Create a radio box to select picture size -->
+<br><br>
+Select Picture Size<br />
+<input type="radio" name="picsize" value="Small">Small 
+<input type="radio" name="picsize" value="Medium" checked>Medium 
+<input type="radio" name="picsize" value="Large">Large 
+
+
+<br><br>
+&nbsp; &nbsp; &nbsp; 
+<INPUT TYPE="button" NAME="Clear Form" Value="Clear Form" onClick="ClearForm()">
+&nbsp; &nbsp; &nbsp; 
+<INPUT TYPE=SUBMIT ID="SubmitButton" onClick="return SubmitVerify(this.form)" VALUE="Submit">
+
+
+</form>
+
+</body>
+</html>
+
+<!-- ----------------------------------- End ----------------------------- -->
