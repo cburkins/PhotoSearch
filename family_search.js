@@ -321,18 +321,19 @@ $(function() {
 		// Script must parse for the "term" field, and return JSON data
 		source: SearchRoot + "/searchPeople.py",
 
-		// Mininum number of characters needed from user before search starts	
+		// jQuery Autocomplete option: Mininum number of characters needed in field before search (i.e. source is called)	
 		minLength:1,
 		
-		// Amount of idle time (in milliseconds) that we wait until be begin to search (default is 300)
+		// jQuery Autocomplete option: Amount of idle time (in milliseconds) that we wait until be begin to search (default is 300)
 		delay:100,
 
 		// Function called when user selects item from drop-down list
 		select: function(event, ui) {
 
 			// Clear the search field
+			// Set the value of the matched element to "" (i.e. the empty string)
 			$('#people').val("");
-			$('#autocomplete').val("");
+			// $('#autocomplete').val("");
 
 			// Inser the new keyword in the table on the bottom of form
 			UpdateScreenWithSelectedItem(ui.item.label);
