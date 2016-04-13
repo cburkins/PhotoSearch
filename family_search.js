@@ -270,7 +270,8 @@ UpdateTotal = function() {
 
 // ----------------------------------------------------------------------------
 
-// This is a test function that looks for a field that has a div tag of "#tags"
+// This is a test function that looks for a field that input id of "tags" within a div class 
+// In other words, <div><input id="tagsid"></div>
 
   $(function() {
     var availableTags = [
@@ -298,7 +299,7 @@ UpdateTotal = function() {
       "Scala",
       "Scheme"
     ];
-    $( "#tagsfor" ).autocomplete({
+    $( "#tagsid" ).autocomplete({
       source: availableTags
     });
   });
