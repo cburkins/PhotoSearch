@@ -298,7 +298,7 @@ UpdateTotal = function() {
       "Scala",
       "Scheme"
     ];
-    $( "#tagsid" ).autocomplete({
+    $( "#tagsfor" ).autocomplete({
       source: availableTags
     });
   });
