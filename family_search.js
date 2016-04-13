@@ -269,45 +269,10 @@ UpdateTotal = function() {
 
 
 // ----------------------------------------------------------------------------
-
-// This is a test function that looks for a field that input id of "tags" within a div class 
-// In other words, <div><input id="tagsid"></div>
-
-  $(function() {
-    var availableTags = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Chad",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
-    $( "#tags" ).autocomplete({
-      source: availableTags
-    });
-  });
-
-  // ----------------------------------------------------------------------------
   
   
 // Create a JavaScript function that will be associated with People search field
+// This is an anonymous self-invoking function (i.e. a function without a name)
 
 $(function() {
 	
@@ -333,9 +298,10 @@ $(function() {
 			// Clear the search field
 			// Set the value of the matched element to "" (i.e. the empty string)
 			$('#people').val("");
-			// $('#autocomplete').val("");
+			// I'm not sure what this does....
+			$('#autocomplete').val("");
 
-			// Inser the new keyword in the table on the bottom of form
+			// Insert the new keyword (from autocomplete) into the table on the bottom of form
 			UpdateScreenWithSelectedItem(ui.item.label);
 
 			// Insert the new keyword as a hidden field in the form
@@ -350,25 +316,10 @@ $(function() {
 	});
 });
 
-
- $(function() {
-    var availableTags = [
-	  "Chad",
-	  "Chad2",
-      "Clojure",
-      "COBOL",
-      "ColdFusion"
-    ];
-    $( "#tags2" ).autocomplete({
-      source: availableTags
-    });
-  });
-  
-  
   
 // ----------------------------------------------------------------------------
 
-// Create a JavaScript function that will be associated with People search field
+// Create a JavaScript function that will be associated with Artist search field
 $(function() {
 	
 	$( "#artist" ).autocomplete({
@@ -406,8 +357,17 @@ $(function() {
 // ----------------------------------------------------------------------------
 
 // Create a JavaScript function that will be associated with Places search field
+// jQuery syntax is tail-made for selecting HTML elements and performing some action on the elements
+// (function () <code>) creates a function, and return it to the parent scope (i.e. index.html)
+// What's the extra $ do ?
+// $ sign to define/access jQuery
+// I think this is shorthand for the jQuery document ready event
+// Yup.   $() is the same as $( document ).ready()
+// So this code is run when the DOM (or document) is ready
 $(function() {
 	
+	// Guessing here: Define the autocomplete function for the form input field with an id of "places"
+    // This is part of something called "DOM Traversal and Manipulation"	
 	$( "#places" ).autocomplete({
 		
 		source: SearchRoot + "/searchPlaces.py",
