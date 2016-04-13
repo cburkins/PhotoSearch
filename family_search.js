@@ -299,7 +299,7 @@ UpdateTotal = function() {
       "Scala",
       "Scheme"
     ];
-    $( "#tagsid" ).autocomplete({
+    $( "#tags" ).autocomplete({
       source: availableTags
     });
   });
@@ -308,10 +308,17 @@ UpdateTotal = function() {
   
   
 // Create a JavaScript function that will be associated with People search field
+
 $(function() {
 	
 	$( "#people" ).autocomplete({
 		
+		// Define the list to be searched as the user is typing in the field
+		// In this case, we are defining a String, so jQuery assumes we are calling a URL
+		// In this case, we are calling a python script via HTTP
+		// If the user typed "Bob" into the form field, then a 
+		// a GET request is constructed http://example.com?term=Bob
+		// Script must parse for the "term" field, and return JSON data
 		source: SearchRoot + "/searchPeople.py",
 
 		// Mininum number of characters needed from user before search starts	
