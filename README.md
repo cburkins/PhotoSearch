@@ -1,6 +1,6 @@
 # PhotoSearch
 
-This is a rudimentary web application for searching through pictures based on the metadata within their EXIF tags.  
+This is a rudimentary web application for searching through pictures based on the metadata within their EXIF tags.  It's part of a larger ecosystem that I've developed for my own use.  There are three parts: a desktop application for tagging each picture with keywords, an online photo album based on jAlbum that can display all the metadata, and PhotoSearch (this piece) which allows me to search through all the pictures based on EXIF tags (e.g. a picture containing my wife and me which was taken between 2008 and 2010)
 
 ## Installation
 
