@@ -45,15 +45,16 @@
 <!-- Put the Prev and Next links onto the page for the slideshow -->
 <div class=center style="text-align: center; font-size: 200%;">
   <!-- The id=next is what makes this link work.  Cycle2 Slideshow looks for that ID -->
+  <!-- &lt is a safe way to display the less-than symbol without confusing HTML render -->
   <a href=# id="prev">&lt-- Prev</a>
   &nbsp;&nbsp;&nbsp;		  
-  <a href=# id="next">Next --></a>
+  <a href=# id="next">Next --&gt</a>
 </div>
 
 <!-- Enable the right-arrow and left-arrow keys to operate Next and Prev for the slideshow -->
 <script type="text/javascript">
   <!-- -->
-  <!-- -->
+  <!-- document.Element is essentially the HTML element within the DOM -->
   $(document.documentElement).keyup(function (e) {
   <!-- When user releases the right-arrow key, execute "next" for the Cycle2 slideshow -->
   if (e.keyCode == 39) { $('.cycle-slideshow').cycle('next'); }
