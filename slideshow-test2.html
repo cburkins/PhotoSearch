@@ -27,16 +27,16 @@ Hello world
     <a href=# id="next">Next</a>
 </div>
 
-<script>
+<script type="text/javascript">
 $(document.documentElement).keyup(function (e) {
     if (e.keyCode == 39)
     {        
-       $('#cycle-slideshow').cycle2('next');
+       $('.cycle-slideshow').cycle('next');
     }
 
     if (e.keyCode == 37)
     {
-        $('#cycle-slideshow').cycle2('prev');
+        $('.cycle-slideshow').cycle('prev');
     }
 
 });
