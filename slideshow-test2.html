@@ -55,6 +55,8 @@
 <script type="text/javascript">
   <!-- -->
   <!-- document.Element is essentially the HTML element within the DOM -->
+  <!-- This is a jQuery shortcut to assign a method to the JavaScript "keyup" event -->
+  <!-- It assigns an anonymous function to JavaScript keyup, looking for left and right arrow keys-->
   $(document.documentElement).keyup(function (e) {
      <!-- When user releases the right-arrow key, execute "next" for the Cycle2 slideshow -->
      if (e.keyCode == 39) { $('.cycle-slideshow').cycle('next'); }
