@@ -1,0 +1,81 @@
+
+<html>
+<head>
+
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+<!-- Create an element so that we can apply CSS style to it -->
+<div id="main">
+
+<!-- CSS Style sheet --> 
+<style>
+/* Comments witin a style tag are a different format */
+/* Apply style elements to the Cycle slidehow */
+/* The first element in the line (element) is user-defined in the div class below */
+.cycle-slideshow { width: 60%; height: 60%; margin: auto; border: 1px solid #bbb; background: #ffc }
+.cycle-slideshow img { width: auto; height: 100%; opacity: 0; filter:alpha(opacity=0); }
+</style>
+
+<!-- Get the jQuery library -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<!-- Get the jQuery Cycle2 javascript for the slideshow -->
+<script src="http://malsup.github.io/jquery.cycle2.js"></script>
+<!-- Get the jQuery Cycle2 plugin for centering, supports data-cycle-center-horz -->
+<script src="http://malsup.github.io/jquery.cycle2.center.js"></script>
+
+
+<!-- Create the Cycle2 slideshow via the div tag -->
+<!-- cycle-slideshow is special classname,tells Cycle2 to auto-initialize slideshow when page is loaded -->
+<!-- Options are set using data-cycle-* attributes -->
+
+<div class="cycle-slideshow"
+     data-cycle-fx="scrollHorz"
+     data-cycle-timeout="0"
+     data-cycle-prev="#prev"
+     data-cycle-next="#next"
+     data-cycle-center-horz="true"
+     data-cycle-center-vert="true"
+     >
+  <!-- Load up 4 sample images into the slideshow -->
+  <img src="http://malsup.github.io/images/p1.jpg">
+  <img src="http://malsup.github.io/images/p2.jpg">
+  <img src="http://malsup.github.io/images/p3.jpg">
+  <img src="http://malsup.github.io/images/p4.jpg">
+</div>
+
+<!-- Put the Prev and Next links onto the page for the slideshow -->
+<div class=center style="text-align: center; font-size: 200%;">
+  <!-- The id=next is what makes this link work.  Cycle2 Slideshow looks for that ID -->
+  <!-- &lt is a safe way to display the less-than symbol without confusing HTML render -->
+  <a href=# id="prev"><i class="fa fa-arrow-circle-left" style="font-size:100%; color:black;"></i> Prev</a>
+  &nbsp;&nbsp;&nbsp;		  
+  <a href=# id="next">Next --&gt</a>
+</div>
+
+<!-- Enable the right-arrow and left-arrow keys to operate Next and Prev for the slideshow -->
+<script type="text/javascript">
+  <!-- -->
+  <!-- document.Element is essentially the HTML element within the DOM -->
+  <!-- This is a jQuery shortcut to assign a method to the JavaScript "keyup" event -->
+  <!-- It assigns an anonymous function to JavaScript keyup, looking for left and right arrow keys-->
+  $(document.documentElement).keyup(function (e) {
+     <!-- When user releases the right-arrow key, execute "next" for the Cycle2 slideshow -->
+     if (e.keyCode == 39) { $('.cycle-slideshow').cycle('next'); }
+     <!-- When user releases the left-arrow key, execute "prev" for the Cycle2 slideshow -->
+     if (e.keyCode == 37) { $('.cycle-slideshow').cycle('prev'); }
+  });
+</script>
+
+</div>
+
+</body>
+
+</html>
+
+<!--  ================================================================================ -->
+<!--  ================================= End ========================================== -->
+<!--  ================================================================================ -->
