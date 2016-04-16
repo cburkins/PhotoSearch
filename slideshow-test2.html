@@ -27,6 +27,21 @@ Hello world
     <a href=# id="next">Next</a>
 </div>
 
+<script>
+$(document.documentElement).keyup(function (e) {
+    if (e.keyCode == 39)
+    {        
+       $('#cycle-slideshow').cycle('next');
+    }
+
+    if (e.keyCode == 37)
+    {
+        $('#cycle-slideshow').cycle('prev');
+    }
+
+});
+</script>
+
 </body>
 
 </html>
