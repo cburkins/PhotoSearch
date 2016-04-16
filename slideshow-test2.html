@@ -2,6 +2,7 @@
 <html>
 <head>
 
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 
 </head>
 
@@ -15,7 +16,7 @@
 /* Comments witin a style tag are a different format */
 /* Apply style elements to the Cycle slidehow */
 /* The first element in the line (element) is user-defined in the div class below */
-.cycle-slideshow { width: 90%; height: 90%; margin: auto; border: 1px solid #bbb; background: #ffc }
+.cycle-slideshow { width: 60%; height: 60%; margin: auto; border: 1px solid #bbb; background: #ffc }
 .cycle-slideshow img { width: auto; height: 100%; opacity: 0; filter:alpha(opacity=0); }
 </style>
 
@@ -26,6 +27,10 @@
 <!-- Get the jQuery Cycle2 plugin for centering, supports data-cycle-center-horz -->
 <script src="http://malsup.github.io/jquery.cycle2.center.js"></script>
 
+
+<!-- Create the Cycle2 slideshow via the div tag -->
+<!-- cycle-slideshow is special classname,tells Cycle2 to auto-initialize slideshow when page is loaded -->
+<!-- Options are set using data-cycle-* attributes -->
 
 <div class="cycle-slideshow"
      data-cycle-fx="scrollHorz"
@@ -51,6 +56,10 @@
   <a href=# id="next">Next --&gt</a>
 </div>
 
+<i class="fa fa-car"></i>
+<i class="fa fa-car" style="font-size:48px;"></i>
+<i class="fa fa-car" style="font-size:60px;color:red;"></i>
+
 <!-- Enable the right-arrow and left-arrow keys to operate Next and Prev for the slideshow -->
 <script type="text/javascript">
   <!-- -->
@@ -70,3 +79,7 @@
 </body>
 
 </html>
+
+<!--  ================================================================================ -->
+<!--  ================================= End ========================================== -->
+<!--  ================================================================================ -->
