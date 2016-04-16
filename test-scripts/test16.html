@@ -9,21 +9,10 @@
 <!-- Create an element so that we can apply CSS style to it -->
 <div id="main">
 
-<!-- CSS Style sheet --> 
-<style>
-/* Comments witin a style tag are a different format */
-/* Apply style elements to the Cycle slidehow */
-/* The first element in the line (element) is user-defined in the div class below */
-.cycle-slideshow { width: 60%; height: 60%; margin: auto; border: 1px solid #bbb; background: #ffc }
-.cycle-slideshow img { width: auto; height: 100%; opacity: 0; filter:alpha(opacity=0); }
-</style>
-
 <!-- Get the jQuery library -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 <!-- Get the jQuery Cycle2 javascript for the slideshow -->
 <script src="http://malsup.github.io/jquery.cycle2.js"></script>
-<!-- Get the jQuery Cycle2 plugin for centering, supports data-cycle-center-horz -->
-<script src="http://malsup.github.io/jquery.cycle2.center.js"></script>
 
 
 <!-- Create the Cycle2 slideshow via the div tag -->
@@ -35,8 +24,6 @@
      data-cycle-timeout="0"
      data-cycle-prev="#prev"
      data-cycle-next="#next"
-     data-cycle-center-horz="true"
-     data-cycle-center-vert="true"
      >
   <!-- Load up 4 sample images into the slideshow -->
   <img src="http://malsup.github.io/images/p1.jpg">
@@ -53,20 +40,6 @@
   &nbsp;&nbsp;&nbsp;		  
   <a href=# id="next">Next --&gt</a>
 </div>
-
-<!-- Enable the right-arrow and left-arrow keys to operate Next and Prev for the slideshow -->
-<script type="text/javascript">
-  <!-- -->
-  <!-- document.Element is essentially the HTML element within the DOM -->
-  <!-- This is a jQuery shortcut to assign a method to the JavaScript "keyup" event -->
-  <!-- It assigns an anonymous function to JavaScript keyup, looking for left and right arrow keys-->
-  $(document.documentElement).keyup(function (e) {
-     <!-- When user releases the right-arrow key, execute "next" for the Cycle2 slideshow -->
-     if (e.keyCode == 39) { $('.cycle-slideshow').cycle('next'); }
-     <!-- When user releases the left-arrow key, execute "prev" for the Cycle2 slideshow -->
-     if (e.keyCode == 37) { $('.cycle-slideshow').cycle('prev'); }
-  });
-</script>
 
 </div>
 
