@@ -15,7 +15,6 @@ Hello world
 	data-cycle-timeout="0"
     data-cycle-prev="#prev"
     data-cycle-next="#next"
-	data-cycle-width="10%"
 	>
     <img src="http://malsup.github.io/images/p1.jpg">
     <img src="http://malsup.github.io/images/p2.jpg">
@@ -27,6 +26,10 @@ Hello world
     <a href=# id="prev">Prev</a>
     <a href=# id="next">Next</a>
 </div>
+
+<style>
+.cycle-slideshow { width: 30% }
+</style>
 
 <script type="text/javascript">
 $(document.documentElement).keyup(function (e) {
