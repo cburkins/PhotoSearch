@@ -47,7 +47,9 @@
 <!-- Enable the right-arrow and left-arrow keys to operate Next and Prev for the slideshow -->
 <script type="text/javascript">
   $(document.documentElement).keyup(function (e) {
+  <!-- When user releases the right-arrow key, execute "next" for the Cycle2 slideshow -->
   if (e.keyCode == 39) { $('.cycle-slideshow').cycle('next'); }
+  <!-- When user releases the left-arrow key, execute "prev" for the Cycle2 slideshow -->
   if (e.keyCode == 37) { $('.cycle-slideshow').cycle('prev'); }
 });
 </script>
