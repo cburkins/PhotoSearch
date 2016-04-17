@@ -196,6 +196,7 @@ print """
 .cycle-slideshow { width: 70%; height: 70%; margin: auto; border: 1px solid #bbb; background: #ffc }
 .cycle-slideshow img { width: auto; height: 100%; opacity: 0; filter:alpha(opacity=0); }
 .lower-caption { width: 80%; margin:auto; border:3px solid #bbb; background: #eee }
+.caption { font-size: 60%; }
 .caption-category { font-weight: bold; color: red; }
 </style>
 """
@@ -236,11 +237,7 @@ for image in matching_filenames_corrected:
 
 	caption = "Year = " + year + "<BR><BR><font color=#929292>Filename = " + local_path
         
-        print '<img src="{0}", data-cycle-title="{1}">'.format(image, caption)
-
-#	img_src = '<img src="' + image + '", data-cycle-title="' + caption + '">'
-#	print img_src
-        
+        print '<img src="{0}", data-cycle-title="<span class=caption>{1}</span>">'.format(image, caption)
 
         # Example      <img src="http://malsup.github.io/images/p1.jpg">
 
