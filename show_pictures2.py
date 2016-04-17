@@ -236,7 +236,7 @@ for image in matching_filenames_corrected:
 
 	caption = "Year = " + year + "<BR><BR><font color=#929292>Filename = " + local_path
         
-        print '<img src="{}", data-cycle-title="{}"'.format(image, caption)
+        print '<img src="{0}", data-cycle-title="{1}"'.format(image, caption)
 
 #	img_src = '<img src="' + image + '", data-cycle-title="' + caption + '">'
 #	print img_src
