@@ -250,8 +250,8 @@ $.fn.cycle.defaults.nowrap = 1;
 $(document).ready(function() {
     $('.slideshow').cycle({
 		fx: 'scrollHorz',  // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-        next:   '#next2', 
-        prev:   '#prev2',
+                next:   '#next2', 
+                prev:   '#prev2',
 		timeout: 0,
 		after:     onAfter,
 		containerResize: 0
