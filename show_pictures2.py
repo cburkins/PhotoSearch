@@ -24,7 +24,7 @@
 # - Display them with a JQuery applet called Cycle
 #
 # Output : 
-# - Produces an HTML file
+# - Produces an HTML file which calls the jQuery Cycle2 plugin
 # - Pretty sure there's a separate line for each photo, need to verify that
 #
 # Dependencies :
@@ -51,9 +51,10 @@ import os
 import sys
 import cgi
 
-ROOT = "/home3/cburkins/public_html/cgi-bin/site-packages"
-sys.path.insert(0, ROOT)
-from PIL import Image
+# Commented this out on 4/17/2016. Maybe we used to use this on iPowerWeb, now using Hostgator
+#ROOT = "/home3/cburkins/public_html/cgi-bin/site-packages"
+#sys.path.insert(0, ROOT)
+#from PIL import Image
 
 ROOT = "/home3/cburkins/public_html/family/search"
 sys.path.insert(0, ROOT)
