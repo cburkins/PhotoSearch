@@ -171,11 +171,12 @@ for filename in matching_filenames:
 # --------- Start of form ---------
 # ---------------------------------
 
-# Create the HTML header	
+# Create the HTML header and Font Awesome	
 print """
 <html>
 <head>
 <title>Family Search</title>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 """
 
