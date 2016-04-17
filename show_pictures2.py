@@ -51,10 +51,6 @@ import os
 import sys
 import cgi
 
-# Commented this out on 4/17/2016. Maybe we used to use this on iPowerWeb, now using Hostgator
-#ROOT = "/home3/cburkins/public_html/cgi-bin/site-packages"
-#sys.path.insert(0, ROOT)
-
 # Import from Python Image Library
 from PIL import Image
 
@@ -63,7 +59,6 @@ sys.path.insert(0, ROOT)
 
 # Import my local code
 from FS_common import *
-
 from get_matching_pictures import *
 
 
@@ -242,37 +237,26 @@ print """
 </style>
 <script type="text/javascript" src="http://www.burkins.com/family/pictures/search/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="http://www.burkins.com/family/pictures/search/jquery.cycle.all.3.03.js"></script>
+</head>
+
+<body>
 """
 
 # Setup
 print """
-<script type="text/javascript">
+<div id="main">
 
-$.fn.cycle.defaults.nowrap = 1;
+<!-- Get the jQuery library -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<!-- Get the jQuery Cycle2 javascript for the slideshow -->
+<script src="http://malsup.github.io/jquery.cycle2.js"></script>
 
-$(document).ready(function() {
-    $('.slideshow').cycle({
-		fx: 'scrollHorz',  // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-                next:   '#next2', 
-                prev:   '#prev2',
-		timeout: 0,
-		after:     onAfter,
-		containerResize: 0
-		});
-});
-
-function onAfter(curr,next,opts) {
-	var caption = 'Image ' + (opts.currSlide + 1) + ' of ' + opts.slideCount + '<br>' + this.alt;
-	$('#caption').html(caption);
-}
-</script>
-</head>
-
-<body>
-
-    <center><div class="nav"><a id="prev2" href="#">Prev2</a> -------- <a id="next2" href="#">Next2</a></div></center>
-
-	<div class="slideshow">
+<div class="cycle-slideshow"
+     data-cycle-fx="scrollHorz"
+     data-cycle-timeout="0"
+     data-cycle-prev="#prev"
+     data-cycle-next="#next"
+     >
 """
 
 # Loop through matching images, and contrsuct HTML to support the Cycle jQuery tool
@@ -280,29 +264,36 @@ for image in matching_filenames_corrected:
 	local_path = image.replace("http://www.burkins.com", "/home3/cburkins/public_html")
 	metadata_path = image.replace(DST_URL, SRC_PATH)
 
-        # Get the dimension of the given image
-	width,height = get_dimensions(local_path)
-
-        # Compute new desired dimenions (usually means computing smaller dimensions for a large pic)
-	new_width,new_height = scale_dimensions(width, height, max_width, max_height)
-
         if "Y" in keyword_dictionary[metadata_path]:
             year = str(((keyword_dictionary[metadata_path])["Y"])[0])
         else:
             year = 'Unknown'
 
-#	caption = "Local Path = " + local_path
-#	caption = "Metadata Path = " + metadata_path
 	caption = "Year = " + year + "<BR><BR><font color=#929292>Filename = " + local_path
 
-	img_src = '<img src="' + image + '" width=' + str(new_width) + ' height=' + str(new_height) + ' alt="' + caption + '" />'
+	img_src = '<img src="' + image + '" />'
 	print img_src
 
+        # Example      <img src="http://malsup.github.io/images/p1.jpg">
+
+# End of slideshow <div>
+print """
+</div>
+"""
+
+# Put the Prev and Next links onto the page for the slideshow
+print """
+<div class=center style="text-align: center; font-size: 200%;">
+  <!-- The id=next is what makes this link work.  Cycle2 Slideshow looks for that ID -->
+  <!-- &lt is a safe way to display the less-than symbol without confusing HTML render -->
+  <a href=# id="prev">Prev</a>
+  &nbsp;&nbsp;&nbsp;
+  <a href=# id="next">Next</a>
+</div>
+"""
 
 print """
-		</div>
-<center><p id="caption"></p></center>
-
+</div>
 </body>
 </html>
 """
