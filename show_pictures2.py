@@ -51,9 +51,6 @@ import os
 import sys
 import cgi
 
-# Import from Python Image Library
-from PIL import Image
-
 ROOT = "/home3/cburkins/public_html/family/search"
 sys.path.insert(0, ROOT)
 
@@ -66,31 +63,6 @@ from get_matching_pictures import *
 
 fileList = []
 search_list = []
-max_width = 800
-max_height = 600
-
-# ---------------------------------------------------------------------------------------------------
-
-# Get pixel dimensions of a picture
-
-def get_dimensions(filepath):
-    width, height = Image.open(open(filepath)).size
-    return width,height
-
-# ---------------------------------------------------------------------------------------------------
-
-# Given a max width and height, compute new dimensions based on max_width and max_height
-
-def scale_dimensions(width, height, max_width, max_height):
-
-    new_width = width * (max_height / float(height))
-    new_height = max_height
-
-    if (new_width > max_width):
-        new_width = max_width
-        new_height = height * (max_width / float(width))
-
-    return int(new_width), int(new_height)
 
 # ---------------------------------------------------------------------------------------------------
 # -------------------------------------- Main  ------------------------------------------------------
@@ -102,28 +74,9 @@ params = []
 search_list = []
 
 
-# Set the default picture size (can be overridden in user-submitted form)
-picsize = 'Small'
-
-# Based on the user-selected radio button from previous page, set picture size
-# Ratio of 1.42 works well (e.g. 1000x700)
-picsize = theform.getvalue("picsize");
-if (picsize == 'Large'):
-    max_width = 1000
-    max_height = 700
-elif (picsize == 'Medium'):
-    max_width = 650
-    max_height = 457
-else : 
-    max_width = 500
-    max_height = 350
-
-
 # Using hidden value passed via form, build a search dictionary (used later)
 # Keywords (People, Places, Events) are in one big list associated with the key "Keyword"
 # Parse through that list, and create seperate lists in a dictionary called "search_dictionary"
-
-
 # Careful, if there's only one term, it's a string, if more than one, it's a list.  
 # Need a list for next section of code, so if needed, convert single item to a list
 keyword_item = theform.getvalue("Keyword");
@@ -227,30 +180,16 @@ print """
 </head>
 """
 
-slideshow_width = max_width + 32
-slideshow_height = max_height + 32
-print_string = '.slideshow {  width: ' + str(slideshow_width) + 'px; height: ' + str(slideshow_height) + 'px; margin: auto; containerResize: 0;  }'
-print print_string
-
 # CSS Setup, include jQuery library and Cycle plugin
-print """
-
-"""
-
-# Setup
 print """
 <body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 <script src="http://malsup.github.io/jquery.cycle2.js"></script>
+"""
 
-
-
+# Setup div for slideshow
+print """
 <div id="main">
-
-<!-- Get the jQuery library -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-<!-- Get the jQuery Cycle2 javascript for the slideshow -->
-<script src="http://malsup.github.io/jquery.cycle2.js"></script>
 
 <div class="cycle-slideshow"
      data-cycle-fx="scrollHorz"
@@ -293,6 +232,7 @@ print """
 </div>
 """
 
+# end of main div
 print """
 </div>
 </body>
