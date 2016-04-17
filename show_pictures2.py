@@ -225,9 +225,6 @@ print """
 <style type="text/css">
 """
 
-# img_src = '<img src="' + image + '" width=' + str(new_width) + ' height=' + str(new_height) + ' alt="' + caption + '" />'
-#print img_src
-
 slideshow_width = max_width + 32
 slideshow_height = max_height + 32
 print_string = '.slideshow {  width: ' + str(slideshow_width) + 'px; height: ' + str(slideshow_height) + 'px; margin: auto; containerResize: 0;  }'
@@ -242,8 +239,6 @@ print """
 
 
 <!-- include Cycle plugin -->
-
-<!-- On 2013-12-14, commented out v2.72 of the cycle jquery app, and added local copy of v3.03 -->
 <script type="text/javascript" src="http://www.burkins.com/family/pictures/search/jquery.cycle.all.3.03.js"></script>
 <script type="text/javascript">
 
@@ -270,7 +265,7 @@ function onAfter(curr,next,opts) {
 
 <body>
 
-    <center><div class="nav"><a id="prev2" href="#">Prev</a> -------- <a id="next2" href="#">Next</a></div></center>
+    <center><div class="nav"><a id="prev2" href="#">Prev2</a> -------- <a id="next2" href="#">Next2</a></div></center>
 
 	<div class="slideshow">
 """
