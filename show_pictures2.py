@@ -54,6 +54,8 @@ import cgi
 # Commented this out on 4/17/2016. Maybe we used to use this on iPowerWeb, now using Hostgator
 #ROOT = "/home3/cburkins/public_html/cgi-bin/site-packages"
 #sys.path.insert(0, ROOT)
+
+# Import from Python Image Library
 from PIL import Image
 
 ROOT = "/home3/cburkins/public_html/family/search"
@@ -82,7 +84,7 @@ def get_dimensions(filepath):
 
 # ---------------------------------------------------------------------------------------------------
 
-# Given a max width and height, scale a picture to be contained inside that
+# Given a max width and height, compute new dimensions based on max_width and max_height
 
 def scale_dimensions(width, height, max_width, max_height):
 
@@ -277,7 +279,11 @@ function onAfter(curr,next,opts) {
 for image in matching_filenames_corrected:
 	local_path = image.replace("http://www.burkins.com", "/home3/cburkins/public_html")
 	metadata_path = image.replace(DST_URL, SRC_PATH)
+
+        # Get the dimension of the given image
 	width,height = get_dimensions(local_path)
+
+        # Compute new desired dimenions (usually means computing smaller dimensions for a large pic)
 	new_width,new_height = scale_dimensions(width, height, max_width, max_height)
 
         if "Y" in keyword_dictionary[metadata_path]:
