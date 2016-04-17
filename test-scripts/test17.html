@@ -19,7 +19,7 @@
 .cycle-slideshow { width: 70%; height: 70%; margin: auto; border: 1px solid #bbb; background: #ffc }
 .cycle-slideshow img { width: auto; height: 80%; opacity: 0; filter:alpha(opacity=0); }
 .lower-caption { width: 80%; margin:auto; border:3px solid #bbb; background: #eee }
-.caption-category { font-weight: bold; }
+.caption-category { font-weight: bold; font-color: red; }
 </style>
 
 <!-- Get the jQuery library -->
@@ -50,11 +50,11 @@
      data-cycle-center-horz="true"
      data-cycle-center-vert="true"
      data-cycle-caption="#lower-custom-caption"
-     data-cycle-caption-template="<center>Slide {{slideNum}} of {{slideCount}}</center><br><br>{{cycleTitle}}"
+     data-cycle-caption-template="<center>Slide {{slideNum}} of {{slideCount}}</center><br>{{cycleTitle}}"
      >
 
     <!-- Load up 4 sample images into the slideshow -->
-    <img src="http://malsup.github.io/images/p1.jpg" data-cycle-title="<span class=caption-category>People:</span> Bob Burkins, Chad Burkins, Tom Burkins<br><b>Location:</b> Walt Disney World<br>" >
+    <img src="http://malsup.github.io/images/p1.jpg" data-cycle-title="<span class=caption-category>People:</span> Bob Burkins, Chad Burkins, Tom Burkins<br><span class=caption-category>Location:</span> Walt Disney World<br>" >
     <img src="http://malsup.github.io/images/p2.jpg" data-cycle-title="Redwoods" >
     <img src="http://malsup.github.io/images/p3.jpg" data-cycle-title="Angle Island" >
     <img src="http://malsup.github.io/images/p4.jpg" data-cycle-title="Raquette Lake" >
