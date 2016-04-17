@@ -187,7 +187,7 @@ print """
 <script src="http://malsup.github.io/jquery.cycle2.center.js"></script>
 """
 
-# Setup div for slideshow
+# Setup main div for entire doc and internal CSS style sheets
 print """
 <div id="main">
 
@@ -197,7 +197,20 @@ print """
 .lower-caption { width: 80%; margin:auto; border:3px solid #bbb; background: #eee }
 .caption-category { font-weight: bold; color: red; }
 </style>
+"""
 
+# Put the Prev and Next links onto the page for the slideshow
+# The id=next is what makes this link work.  Cycle2 Slideshow looks for that ID
+print """
+<div class=center style="text-align: center; font-size: 200%;">
+  <a href=# id="prev"><i class="fa fa-arrow-circle-left" style="font-size:100%; color:black;"></i> Prev</a>
+  &nbsp;&nbsp;&nbsp;
+  <a href=# id="next">Next <i class="fa fa-arrow-circle-right" style="font-size:100%; color:black;"></i></a>
+</div>
+"""
+
+# Setup div for Cycle2 slideshow
+print """
 <div class="cycle-slideshow"
      data-cycle-fx="scrollHorz"
      data-cycle-timeout="0"
