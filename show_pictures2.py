@@ -213,11 +213,14 @@ for filename in matching_filenames:
 	# DST_URL is the full-pathname where the pictures are located on the Web server
 	matching_filenames_corrected.append(filename.replace(SRC_PATH, DST_URL))
 
+# OK, now ready to start construction the HTML page
+# We've got a list of image, each with a full path name (that matches the layout on the webserver)
 	
 # ---------------------------------
 # --------- Start of form ---------
 # ---------------------------------
-	
+
+# Create the HTML header	
 print """
 <!DOCTYPE html>
 <head>
@@ -258,7 +261,6 @@ $(document).ready(function() {
 function onAfter(curr,next,opts) {
 	var caption = 'Image ' + (opts.currSlide + 1) + ' of ' + opts.slideCount + '<br>' + this.alt;
 	$('#caption').html(caption);
-<!--	$('#caption').html(this.alt);  -->
 }
 </script>
 </head>
