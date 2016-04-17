@@ -203,6 +203,10 @@ print """
      data-cycle-timeout="0"
      data-cycle-prev="#prev"
      data-cycle-next="#next"
+     data-cycle-center-horz="true"
+     data-cycle-center-vert="true"
+     data-cycle-caption="#lower-custom-caption"
+     data-cycle-caption-template="<center>Slide {{slideNum}} of {{slideCount}}</center><br>{{cycleTitle}}"
      >
 """
 
