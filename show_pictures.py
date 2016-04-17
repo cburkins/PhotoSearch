@@ -55,7 +55,7 @@ ROOT = "/home3/cburkins/public_html/cgi-bin/site-packages"
 sys.path.insert(0, ROOT)
 from PIL import Image
 
-≈çROOT = "/home3/cburkins/public_html/family/search"
+ROOT = "/home3/cburkins/public_html/family/search"
 sys.path.insert(0, ROOT)
 
 # Import my local code
