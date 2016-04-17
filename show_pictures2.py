@@ -173,10 +173,9 @@ for filename in matching_filenames:
 
 # Create the HTML header	
 print """
-<!DOCTYPE html>
+<html>
 <head>
 <title>Family Search</title>
-<style type="text/css">
 </head>
 """
 
