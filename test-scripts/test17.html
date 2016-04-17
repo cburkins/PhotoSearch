@@ -39,17 +39,20 @@
      data-cycle-next="#next"
      data-cycle-center-horz="true"
      data-cycle-center-vert="true"
+     data-cycle-caption="#adv-custom-caption"
+     data-cycle-caption-template="Slide {{slideNum}}: {{cycleTitle}}"
      >
-  
-  <!-- empty element for caption -->
-  <div class="cycle-caption"></div>
 
-  <!-- Load up 4 sample images into the slideshow -->
-  <img src="http://malsup.github.io/images/p1.jpg">
-  <img src="http://malsup.github.io/images/p2.jpg">
-  <img src="http://malsup.github.io/images/p3.jpg">
-  <img src="http://malsup.github.io/images/p4.jpg">
+    <!-- Load up 4 sample images into the slideshow -->
+    <img src="http://malsup.github.io/images/p1.jpg" data-cycle-title="Spring" >
+    <img src="http://malsup.github.io/images/p2.jpg" data-cycle-title="Redwoods" >
+    <img src="http://malsup.github.io/images/p3.jpg" data-cycle-title="Angle Island" >
+    <img src="http://malsup.github.io/images/p4.jpg" data-cycle-title="Raquette Lake" >
+
 </div>
+
+<!-- empty element for caption -->
+<div id="adv-custom-caption" class="center"></div>
 
 <!-- Put the Prev and Next links onto the page for the slideshow -->
 <div class=center style="text-align: center; font-size: 200%;">
