@@ -236,9 +236,11 @@ for image in matching_filenames_corrected:
 
 	caption = "Year = " + year + "<BR><BR><font color=#929292>Filename = " + local_path
         
+        print '<img src="{}", data-cycle-title="{}"'.format(image, caption)
 
-	img_src = '<img src="' + image + '", data-cycle-title="' + caption + '">'
-	print img_src
+#	img_src = '<img src="' + image + '", data-cycle-title="' + caption + '">'
+#	print img_src
+        
 
         # Example      <img src="http://malsup.github.io/images/p1.jpg">
 
