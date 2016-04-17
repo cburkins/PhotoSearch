@@ -233,16 +233,16 @@ slideshow_height = max_height + 32
 print_string = '.slideshow {  width: ' + str(slideshow_width) + 'px; height: ' + str(slideshow_height) + 'px; margin: auto; containerResize: 0;  }'
 print print_string
 
+# CSS Setup, include jQuery library and Cycle plugin
 print """
 .slideshow img { padding: 15px; border: 1px solid #ccc; background-color: #eee; }
 </style>
-
-<!-- include jQuery library -->
 <script type="text/javascript" src="http://www.burkins.com/family/pictures/search/jquery-1.10.2.min.js"></script>
-
-
-<!-- include Cycle plugin -->
 <script type="text/javascript" src="http://www.burkins.com/family/pictures/search/jquery.cycle.all.3.03.js"></script>
+"""
+
+# Setup
+print """
 <script type="text/javascript">
 
 $.fn.cycle.defaults.nowrap = 1;
