@@ -224,6 +224,7 @@ print """
 <head>
 <title>Family Search</title>
 <style type="text/css">
+</head>
 """
 
 slideshow_width = max_width + 32
@@ -233,17 +234,17 @@ print print_string
 
 # CSS Setup, include jQuery library and Cycle plugin
 print """
-.slideshow img { padding: 15px; border: 1px solid #ccc; background-color: #eee; }
-</style>
-<script type="text/javascript" src="http://www.burkins.com/family/pictures/search/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="http://www.burkins.com/family/pictures/search/jquery.cycle.all.3.03.js"></script>
-</head>
 
-<body>
 """
 
 # Setup
 print """
+<body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script src="http://malsup.github.io/jquery.cycle2.js"></script>
+
+
+
 <div id="main">
 
 <!-- Get the jQuery library -->
