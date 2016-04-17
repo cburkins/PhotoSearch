@@ -257,6 +257,23 @@ print """
 </div>
 """
 
+
+# empty element for caption 
+print """
+<div id="lower-custom-caption" class="lower-caption" style="font-size:150%"></div>
+"""
+
+# Enable the right-arrow and left-arrow keys to operate Next and Prev for the slideshow
+print """
+<script type="text/javascript">
+  $(document.documentElement).keyup(function (e) {
+     if (e.keyCode == 39) { $('.cycle-slideshow').cycle('next'); }
+     if (e.keyCode == 37) { $('.cycle-slideshow').cycle('prev'); }
+  });
+</script>
+"""
+
+
 # end of main div
 print """
 </div>
