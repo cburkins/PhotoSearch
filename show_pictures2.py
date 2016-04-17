@@ -54,7 +54,7 @@ import cgi
 # Commented this out on 4/17/2016. Maybe we used to use this on iPowerWeb, now using Hostgator
 #ROOT = "/home3/cburkins/public_html/cgi-bin/site-packages"
 #sys.path.insert(0, ROOT)
-#from PIL import Image
+from PIL import Image
 
 ROOT = "/home3/cburkins/public_html/family/search"
 sys.path.insert(0, ROOT)
