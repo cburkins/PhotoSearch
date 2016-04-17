@@ -27,6 +27,15 @@
 <!-- Get the jQuery Cycle2 plugin for centering, supports data-cycle-center-horz -->
 <script src="http://malsup.github.io/jquery.cycle2.center.js"></script>
 
+<!-- Put the Prev and Next links onto the page for the slideshow -->
+<div class=center style="text-align: center; font-size: 200%;">
+  <!-- The id=next is what makes this link work.  Cycle2 Slideshow looks for that ID -->
+  <!-- &lt is a safe way to display the less-than symbol without confusing HTML render -->
+  <a href=# id="prev"><i class="fa fa-arrow-circle-left" style="font-size:100%; color:black;"></i> Prev</a>
+  &nbsp;&nbsp;&nbsp;		  
+  <a href=# id="next">Next <i class="fa fa-arrow-circle-right" style="font-size:100%; color:black;"></i></a>
+</div>
+
 
 <!-- Create the Cycle2 slideshow via the div tag -->
 <!-- cycle-slideshow is special classname,tells Cycle2 to auto-initialize slideshow when page is loaded -->
@@ -53,15 +62,6 @@
 
 <!-- empty element for caption -->
 <div id="adv-custom-caption" class="center" style="text-align: center; font-size:150%"></div>
-
-<!-- Put the Prev and Next links onto the page for the slideshow -->
-<div class=center style="text-align: center; font-size: 200%;">
-  <!-- The id=next is what makes this link work.  Cycle2 Slideshow looks for that ID -->
-  <!-- &lt is a safe way to display the less-than symbol without confusing HTML render -->
-  <a href=# id="prev"><i class="fa fa-arrow-circle-left" style="font-size:100%; color:black;"></i> Prev</a>
-  &nbsp;&nbsp;&nbsp;		  
-  <a href=# id="next">Next <i class="fa fa-arrow-circle-right" style="font-size:100%; color:black;"></i></a>
-</div>
 
 <!-- Enable the right-arrow and left-arrow keys to operate Next and Prev for the slideshow -->
 <script type="text/javascript">
