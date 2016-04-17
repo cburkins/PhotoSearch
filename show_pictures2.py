@@ -237,10 +237,11 @@ for image in matching_filenames_corrected:
         else:
             people = 'Unknown'
 
-	caption = "Year = " + year + "<BR><font color=#929292>Filename = " + local_path
         caption = 'Year = {0} <BR><font color=#929292>Filename = {1}'.format(year, local_path)
-     
-        print '<img src="{0}", data-cycle-title="<span class=caption>{1}</span>">'.format(image, caption)
+        people = 'People: {0}'.format(people)
+        title = '<span class=caption>{0}</span>'.format(caption)
+    
+        print '<img src="{0}", data-cycle-title="{1}">'.format(image, title)
 
         # Example      <img src="http://malsup.github.io/images/p1.jpg">
 
