@@ -144,9 +144,6 @@ for keyword in keyword_list:
 		search_dictionary = dictionary_list_push(keyword, 'People', search_dictionary)
 
 
-# go through list of filenames, and keep only filenames with "jpg" somewhere in filename
-# images = [elem for elem in fileList if 'jpg' in elem]
-
 # Get the dictionary of all keywords in my pictures (this is a big dictionary)
 keyword_dictionary = get_keyword_dictionary(Image_Metadata)
 	
@@ -235,8 +232,14 @@ for image in matching_filenames_corrected:
         else:
             year = 'Unknown'
 
-	caption = "Year = " + year + "<BR><BR><font color=#929292>Filename = " + local_path
-        
+        if "P" in keyword_dictionary[metadata_path]:
+            people = str(((keyword_dictionary[metadata_path])["P"])[0])
+        else:
+            people = 'Unknown'
+
+	caption = "Year = " + year + "<BR><font color=#929292>Filename = " + local_path
+        caption = 'Year = {0} <BR><font color=#929292>Filename = {1}'.format(year, local_path)
+     
         print '<img src="{0}", data-cycle-title="<span class=caption>{1}</span>">'.format(image, caption)
 
         # Example      <img src="http://malsup.github.io/images/p1.jpg">
