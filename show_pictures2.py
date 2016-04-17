@@ -235,8 +235,9 @@ for image in matching_filenames_corrected:
             year = 'Unknown'
 
 	caption = "Year = " + year + "<BR><BR><font color=#929292>Filename = " + local_path
+        
 
-	img_src = '<img src="' + image + '">'
+	img_src = '<img src="' + image + '", data-cycle-title="' + caption + '">'
 	print img_src
 
         # Example      <img src="http://malsup.github.io/images/p1.jpg">
@@ -245,18 +246,6 @@ for image in matching_filenames_corrected:
 print """
 </div>
 """
-
-# Put the Prev and Next links onto the page for the slideshow
-print """
-<div class=center style="text-align: center; font-size: 200%;">
-  <!-- The id=next is what makes this link work.  Cycle2 Slideshow looks for that ID -->
-  <!-- &lt is a safe way to display the less-than symbol without confusing HTML render -->
-  <a href=# id="prev">Prev</a>
-  &nbsp;&nbsp;&nbsp;
-  <a href=# id="next">Next</a>
-</div>
-"""
-
 
 # empty element for caption 
 print """
@@ -272,7 +261,6 @@ print """
   });
 </script>
 """
-
 
 # end of main div
 print """
