@@ -195,6 +195,7 @@ print """
 .lower-caption { width: 80%; margin:auto; border:3px solid #bbb; background: #eee }
 .caption { font-size: 100%; }
 .caption-category { font-weight: bold; color: red; }
+.cycle-overlay { font-family: tahoma, arial; position: absolute; bottom: 0; width: 100%; z-index: 600; background: black; color: white; padding: 15px; opacity: .5;}
 </style>
 """
 
