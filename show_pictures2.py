@@ -240,9 +240,9 @@ for image in matching_filenames_corrected:
                 
         if "P" in keyword_dictionary[metadata_path]:
                 peopleList = (keyword_dictionary[metadata_path])["P"]
-                people = str(peopleList);
-                # people = str(((keyword_dictionary[metadata_path])["P"])[0])
-        else:
+                 # Convert the list of People into a comma-separated string
+                people = ",".join(peopleList)
+         else:
                 people = 'Unknown'
 
         captionYear = 'Year = {0}'.format(year)
