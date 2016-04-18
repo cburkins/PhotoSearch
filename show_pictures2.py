@@ -284,6 +284,12 @@ print """
 </script>
 """
 
+print """
+$('.cycle-slideshow').on('cycle-after', function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag) {
+    $('.overlay', this).css({'width':$('img',incomingSlideEl).css('width'), 'height': $('img',incomingSlideEl).css('height')});
+});
+"""
+
 # end of main div
 print """
 </div>
