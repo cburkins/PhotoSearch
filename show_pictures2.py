@@ -197,7 +197,7 @@ print """
 .lower-caption { width: 80%; margin:auto; border:3px solid #bbb; background: #eee }
 .caption { font-size: 100%; }
 .caption-category { font-weight: bold; color: red; }
-.cycle-overlay { font-family: tahoma, arial; position:absolute; bottom:0; width:70%; margin:auto; z-index:600; background:black; color:white; padding:15px; opacity: .6;}
+.cycle-overlay { font-family: tahoma, arial; position:absolute; bottom:0; width:70%; left:15%; z-index:600; background:black; color:white; padding:15px; opacity: .6;}
 </style>
 """
 
@@ -222,7 +222,6 @@ print """
      data-cycle-center-vert="true"
      data-cycle-caption="#lower-custom-caption"
      data-cycle-caption-template="<center>Slide {{slideNum}} of {{slideCount}}</center><br>{{cycleTitle}}"
-     data-cycle-auto-height=container
      >
 
 <div class="cycle-overlay"></div>
