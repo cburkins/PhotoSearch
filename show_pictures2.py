@@ -242,7 +242,7 @@ for image in matching_filenames_corrected:
                 peopleList = (keyword_dictionary[metadata_path])["P"]
                  # Convert the list of People into a comma-separated string
                 people = ",".join(peopleList)
-         else:
+        else:
                 people = 'Unknown'
 
         captionYear = 'Year = {0}'.format(year)
