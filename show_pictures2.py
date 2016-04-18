@@ -186,6 +186,8 @@ print """
 """
 
 # Setup main div for entire doc and internal CSS style sheets
+#.cycle-overlay { font-family: tahoma, arial; position: absolute; bottom: 0; width: 70%; margin:auto; z-index: 600; background: black; color: white; padding: 15px; opacity: .6;}
+
 print """
 <div id="main">
 
@@ -195,7 +197,7 @@ print """
 .lower-caption { width: 80%; margin:auto; border:3px solid #bbb; background: #eee }
 .caption { font-size: 100%; }
 .caption-category { font-weight: bold; color: red; }
-.cycle-overlay { font-family: tahoma, arial; position: absolute; bottom: 0; width: 70%; margin:auto; z-index: 600; background: black; color: white; padding: 15px; opacity: .6;}
+.cycle-overlay { font-family: tahoma, arial; bottom: 0; width: 70%; margin:auto; z-index: 600; background: black; color: white; padding: 15px; opacity: .6;}
 </style>
 """
 
@@ -281,14 +283,6 @@ print """
      if (e.keyCode == 39) { $('.cycle-slideshow').cycle('next'); }
      if (e.keyCode == 37) { $('.cycle-slideshow').cycle('prev'); }
   });
-</script>
-"""
-
-print """
-<script type="text/javascript">
-$('.cycle-slideshow').on('cycle-after', function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag) {
-    $('.cycle-overlay', this).css({'width':$('img',incomingSlideEl).css('width'), 'height': $('img',incomingSlideEl).css('height')});
-});
 </script>
 """
 
