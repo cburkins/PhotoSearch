@@ -222,7 +222,10 @@ print """
      data-cycle-center-vert="true"
      data-cycle-caption="#lower-custom-caption"
      data-cycle-caption-template="<center>Slide {{slideNum}} of {{slideCount}}</center><br>{{cycleTitle}}"
+     data-cycle-auto-height=container
      >
+
+<div class="cycle-overlay"></div>
 """
 
 # Loop through matching images, and contrsuct HTML to support the Cycle jQuery tool
@@ -270,10 +273,6 @@ print """
 </div>
 """
 
-# overlay
-print """
-<div class="cycle-overlay"></div>
-"""
 
 
 # empty element for caption 
