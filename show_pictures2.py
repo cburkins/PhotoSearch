@@ -227,15 +227,23 @@ for image in matching_filenames_corrected:
 	local_path = image.replace("http://www.burkins.com", "/home3/cburkins/public_html")
 	metadata_path = image.replace(DST_URL, SRC_PATH)
 
-        if "Y" in keyword_dictionary[metadata_path]:
-            year = str(((keyword_dictionary[metadata_path])["Y"])[0])
-        else:
-            year = 'Unknown'
+        # keyword dictionary
+        #      key : filename
+        #      value : dictionary
+        #         key : cateogry (P=ListOfPeople, L=ListofLocations, Y=ListofYears, R=ListOfRatings)
+        #         value : list matching the category                                          
 
-        if "P" in keyword_dictionary[metadata_path]:
-            people = str(((keyword_dictionary[metadata_path])["P"])[0])
+        if "Y" in keyword_dictionary[metadata_path]:
+                year = str(((keyword_dictionary[metadata_path])["Y"])[0])
         else:
-            people = 'Unknown'
+                year = 'Unknown'
+                
+        if "P" in keyword_dictionary[metadata_path]:
+                peopleList = (keyword_dictionary[metadata_path])["P"]
+                people = str(peopleList);
+                # people = str(((keyword_dictionary[metadata_path])["P"])[0])
+        else:
+                people = 'Unknown'
 
         captionYear = 'Year = {0}'.format(year)
         captionFilename = '<font color=#929292>Filename = {0}'.format(local_path)
