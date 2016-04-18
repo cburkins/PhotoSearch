@@ -193,7 +193,7 @@ print """
 .cycle-slideshow { width: 70%; height: 70%; margin: auto; border: 1px solid #bbb; background: #ffc }
 .cycle-slideshow img { width: auto; height: 100%; opacity: 0; filter:alpha(opacity=0); }
 .lower-caption { width: 80%; margin:auto; border:3px solid #bbb; background: #eee }
-.caption { font-size: 60%; }
+.caption { font-size: 100%; }
 .caption-category { font-weight: bold; color: red; }
 </style>
 """
@@ -245,11 +245,18 @@ for image in matching_filenames_corrected:
         else:
                 people = 'Unknown'
 
+        if "L" in keyword_dictionary[metadata_path]:
+                locationList = (keyword_dictionary[metadata_path])["L"]
+                 # Convert the list of People into a comma-separated string
+                locations = ",".join(locationList)
+        else:
+                locations = 'Unknown'
+
         captionYear = 'Year = {0}'.format(year)
-        captionFilename = '<font color=#929292>Filename = {0}'.format(local_path)
         captionPeople = 'People: {0}'.format(people)
+        captionLocations = 'Location: {0}'.format(locations)
         
-        title = '<span class=caption>{0}<BR>{1}<BR>{2}</span>'.format(captionYear, captionFilename, captionPeople)
+        title = '<span class=caption>{0}<BR>{1}<BR>{2}</span>'.format(captionYear, captionPeople, captionLocations)
     
         print '<img src="{0}", data-cycle-title="{1}">'.format(image, title)
 
