@@ -285,7 +285,7 @@ print """
 """
 
 print """
-<script>
+<script type="text/javascript">
 $('.cycle-slideshow').on('cycle-after', function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag) {
     $('.cycle-overlay', this).css({'width':$('img',incomingSlideEl).css('width'), 'height': $('img',incomingSlideEl).css('height')});
 });
