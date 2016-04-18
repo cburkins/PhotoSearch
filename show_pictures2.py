@@ -192,7 +192,7 @@ print """
 <div id="main">
 
 <style>
-.cycle-slideshow { width:70%; height:auto; margin:auto; border:1px solid #bbb; background:#ffc }
+.cycle-slideshow { width:auto; height:80%; margin:auto; border:1px solid #bbb; background:#ffc }
 .cycle-slideshow img { width: auto; height: 100%; opacity: 0; filter:alpha(opacity=0); }
 .lower-caption { width: 80%; margin:auto; border:3px solid #bbb; background: #eee }
 .caption { font-size: 100%; }
