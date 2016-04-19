@@ -1,0 +1,46 @@
+/* Comments witin a style tag are a different format */
+/* Apply style elements to the Cycle slidehow */
+/* The first element in the line (element) is user-defined in the div class below */
+
+/* wrapper with intrinsic ration */
+/* 16:9 = 56.25% */
+/* 4:3 = 75% */
+#ratio-wrapper {
+    position: relative;
+    padding-bottom: 75%;
+    height: 0;
+    border: 1px solid #bbb;
+    background: red;
+}
+.cycle-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 70%;
+    border: 3px solid #bbb;
+    background: teal;
+}
+
+/* div container for the image.  We're actually using the class selector here (i.e. the period) */
+/* left and right margin take away from width.  So this means width is 60% of screen  */
+/*
+.cycle-slideshow { width: auto; height: 70%; margin-left: 20%; margin-right:20%; border: 1px solid #bbb; background: #ffc }
+*/
+
+
+/* the image itself, within the div container.  Not actually a div container, just an image */
+/* we're actually selecting all img elements within class=cycle-slideshow */
+.cycle-slideshow img { width: auto; height: 100%; opacity: 0; filter:alpha(opacity=0); }
+
+/* the div container for the caption below the image */
+.lower-caption { width: 80%; margin:auto; border:3px solid #bbb; background: #eee }
+
+/* the span tag for the label for each line within the caption (e.g. People: ) */
+.caption-category { font-weight: bold; color: green; }
+
+/* overlay */
+.cycle-overlay { 
+    font-family: tahoma, arial; 
+    position: absolute; bottom:0; width:100%; 
+    z-index: 600; background: black; color: white; padding: 15px; opacity: .5;
+}
