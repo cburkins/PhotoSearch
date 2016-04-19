@@ -10,6 +10,7 @@
     padding-bottom: 75%;
     height: 0;
     border: 1px solid #bbb;
+    margin: auto;
 }
 .cycle-slideshow {
     position: absolute;
