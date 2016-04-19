@@ -2,6 +2,8 @@
 /* Apply style elements to the Cycle slidehow */
 /* The first element in the line (element) is user-defined in the div class below */
 
+/* width is 60% of containing element, which is the viewport (screen) */
+/* height=padding-bottom which is 40% of the containing element (screen) */
 
 .wrapper {
     width: 60%;
@@ -11,7 +13,9 @@
     background: teal;
     margin: auto;
 }
-
+.inside {
+    background: red;
+}
 
 
 
