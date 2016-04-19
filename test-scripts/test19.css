@@ -3,8 +3,9 @@
 /* The first element in the line (element) is user-defined in the div class below */
 
 
-#wrapper {
+,wrapper {
     position: relative;
+    width: 40%
     padding-bottom: 40%;
     height: 0;
     border: 1px solid #bbb;
@@ -22,26 +23,3 @@
 
 
 
-/* 
-
-.wrapper {
-  width: 50%;
-  display: inline-block;
-  position: relative;
-}
-.wrapper:after {
-  padding-top: 56.25%;
-  display: block;
-  content: '';
-}
-.inside {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: deepskyblue;
-  color: white;
-}
-
-*/
