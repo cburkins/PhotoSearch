@@ -3,21 +3,12 @@
 /* The first element in the line (element) is user-defined in the div class below */
 
 
-#wrapper {
-    position: relative;
+.wrapper {
     width: 40%
-    padding-bottom: 40%;
     height: 0;
-    border: 1px solid #bbb;
-    background: red;
+    padding-bottom: 40%;
 }
-#inside {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: 3px solid #bbb;
-    background: teal;
-} */
+
 
 
 
