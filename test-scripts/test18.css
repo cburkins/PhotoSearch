@@ -15,3 +15,6 @@
 /* the span tag for the label for each line within the caption (e.g. People: ) */
 .caption-category { font-weight: bold; color: green; }
 
+/* overlay */
+.cycle-overlay { font-family: tahoma, arial; position: absolute; bottom:0; width:100%; z-index: 600; background: black; color: white; padding: 15px; opacity: .5;
+}
