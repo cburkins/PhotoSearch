@@ -7,13 +7,13 @@
   /* whatever width you want */
   display: inline-block;
   position: relative;
-  margin: auto;
 }
 .wrapper:after {
   padding-top: 56.25%;
   /* 16:9 ratio */
   display: block;
   content: '';
+  margin: auto;
 }
 .inside {
   position: absolute;
