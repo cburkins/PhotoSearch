@@ -2,10 +2,11 @@
 /* Apply style elements to the Cycle slidehow */
 /* The first element in the line (element) is user-defined in the div class below */
 
-/* div container for the image */
+/* div container for the image.  We're actually using the class selector here (i.e. the period) */
 .cycle-slideshow { width: 70%; height: 70%; margin: auto; border: 1px solid #bbb; background: #ffc }
 
 /* the image itself, within the div container.  Not actually a div container, just an image */
+/* we're actually selecting all img elements within class=cycle-slideshow */
 .cycle-slideshow img { width: auto; height: 100%; opacity: 0; filter:alpha(opacity=0); }
 
 /* the div container for the caption below the image */
