@@ -2,8 +2,29 @@
 /* Apply style elements to the Cycle slidehow */
 /* The first element in the line (element) is user-defined in the div class below */
 
+/* wrapper with intrinsic ration */
+#ratio-wrapper {
+    position: relative;
+    padding-bottom: 20%;
+    height: 0;
+    border: 1px solid #bbb;
+}
+.cycle-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #bbb;
+    background: teal;
+}
+
 /* div container for the image.  We're actually using the class selector here (i.e. the period) */
+/* left and right margin take away from width.  So this means width is 60% of screen  */
+/*
 .cycle-slideshow { width: auto; height: 70%; margin-left: 20%; margin-right:20%; border: 1px solid #bbb; background: #ffc }
+*/
+
 
 /* the image itself, within the div container.  Not actually a div container, just an image */
 /* we're actually selecting all img elements within class=cycle-slideshow */
