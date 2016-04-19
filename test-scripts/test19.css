@@ -39,7 +39,7 @@
   display: block;
   content: '';
 }
-.cycle-slideshow {
+.inside {
   position: absolute;
   top: 0;
   bottom: 0;
