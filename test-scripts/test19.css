@@ -6,7 +6,7 @@
 #wrapper {
     position: relative;
     width: 300px;;
-    padding-bottom: 20%;
+    padding-bottom: 40%;
     height: 0;
     border: 1px solid #bbb;
     background: red;
@@ -15,8 +15,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 10%;
-    width: 10%; 
     border: 3px solid #bbb;
     background: teal;
 } */
