@@ -5,6 +5,7 @@
 
 #wrapper {
     position: relative;
+    width: 50%;
     padding-bottom: 20%;
     height: 0;
     border: 1px solid #bbb;
