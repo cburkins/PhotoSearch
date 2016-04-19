@@ -7,6 +7,7 @@
   /* whatever width you want */
   display: inline-block;
   position: relative;
+  margin: auto;
 }
 .wrapper:after {
   padding-top: 56.25%;
