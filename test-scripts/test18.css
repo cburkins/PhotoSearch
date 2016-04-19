@@ -3,7 +3,7 @@
 /* The first element in the line (element) is user-defined in the div class below */
 
 /* div container for the image.  We're actually using the class selector here (i.e. the period) */
-.cycle-slideshow { width: auto; height: 70%; margin: 30%; border: 1px solid #bbb; background: #ffc }
+.cycle-slideshow { width: auto; height: 70%; margin-left: 10%; margin-right:10%; border: 1px solid #bbb; background: #ffc }
 
 /* the image itself, within the div container.  Not actually a div container, just an image */
 /* we're actually selecting all img elements within class=cycle-slideshow */
