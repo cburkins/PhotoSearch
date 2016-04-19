@@ -3,9 +3,11 @@
 /* The first element in the line (element) is user-defined in the div class below */
 
 /* wrapper with intrinsic ration */
+/* 16:9 = 56.25% */
+/* 4:3 = 75% */
 #ratio-wrapper {
     position: relative;
-    padding-bottom: 56.25%;
+    padding-bottom: 75%;
     height: 0;
     border: 1px solid #bbb;
 }
