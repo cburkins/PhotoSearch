@@ -6,6 +6,8 @@
 /* 16:9 = 56.25% */
 /* 4:3 = 75% */
 /* padding-bottom is a percentage of the width.  Height is 0, so padding-bottom sets overall height relative to width */
+/* padding-bottom might be a percentage of screen-width ? */
+/*
 #ratio-wrapper {
     position: relative;
     width: 400px;
@@ -22,6 +24,31 @@
     width: 10%; 
     border: 3px solid #bbb;
     background: teal;
+} */
+
+
+.ratio-wrapper {
+  width: 50%;
+  /* whatever width you want */
+  display: inline-block;
+  position: relative;
+}
+.wrapper:after {
+  padding-top: 56.25%;
+  /* 16:9 ratio */
+  display: block;
+  content: '';
+}
+.cycle-slideshow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  /* fill parent */
+  background-color: deepskyblue;
+  /* let's see it! */
+  color: white;
 }
 
 /* div container for the image.  We're actually using the class selector here (i.e. the period) */
