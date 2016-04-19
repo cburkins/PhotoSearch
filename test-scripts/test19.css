@@ -3,7 +3,7 @@
 /* The first element in the line (element) is user-defined in the div class below */
 
 
-,wrapper {
+#wrapper {
     position: relative;
     width: 40%
     padding-bottom: 40%;
@@ -11,7 +11,7 @@
     border: 1px solid #bbb;
     background: red;
 }
-.inside {
+#inside {
     position: absolute;
     top: 0;
     left: 0;
