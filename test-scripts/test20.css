@@ -33,6 +33,6 @@
 /* overlay */
 .cycle-overlay { 
     font-family: tahoma, arial; 
-    position: absolute; bottom:0; width:60%; 
+    position: absolute; bottom:0; width:60%; margin:auto;
     z-index: 600; background: black; color: white; padding: 15px; opacity: .5;
 }
