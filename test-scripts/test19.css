@@ -3,18 +3,16 @@
 /* The first element in the line (element) is user-defined in the div class below */
 
 /* width is 60% of containing element, which is the viewport (screen) */
-/* height=padding-bottom which is 40% of the containing element (screen) */
+/* height=0, so padding-bottom is actually setting the height of the div */
+/*   padding-bottom=40%, which is 40% of the WIDTH of the containing element (screen) */
+/* so ratio is 60/40 or 3:2 */
+/* ration 100% to 56.25% is really 100:56.25 or 16:9 */
 
 .wrapper {
-    width: 60%;
+    width: 100%;
     height: 0;
-    padding-bottom: 40%;
+    padding-bottom: 56.25%;
     border: 1px;
     background: teal;
     margin: auto;
 }
-
-
-
-
-
