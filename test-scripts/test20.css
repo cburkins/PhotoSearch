@@ -36,5 +36,6 @@ html body { background:black }
     font-family: tahoma, arial; 
     position: absolute; bottom:0; left:0; right:0; width:80%; margin:auto;
     z-index:600; background:black; color:white; opacity:.5;
-    padding-left:50px; padding-right:50px; padding:15px;
+    padding:15px; padding-left:15%; padding-right:15%; 
 }
+
