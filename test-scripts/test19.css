@@ -9,9 +9,9 @@
 /* ration 100% to 56.25% is really 100:56.25 or 16:9 */
 
 .wrapper {
-    width: 100%;
+    width: 80%;
     height: 0;
-    padding-bottom: 56.25%;
+    padding-bottom: 45%;
     border: 1px;
     background: teal;
     margin: auto;
