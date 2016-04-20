@@ -2,54 +2,16 @@
 /* Apply style elements to the Cycle slidehow */
 /* The first element in the line (element) is user-defined in the div class below */
 
-/* wrapper with intrinsic ration */
-/* 16:9 = 56.25% */
-/* 4:3 = 75% */
-/* padding-bottom is a percentage of the width.  Height is 0, so padding-bottom sets overall height relative to width */
-/* padding-bottom might be a percentage of screen-width ? */
-/*
-#ratio-wrapper {
-    position: relative;
-    width: 400px;
-    padding-bottom: 20%;
-    height: 0;
-    border: 1px solid #bbb;
-    background: red;
-}
+
 .cycle-slideshow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 10%;
-    width: 10%; 
-    border: 3px solid #bbb;
+    width: 80%;
+    height: 0;
+    padding-bottom: 45%;
+    border: 1px;
     background: teal;
-} */
+    margin: auto;
+}
 
-
-.wrapper {
-  width: 50%;
-  /* whatever width you want */
-  display: inline-block;
-  position: relative;
-}
-.wrapper:after {
-  padding-top: 56.25%;
-  /* 16:9 ratio */
-  display: block;
-  content: '';
-}
-.inside {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  /* fill parent */
-  background-color: deepskyblue;
-  /* let's see it! */
-  color: white;
-}
 
 /* div container for the image.  We're actually using the class selector here (i.e. the period) */
 /* left and right margin take away from width.  So this means width is 60% of screen  */
