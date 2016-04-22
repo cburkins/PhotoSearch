@@ -197,8 +197,6 @@ print """
      >
 
   <div class="cycle-overlay"></div>
-
-    <img src="http://malsup.github.io/images/p1.jpg" data-cycle-desc="<span class=caption-category>People:</span> Bob Burkins, Chad Burkins, Tom Burkins<br><span class=caption-category>Location:</span> Walt Disney World<br>" >
 """
 
 # Loop through matching images, and contrsuct HTML to support the Cycle jQuery tool
@@ -254,6 +252,8 @@ for image in matching_filenames_corrected:
         print '<img src="{0}", data-cycle-desc="{1}">'.format(image, title)
 
         # Example      <img src="http://malsup.github.io/images/p1.jpg">
+        # Complex Ex:  <img src="http://malsup.github.io/images/p1.jpg" data-cycle-desc="<span class=caption-category>People:</span> Bob Burkins, Chad Burkins, Tom Burkins<br><span class=caption-category>Location:</span> Walt Disney World<br>" >
+
 
 # End of slideshow <div>
 print """
