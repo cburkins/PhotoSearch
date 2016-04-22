@@ -214,21 +214,26 @@ for image in matching_filenames_corrected:
         #         key : cateogry (P=ListOfPeople, L=ListofLocations, Y=ListofYears, R=ListOfRatings)
         #         value : list matching the category                                          
 
+        # Find the Year in the picture metadata
         if "Y" in keyword_dictionary[metadata_path]:
                 year = str(((keyword_dictionary[metadata_path])["Y"])[0])
         else:
                 year = 'Unknown'
                 
+        # Find the people in the picture metadata
         if "P" in keyword_dictionary[metadata_path]:
                 peopleList = (keyword_dictionary[metadata_path])["P"]
+                # Remove the flag element **PIK***
+                peopleList.remove('**PIK**');
                  # Convert the list of People into a comma-separated string
                 people = ", ".join(peopleList)
         else:
                 people = 'Unknown'
 
+        # Find the locations in the picture metadata
         if "L" in keyword_dictionary[metadata_path]:
                 locationList = (keyword_dictionary[metadata_path])["L"]
-                 # Convert the list of People into a comma-separated string
+                 # Convert the list of Locations into a comma-separated string
                 locations = ", ".join(locationList)
         else:
                 locations = 'Unknown'
