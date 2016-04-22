@@ -20,7 +20,7 @@ html body { background:black }
 .caption-category { font-weight: bold; color: green; }
 
 /* caption - hold the picture count */
-.cycle-caption { position: absolute; color: white; bottom: 15px; right: 15px; z-index: 700; }
+.cycle-caption { position: absolute; color: white; top: 15px; right: 15px; z-index: 700; }
 
 /* overlay at the bottom of the image, displays picture metadata */
 .cycle-overlay { 
