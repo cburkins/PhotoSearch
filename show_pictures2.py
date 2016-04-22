@@ -149,17 +149,18 @@ for keyword in keyword_list:
 # Pathname of each pic is the local path on my Linux machine at home (e.g. /mnt/ChadDocs/My Webs/www.burkins.com/)
 keyword_dictionary = get_keyword_dictionary(Image_Metadata)
 	
-# Get list of pictures that have all matching keywords
+# Slim down list of pictures to those that have all matching keywords (that were given in search form by users)
 matching_filenames = get_matching_pictures_advanced(search_dictionary, keyword_dictionary)
 
 # At this point, matching_filenames is a simple list of full-path filenames
+# Pathname is still relative to my home Linux machine (e.g. /mnt/ChadDocs/My Webs/www.burkins.com/)
 	
 # Change the full path of each filename to match the web server
 matching_filenames_corrected = []
 for filename in matching_filenames:
 
 	# SRC_PATH and DST_URL are defined in FS_common.py
-	# SRC_PATH is the full-pathname as defined on my local computer before getting pushed up to webserver
+	# SRC_PATH is the full-pathname as defined on my home Linux machine before getting pushed up to webserver
 	# DST_URL is the full-pathname where the pictures are located on the Web server
 	matching_filenames_corrected.append(filename.replace(SRC_PATH, DST_URL))
 
@@ -207,11 +208,17 @@ print """
 """
 
 # Loop through matching images, and contrsuct HTML to support the Cycle jQuery tool
+# Pathname of images is full URL on webserver (e.g. http://www.burkins.com/family/pictures)
 for image in matching_filenames_corrected:
 
         # Seems like these two lines might be redundant, but not sure
+        # Chad, work on this
+        # picture pathname is http://www.burkins.com/family/pictures/
 	local_path = image.replace("http://www.burkins.com", "/home3/cburkins/public_html")
-	metadata_path = image.replace(DST_URL, SRC_PATH)
+        # picture pathname is /home3/cburkins/public_html/family/pictures/
+
+	#metadata_path = image.replace(DST_URL, SRC_PATH)
+        # picture pathname is /mnt/ChadDocs/My Webs/www.burkins.com/01 - Web Albums/Family Pics - Turtle - Production/
 
         # keyword dictionary
         #      key : filename

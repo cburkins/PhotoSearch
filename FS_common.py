@@ -11,11 +11,7 @@ SRC_PATH = '/mnt/ChadDocs/My Webs/www.burkins.com/01 - Web Albums/Family Pics - 
 # Path where same picture is placed on the webserver
 DST_URL = 'http://www.burkins.com/family/pictures/'
 
-# The local directory on webserver
-Root = '/home3/cburkins/public_html/family/pictures/album/'
-Image_Metadata = Root + '/Image_Metadatav2'
-KM_Keyword_Cache = Root + '/.KM_keyword_cache'
-
+# The local directory on webserver for key MetaData files
 Root = '/home3/cburkins/public_html/family/pictures'
 Image_Metadata = Root + '/album/Image_Metadatav2'
 KM_Keyword_Cache = Root + '/album/.KM_keyword_cache'
