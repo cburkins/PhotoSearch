@@ -228,7 +228,6 @@ for image in matching_filenames_corrected:
                         peopleList.remove('**PIK**')
                 # Convert the list of People into a comma-separated string
                 people = ", ".join(peopleList)
-                people = str(peopleList)
         else:
                 people = 'Unknown'
 
