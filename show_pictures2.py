@@ -194,6 +194,7 @@ print """
      data-cycle-next="#next"
      data-cycle-center-horz="true"
      data-cycle-center-vert="true"
+     data-cycle-caption-template="Slide {{slideNum}} of {{slideCount}}"
      >
 
   <!-- empty element for caption, CSS will place in top-right of picture -->
