@@ -159,6 +159,7 @@ matching_filenames = get_matching_pictures_advanced(search_dictionary, keyword_d
 matching_filenames_corrected = []
 for filename in matching_filenames:
 
+        # Pathname is still relative to my home Linux machine (e.g. /mnt/ChadDocs/My Webs/www.burkins.com/)
 	# SRC_PATH and DST_URL are defined in FS_common.py
 	# SRC_PATH is the full-pathname as defined on my home Linux machine before getting pushed up to webserver
 	# DST_URL is the full-pathname where the pictures are located on the Web server
