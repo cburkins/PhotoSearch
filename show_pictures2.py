@@ -145,6 +145,8 @@ for keyword in keyword_list:
 
 
 # Get the dictionary of all keywords in my pictures (this is a big dictionary)
+# This does NOT query each image, it just parses the static Image_Metadata file (which has one line per picture)
+# Pathname of each pic is the local path on my Linux machine at home (e.g. /mnt/ChadDocs/My Webs/www.burkins.com/)
 keyword_dictionary = get_keyword_dictionary(Image_Metadata)
 	
 # Get list of pictures that have all matching keywords
@@ -206,6 +208,8 @@ print """
 
 # Loop through matching images, and contrsuct HTML to support the Cycle jQuery tool
 for image in matching_filenames_corrected:
+
+        # Seems like these two lines might be redundant, but not sure
 	local_path = image.replace("http://www.burkins.com", "/home3/cburkins/public_html")
 	metadata_path = image.replace(DST_URL, SRC_PATH)
 
@@ -247,13 +251,17 @@ for image in matching_filenames_corrected:
         else:
                 events = 'Unknown'
 
+        # Create a caption-line for each element, insert a span tag for CSS formatting
         captionYear = '<span class=caption-category>Year:</span> {0}'.format(year)
         captionPeople = '<span class=caption-category>People:</span> {0}'.format(people)
         captionLocations = '<span class=caption-category>Location:</span> {0}'.format(locations)
         captionEvents = '<span class=caption-category>Event:</span> {0}'.format(events)
         
+        # Create the full multi-line title to be displayed in the overlay at the bottom of the picture
+        # Use a single span so we can apply CSS, and insert line breaks
         title = '<span class=caption>{0}<BR>{1}<BR>{2}<BR>{3}</span>'.format(captionYear, captionPeople, captionLocations, captionEvents)
     
+        # Insert the complete HTML img tag for this picture into the slideshow <div>
         print '<img src="{0}", data-cycle-desc="{1}">'.format(image, title)
 
         # Example      <img src="http://malsup.github.io/images/p1.jpg">
