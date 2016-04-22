@@ -218,7 +218,7 @@ for image in matching_filenames_corrected:
 	local_path = image.replace("http://www.burkins.com", "/home3/cburkins/public_html")
         # picture pathname is /home3/cburkins/public_html/family/pictures/
 
-	#metadata_path = image.replace(DST_URL, SRC_PATH)
+	metadata_path = image.replace(DST_URL, SRC_PATH)
         # picture pathname is /mnt/ChadDocs/My Webs/www.burkins.com/01 - Web Albums/Family Pics - Turtle - Production/
 
         # keyword dictionary
