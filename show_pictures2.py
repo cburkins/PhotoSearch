@@ -233,9 +233,9 @@ for image in matching_filenames_corrected:
         else:
                 locations = 'Unknown'
 
-        captionYear = 'Year = {0}'.format(year)
-        captionPeople = 'People: {0}'.format(people)
-        captionLocations = 'Location: {0}'.format(locations)
+        captionYear = '<span class=caption-category>Year:</span> {0}'.format(year)
+        captionPeople = '<span class=caption-category>People:</span> {0}'.format(people)
+        captionLocations = '<span class=caption-category>Location:</span> {0}'.format(locations)
         
         title = '<span class=caption>{0}<BR>{1}<BR>{2}</span>'.format(captionYear, captionPeople, captionLocations)
     
