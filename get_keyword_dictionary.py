@@ -22,8 +22,8 @@ def get_keyword_dictionary(Image_Metadata):
 	# Sort through the Image_Metadata file, there's one line for each file
 	for line in f:
 
-		# Strip off newline
-		line = line.rstrip('\n')
+		# Strip off carrage return and/or newline
+		line = line.rstrip('\r\n')
 	
 		# Split the line on ':::' and return 1st item
 		filename = line.partition(':::')[0]
