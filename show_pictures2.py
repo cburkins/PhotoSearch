@@ -229,7 +229,7 @@ for image in matching_filenames_corrected:
         if "L" in keyword_dictionary[metadata_path]:
                 locationList = (keyword_dictionary[metadata_path])["L"]
                  # Convert the list of People into a comma-separated string
-                locations = ",".join(locationList)
+                locations = ", ".join(locationList)
         else:
                 locations = 'Unknown'
 
