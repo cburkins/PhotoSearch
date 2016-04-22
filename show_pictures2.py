@@ -225,7 +225,7 @@ for image in matching_filenames_corrected:
                 peopleList = (keyword_dictionary[metadata_path])["P"]
                 # Remove the flag element **PIK***
                 if '**PIK**' in peopleList:
-                        peopleList.remove(**PIK**')
+                        peopleList.remove('**PIK**')
                 # Convert the list of People into a comma-separated string
                 people = ", ".join(peopleList)
                 people = str(peopleList)
