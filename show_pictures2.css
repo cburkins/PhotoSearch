@@ -19,6 +19,9 @@ html body { background:black }
 /* the span tag for the label for each line within the caption (e.g. People: ) */
 .caption-category { font-weight: bold; color: green; }
 
+/* caption - hold the picture count */
+.cycle-caption { position: absolute; color: white; bottom: 15px; right: 15px; z-index: 700; }
+
 /* overlay at the bottom of the image, displays picture metadata */
 .cycle-overlay { 
     font-family: tahoma, arial; 
