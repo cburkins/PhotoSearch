@@ -168,12 +168,13 @@ for filename in matching_filenames:
 # --------- Start of form ---------
 # ---------------------------------
 
-# Create the HTML header and Font Awesome	
+# Create the HTML header, get Font Awesome, get the local external CSS style sheet	
 print """
 <html>
 <head>
 <title>Family Search</title>
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="show_pictures2.css">
 </head>
 """
 
@@ -185,33 +186,6 @@ print """
 <script src="http://malsup.github.io/jquery.cycle2.center.js"></script>
 """
 
-# Setup main div for entire doc and internal CSS style sheets
-#.cycle-overlay { font-family: tahoma, arial; position: absolute; bottom: 0; width: 70%; margin:auto; z-index: 600; background: black; color: white; padding: 15px; opacity: .6;}
-
-print """
-<div id="main">
-
-<style>
-.cycle-slideshow { width:auto; height:80%; margin:auto; border:1px solid #bbb; background:#ffc }
-.cycle-slideshow img { width: auto; height: 100%; opacity: 0; filter:alpha(opacity=0); }
-.lower-caption { width: 80%; margin:auto; border:3px solid #bbb; background: #eee }
-.caption { font-size: 100%; }
-.caption-category { font-weight: bold; color: red; }
-.cycle-overlay { font-family: tahoma, arial; position:absolute; bottom:0; width:70%; left:15%; z-index:600; background:black; color:white; padding:15px; opacity: .6;}
-</style>
-"""
-
-# Put the Prev and Next links onto the page for the slideshow
-# The id=next is what makes this link work.  Cycle2 Slideshow looks for that ID
-print """
-<div class=center style="text-align: center; font-size: 200%;">
-  <a href=# id="prev"><i class="fa fa-arrow-circle-left" style="font-size:100%; color:black;"></i> Prev</a>
-  &nbsp;&nbsp;&nbsp;
-  <a href=# id="next">Next <i class="fa fa-arrow-circle-right" style="font-size:100%; color:black;"></i></a>
-</div>
-"""
-
-# Setup div for Cycle2 slideshow
 print """
 <div class="cycle-slideshow"
      data-cycle-fx="scrollHorz"
@@ -224,7 +198,9 @@ print """
      data-cycle-caption-template="<center>Slide {{slideNum}} of {{slideCount}}</center><br>{{cycleTitle}}"
      >
 
-<div class="cycle-overlay"></div>
+  <div class="cycle-overlay"></div>
+
+    <img src="http://malsup.github.io/images/p1.jpg" data-cycle-title="<span class=caption-category>People:</span> Bob Burkins, Chad Burkins, Tom Burkins<br><span class=caption-category>Location:</span> Walt Disney World<br>" >
 """
 
 # Loop through matching images, and contrsuct HTML to support the Cycle jQuery tool
@@ -272,13 +248,6 @@ print """
 </div>
 """
 
-
-
-# empty element for caption 
-print """
-<div id="lower-custom-caption" class="lower-caption" style="font-size:150%"></div>
-"""
-
 # Enable the right-arrow and left-arrow keys to operate Next and Prev for the slideshow
 print """
 <script type="text/javascript">
@@ -289,9 +258,8 @@ print """
 </script>
 """
 
-# end of main div
+# end of body and html
 print """
-</div>
 </body>
 </html>
 """

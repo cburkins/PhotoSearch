@@ -1,0 +1,32 @@
+/* CSS File */
+
+/* set teh background to black */
+html body { background:black }
+
+/* Apply style elements to the cycle-slideshow class */
+/* Creating a div that stays at a specific aspect ratio, and consums much of the screen */
+.cycle-slideshow {
+    width: 80%; height: 0;
+    padding-bottom: 50%;
+    background: black;
+    margin: auto;
+}
+
+/* the image itself, within the div container.  Not actually a div container, just an image */
+/* we're actually selecting all img elements within class=cycle-slideshow */
+.cycle-slideshow img { width: auto; height: 100%; opacity: 0; filter:alpha(opacity=0); }
+
+/* the div container for the caption below the image */
+.lower-caption { width: 80%; margin:auto; border:3px solid #bbb; background: #eee }
+
+/* the span tag for the label for each line within the caption (e.g. People: ) */
+.caption-category { font-weight: bold; color: green; }
+
+/* overlay at the bottom of the image, displays picture metadata */
+.cycle-overlay { 
+    font-family: tahoma, arial; 
+    position: absolute; bottom:0; left:0; right:0; width:80%; margin:auto;
+    z-index:600; background:black; color:white; opacity:.5;
+    padding:15px; padding-left:15%; padding-right:15%; 
+}
+
