@@ -238,11 +238,20 @@ for image in matching_filenames_corrected:
         else:
                 locations = 'Unknown'
 
+        # Find the events in the picture metadata
+        if "E" in keyword_dictionary[metadata_path]:
+                eventList = (keyword_dictionary[metadata_path])["E"]
+                 # Convert the list of Events into a comma-separated string
+                events = ", ".join(eventList)
+        else:
+                events = 'Unknown'
+
         captionYear = '<span class=caption-category>Year:</span> {0}'.format(year)
         captionPeople = '<span class=caption-category>People:</span> {0}'.format(people)
         captionLocations = '<span class=caption-category>Location:</span> {0}'.format(locations)
+        captionEvents = '<span class=caption-category>Event:</span> {0}'.format(events)
         
-        title = '<span class=caption>{0}<BR>{1}<BR>{2}</span>'.format(captionYear, captionPeople, captionLocations)
+        title = '<span class=caption>{0}<BR>{1}<BR>{2}</span>'.format(captionYear, captionPeople, captionLocations, captionEvents)
     
         print '<img src="{0}", data-cycle-desc="{1}">'.format(image, title)
 
