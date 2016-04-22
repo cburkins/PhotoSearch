@@ -16,9 +16,6 @@ html body { background:black }
 /* we're actually selecting all img elements within class=cycle-slideshow */
 .cycle-slideshow img { width: auto; height: 100%; opacity: 0; filter:alpha(opacity=0); }
 
-/* the div container for the caption below the image */
-.lower-caption { width: 80%; margin:auto; border:3px solid #bbb; background: #eee }
-
 /* the span tag for the label for each line within the caption (e.g. People: ) */
 .caption-category { font-weight: bold; color: green; }
 
