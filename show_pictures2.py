@@ -195,7 +195,7 @@ print """
      data-cycle-center-horz="true"
      data-cycle-center-vert="true"
      data-cycle-caption="#lower-custom-caption"
-     data-cycle-caption-template="<center>Slide {{slideNum}} of {{slideCount}}</center><br>{{cycleTitle}}"
+     data-cycle-caption-template="{{cycleTitle}}"
      >
 
   <div class="cycle-overlay"></div>
