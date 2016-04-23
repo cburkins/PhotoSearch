@@ -66,7 +66,11 @@ filename = "/home3/cburkins/test.jpg"
 im = Image.open(filename)
 im.verify()
 
+print "hello world"
+
 if im.format in ['JPG', 'TIFF']:
+
+    print "inside"
     exif = convert_exif_to_dict(im._getexif())
 
     print exif['XPTitle']
