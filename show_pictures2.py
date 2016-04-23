@@ -150,11 +150,8 @@ for keyword in keyword_list:
 keyword_dictionary = get_keyword_dictionary(Image_Metadata)
 	
 # Slim down list of pictures to those that have all matching keywords (that were given in search form by users)
-matching_filenames = get_matching_pictures_advanced(search_dictionary, keyword_dictionary)
+matchingPictures = get_matching_pictures_advanced(search_dictionary, keyword_dictionary)
 
-# At this point, matching_filenames is a simple list of full-path filenames
-# Pathname is still relative to my home Linux machine (e.g. /mnt/ChadDocs/My Webs/www.burkins.com/)
-	
 # OK, now ready to start construction the HTML page
 	
 # ---------------------------------
@@ -199,7 +196,7 @@ print """
 
 # Loop through matching images, and contrsuct HTML to support the Cycle jQuery tool
 # Pathname on the home linux machine (e.g. /mnt/ChadDocs)
-for imageHomeFile in matching_filenames:
+for imageHomeFile in matchingPictures:
         
         # Pathname on the web server (e.g. http://www.burkins.com)
         imageWebURL = imageHomeFile.replace(SRC_PATH, DST_URL)
