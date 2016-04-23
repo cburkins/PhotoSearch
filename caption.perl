@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 use warnings;
 use strict;
-use Image::ExxifTool qw(ImageInfo);
+use Image::ExifTool qw(ImageInfo);
 
 my $exifTool = new Image::ExifTool;
 
@@ -15,10 +15,13 @@ if (-e $filename)
 }
 
 # Load EXIF data for new Picture
-my $info = $exifTool->ImageInfo($filename);
+my $info = $exifTool->ImageInfo("$filename");
 
 # Get the caption from the picture
 my $Picture_Caption = $exifTool->GetValue('Caption-Abstract');
 if (! defined $Picture_Caption) { $Picture_Caption = ""; };
 
 printf "Caption: $Picture_Caption\n";
+
+$Picture_Year = $exifTool->GetValue('DateTimeOriginal');
+printf "Year: $Picture_Year\n";
