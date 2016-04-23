@@ -163,7 +163,19 @@ for filename in matching_filenames:
 	# SRC_PATH and DST_URL are defined in FS_common.py
 	# SRC_PATH is the full-pathname as defined on my home Linux machine before getting pushed up to webserver
 	# DST_URL is the full-pathname where the pictures are located on the Web server
-	matching_filenames_corrected.append(filename.replace(SRC_PATH, DST_URL))
+	SRCfilename = filename.replace(SRC_PATH, DST_URL)
+	#matching_filenames_corrected.append(filename.replace(SRC_PATH, DST_URL))
+	matching_filenames_corrected.append(SRCfilename)
+
+
+        # picture pathname is http://www.burkins.com/family/pictures/
+	#local_path = image.replace("http://www.burkins.com", "/home3/cburkins/public_html")
+        # picture pathname is /home3/cburkins/public_html/family/pictures/
+
+	#metadata_path = image.replace(DST_URL, SRC_PATH)
+        # picture pathname is /mnt/ChadDocs/My Webs/www.burkins.com/01 - Web Albums/Family Pics - Turtle - Production/
+
+
 
 # OK, now ready to start construction the HTML page
 # We've got a list of image, each with a full path name (that matches the layout on the webserver)
