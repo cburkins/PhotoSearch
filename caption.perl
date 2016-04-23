@@ -7,7 +7,7 @@ my $exifTool = new Image::ExifTool;
 
 
 
-my $filename = "/home3/cburkins/tedst.jpg";
+my $filename = "/home3/cburkins/test.jpg";
 
 if (-e $filename)
 { 
@@ -21,4 +21,4 @@ my $info = $exifTool->ImageInfo($filename);
 my $Picture_Caption = $exifTool->GetValue('Caption-Abstract');
 if (! defined $Picture_Caption) { $Picture_Caption = ""; };
 
-print $Picture_Caption;
+printf "Caption: $Picture_Caption\n";
