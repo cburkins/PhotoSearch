@@ -1,0 +1,4 @@
+repo: e1a3333e406fe2024445aa6c143b21c5e11aac66
+node: ff8eb8d3fb53f4d2eccc5acd8b6bb27e523fa644
+branch: default
+tag: iptcinfo-1.9.5-6
