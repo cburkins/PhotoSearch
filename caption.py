@@ -3,7 +3,7 @@ use warnings;
 use strict;
 use Image::ExifTool qw(ImageInfo);
 
-my $filename = "filename"
+my $filename = "filename";
 
 # Load EXIF data for new Picture
 my $info = $exifTool->ImageInfo($filename);
