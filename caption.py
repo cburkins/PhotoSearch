@@ -68,7 +68,7 @@ im.verify()
 
 print "hello world"
 
-if im.format in ['JPG', 'TIFF']:
+if im.format in ['JEPG', 'TIFF']:
 
     print "inside"
     exif = convert_exif_to_dict(im._getexif())
