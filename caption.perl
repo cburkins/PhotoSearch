@@ -23,5 +23,5 @@ if (! defined $Picture_Caption) { $Picture_Caption = ""; };
 
 printf "Caption: $Picture_Caption\n";
 
-$Picture_Year = $exifTool->GetValue('DateTimeOriginal');
+my $Picture_Year = $exifTool->GetValue('DateTimeOriginal');
 printf "Year: $Picture_Year\n";
