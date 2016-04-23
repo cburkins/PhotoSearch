@@ -213,19 +213,11 @@ print """
 """
 
 # Loop through matching images, and contrsuct HTML to support the Cycle jQuery tool
-# Pathname of images is full URL on webserver (e.g. http://www.burkins.com/family/pictures)
-for image in matching_filenames_corrected:
+# Pathname on the home linux machine (e.g. /mnt/ChadDocs)
+for imageHomeFile in matching_filenames_corrected:
         
-        # Pathname on the home linux machine (e.g. /mnt/ChadDocs)
-	imageHomeFile = image
-
         # Pathname on the web server (e.g. http://www.burkins.com)
         imageWebURL = image.replace(SRC_PATH, DST_URL)
-
-#        old_image = image
-#	image = old_image.replace(SRC_PATH, DST_URL)
-
-        # picture pathname is /mnt/ChadDocs/My Webs/www.burkins.com/01 - Web Albums/Family Pics - Turtle - Production/
 
         # keyword dictionary
         #      key : filename
