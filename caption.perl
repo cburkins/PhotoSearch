@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 use warnings;
 use strict;
-use Image::ExifTool qw(ImageInfo);
+use Image::ExxifTool qw(ImageInfo);
 
 my $exifTool = new Image::ExifTool;
 
