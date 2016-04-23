@@ -163,7 +163,9 @@ for filename in matching_filenames:
 	# SRC_PATH and DST_URL are defined in FS_common.py
 	# SRC_PATH is the full-pathname as defined on my home Linux machine before getting pushed up to webserver
 	# DST_URL is the full-pathname where the pictures are located on the Web server
-	matching_filenames_corrected.append(filename.replace(SRC_PATH, DST_URL))
+
+	#matching_filenames_corrected.append(filename.replace(SRC_PATH, DST_URL))
+	matching_filenames_corrected.append(filename)
 
 
 
@@ -213,6 +215,9 @@ print """
 # Loop through matching images, and contrsuct HTML to support the Cycle jQuery tool
 # Pathname of images is full URL on webserver (e.g. http://www.burkins.com/family/pictures)
 for image in matching_filenames_corrected:
+
+	image = image.replace(SRC_PATH, DST_URL))
+
 
         # Seems like these two lines might be redundant, but not sure
         # Chad, work on this
