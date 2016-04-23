@@ -18,8 +18,8 @@ if (-e $filename)
 my $info = $exifTool->ImageInfo("$filename");
 
 # Get the caption from the picture
-my $pictureCaption = $exifTool->GetValue('Caption-Abstract');
-if (! defined $pictureCaption) { $pictureCaption = ""; };
+my $pictureCaptionAbstract = $exifTool->GetValue('Caption-Abstract');
+if (! defined $pictureCaptionAbstract) { $pictureCaptionAbstract = ""; };
 
 my $pictureImageDescription = $exifTool->GetValue('ImageDescription');
 if (! defined $pictureImageDescription) { $pictureImageDescription = ""; };
@@ -27,9 +27,9 @@ if (! defined $pictureImageDescription) { $pictureImageDescription = ""; };
 my $pictureDescription = $exifTool->GetValue('Description');
 if (! defined $pictureDescription) { $pictureDescription = ""; };
 
-printf "Caption: $pictureCaption\n";
-printf "ImageDescription: $pictureImageDescription\n";
-printf "Description: $pictureDescription\n";
+printf "CaptionAbstract: $pictureCaptionAbstract\n\n";
+printf "ImageDescription: $pictureImageDescription\n\n";
+printf "Description: $pictureDescription\n\n";
 
 
 my $Picture_Year = $exifTool->GetValue('DateTimeOriginal');
