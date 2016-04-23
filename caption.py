@@ -67,6 +67,9 @@ im = Image.open(filename)
 im.verify()
 
 print "hello world"
+exif = convert_exif_to_dict(im._getexif())
+
+print exif['XPTitle']
 
 if im.format in ['JEPG', 'TIFF']:
 
