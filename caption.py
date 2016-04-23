@@ -41,6 +41,7 @@ def convert_exif_to_dict(exif):
     This helper function converts the dictionary keys from
     IDs to strings so your code is easier to read.
     """
+    print "Hello Funciton"
     data = {}
 
     if exif is None:
