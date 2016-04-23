@@ -222,8 +222,8 @@ for image in matching_filenames_corrected:
         # Pathname on the web server (e.g. http://www.burkins.com)
         imageWebURL = image.replace(SRC_PATH, DST_URL)
 
-        old_image = image
-	image = old_image.replace(SRC_PATH, DST_URL)
+#        old_image = image
+#	image = old_image.replace(SRC_PATH, DST_URL)
 
         # picture pathname is /mnt/ChadDocs/My Webs/www.burkins.com/01 - Web Albums/Family Pics - Turtle - Production/
 
