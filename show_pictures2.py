@@ -215,23 +215,15 @@ print """
 # Loop through matching images, and contrsuct HTML to support the Cycle jQuery tool
 # Pathname of images is full URL on webserver (e.g. http://www.burkins.com/family/pictures)
 for image in matching_filenames_corrected:
-
+        
+        # Pathname on the home linux machine (e.g. /mnt/ChadDocs)
 	metadata_path = image
 
+        # Pathname on the web server (e.g. http://www.burkins.com)
         imageWebURL = image.replace(SRC_PATH, DST_URL)
-
-
 
         old_image = image
 	image = old_image.replace(SRC_PATH, DST_URL)
-
-
-        #	local_path = image.replace("http://www.burkins.com", "/home3/cburkins/public_html")
-        local_path = image.replace("http://www.burkins.com", "/home3/cburkins/public_html")
-        # local_path should be local filesystem on webserver
-
-
-
 
         # picture pathname is /mnt/ChadDocs/My Webs/www.burkins.com/01 - Web Albums/Family Pics - Turtle - Production/
 
