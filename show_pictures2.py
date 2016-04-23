@@ -214,7 +214,7 @@ print """
 
 # Loop through matching images, and contrsuct HTML to support the Cycle jQuery tool
 # Pathname on the home linux machine (e.g. /mnt/ChadDocs)
-for imageHomeFile in matching_filenames_corrected:
+for imageHomeFile in matching_filenames:
         
         # Pathname on the web server (e.g. http://www.burkins.com)
         imageWebURL = imageHomeFile.replace(SRC_PATH, DST_URL)
