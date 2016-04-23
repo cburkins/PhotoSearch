@@ -216,8 +216,6 @@ print """
 # Pathname of images is full URL on webserver (e.g. http://www.burkins.com/family/pictures)
 for image in matching_filenames_corrected:
 
-        imageWebURL = image;
-
 	metadata_path = image
 
         old_image = image
@@ -227,6 +225,9 @@ for image in matching_filenames_corrected:
         #	local_path = image.replace("http://www.burkins.com", "/home3/cburkins/public_html")
         local_path = image.replace("http://www.burkins.com", "/home3/cburkins/public_html")
         # local_path should be local filesystem on webserver
+
+        imageWebURL = image;
+
 
 
         # picture pathname is /mnt/ChadDocs/My Webs/www.burkins.com/01 - Web Albums/Family Pics - Turtle - Production/
