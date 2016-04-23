@@ -11,7 +11,7 @@ my $filename = "/home3/cburkins/test.jpg";
 
 if (-e $filename)
 { 
-    print "File exists\n";
+    printf ("File exists: %s\n", $filename);
 }
 
 # Load EXIF data for new Picture
