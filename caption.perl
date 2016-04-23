@@ -6,12 +6,13 @@ use Image::ExifTool qw(ImageInfo);
 my $exifTool = new Image::ExifTool;
 
 
+printf ("\n");
 
 my $filename = "/home3/cburkins/test.jpg";
 
 if (-e $filename)
 { 
-    printf ("File exists: %s\n", $filename);
+    printf ("File exists: %s\n\n", $filename);
 }
 
 # Load EXIF data for new Picture
@@ -34,3 +35,5 @@ printf "Description: $pictureDescription\n\n";
 
 my $Picture_Year = $exifTool->GetValue('DateTimeOriginal');
 printf "Year: $Picture_Year\n";
+
+printf ("\n\n");
