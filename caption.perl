@@ -7,7 +7,7 @@ my $exifTool = new Image::ExifTool;
 
 
 
-my $filename = "/home3/cburkins/test.jpg";
+my $filename = "/home3/cburkins/tedst.jpg";
 
 if (-e $filename)
 { 
