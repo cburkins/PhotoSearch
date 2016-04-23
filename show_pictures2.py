@@ -217,7 +217,7 @@ print """
 for image in matching_filenames_corrected:
         
         # Pathname on the home linux machine (e.g. /mnt/ChadDocs)
-	metadata_path = image
+	imageHomeFile = image
 
         # Pathname on the web server (e.g. http://www.burkins.com)
         imageWebURL = image.replace(SRC_PATH, DST_URL)
@@ -234,14 +234,14 @@ for image in matching_filenames_corrected:
         #         value : list matching the category                                          
 
         # Find the Year in the picture metadata
-        if "Y" in keyword_dictionary[metadata_path]:
-                year = str(((keyword_dictionary[metadata_path])["Y"])[0])
+        if "Y" in keyword_dictionary[imageHomeFile]:
+                year = str(((keyword_dictionary[imageHomeFile])["Y"])[0])
         else:
                 year = 'Unknown'
                 
         # Find the people in the picture metadata
-        if "P" in keyword_dictionary[metadata_path]:
-                peopleList = (keyword_dictionary[metadata_path])["P"]
+        if "P" in keyword_dictionary[imageHomeFile]:
+                peopleList = (keyword_dictionary[imageHomeFile])["P"]
                 # Remove the flag element **PIK***
                 if '**PIK**' in peopleList: peopleList.remove('**PIK**')
                 # Convert the list of People into a comma-separated string
@@ -250,16 +250,16 @@ for image in matching_filenames_corrected:
                 people = 'Unknown'
 
         # Find the locations in the picture metadata
-        if "L" in keyword_dictionary[metadata_path]:
-                locationList = (keyword_dictionary[metadata_path])["L"]
+        if "L" in keyword_dictionary[imageHomeFile]:
+                locationList = (keyword_dictionary[imageHomeFile])["L"]
                  # Convert the list of Locations into a comma-separated string
                 locations = ", ".join(locationList)
         else:
                 locations = 'Unknown'
 
         # Find the events in the picture metadata
-        if "E" in keyword_dictionary[metadata_path]:
-                eventList = (keyword_dictionary[metadata_path])["E"]
+        if "E" in keyword_dictionary[imageHomeFile]:
+                eventList = (keyword_dictionary[imageHomeFile])["E"]
                  # Convert the list of Events into a comma-separated string
                 events = ", ".join(eventList)
         else:
