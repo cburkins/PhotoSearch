@@ -216,6 +216,8 @@ print """
 # Pathname of images is full URL on webserver (e.g. http://www.burkins.com/family/pictures)
 for image in matching_filenames_corrected:
 
+        imageWebURL = image;
+
 	metadata_path = image
 
         old_image = image
@@ -224,7 +226,7 @@ for image in matching_filenames_corrected:
 
         #	local_path = image.replace("http://www.burkins.com", "/home3/cburkins/public_html")
         local_path = image.replace("http://www.burkins.com", "/home3/cburkins/public_html")
-
+        # local_path should be local filesystem on webserver
 
 
         # picture pathname is /mnt/ChadDocs/My Webs/www.burkins.com/01 - Web Albums/Family Pics - Turtle - Production/
@@ -278,7 +280,7 @@ for image in matching_filenames_corrected:
         title = '<span class=caption>{0}<BR>{1}<BR>{2}<BR>{3}</span>'.format(captionYear, captionPeople, captionLocations, captionEvents)
     
         # Insert the complete HTML img tag for this picture into the slideshow <div>
-        print '<img src="{0}", data-cycle-desc="{1}">'.format(image, title)
+        print '<img src="{0}", data-cycle-desc="{1}">'.format(imageWebURL, title)
 
         # Example      <img src="http://malsup.github.io/images/p1.jpg">
         # Complex Ex:  <img src="http://malsup.github.io/images/p1.jpg" data-cycle-desc="<span class=caption-category>People:</span> Bob Burkins, Chad Burkins, Tom Burkins<br><span class=caption-category>Location:</span> Walt Disney World<br>" >
