@@ -155,22 +155,7 @@ matching_filenames = get_matching_pictures_advanced(search_dictionary, keyword_d
 # At this point, matching_filenames is a simple list of full-path filenames
 # Pathname is still relative to my home Linux machine (e.g. /mnt/ChadDocs/My Webs/www.burkins.com/)
 	
-# Change the full path of each filename to match the web server
-matching_filenames_corrected = []
-for filename in matching_filenames:
-
-        # Pathname is still relative to my home Linux machine (e.g. /mnt/ChadDocs/My Webs/www.burkins.com/)
-	# SRC_PATH and DST_URL are defined in FS_common.py
-	# SRC_PATH is the full-pathname as defined on my home Linux machine before getting pushed up to webserver
-	# DST_URL is the full-pathname where the pictures are located on the Web server
-
-	#matching_filenames_corrected.append(filename.replace(SRC_PATH, DST_URL))
-	matching_filenames_corrected.append(filename)
-
-
-
 # OK, now ready to start construction the HTML page
-# We've got a list of image, each with a full path name (that matches the layout on the webserver)
 	
 # ---------------------------------
 # --------- Start of form ---------
