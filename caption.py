@@ -9,7 +9,7 @@ sys.path.insert(0, ROOT)
 from iptcinfo import IPTCInfo
 import sys
 
-fn = (len(sys.argv) > 1 and [sys.argv[1]] or ['~/test.jpg'])[0]
+fn = (len(sys.argv) > 1 and [sys.argv[1]] or ['/home3/cburkins/test.jpg'])[0]
 
 # Create new info object
 info = IPTCInfo(fn)
