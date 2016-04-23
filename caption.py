@@ -47,6 +47,7 @@ def convert_exif_to_dict(exif):
         return data
 
     for k,v in exif.items():
+       print k
        if k in tag_name_to_id:
            data[tag_name_to_id[k]] = v
        else:
