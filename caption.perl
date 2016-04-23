@@ -2,8 +2,10 @@
 use warnings;
 use strict;
 use Image::ExifTool qw(ImageInfo);
+import os.path
 
 my $exifTool = new Image::ExifTool;
+
 
 
 my $filename = "/home3/cburkins/test.jpg";
