@@ -216,7 +216,8 @@ print """
 # Pathname of images is full URL on webserver (e.g. http://www.burkins.com/family/pictures)
 for image in matching_filenames_corrected:
 
-	image = image.replace(SRC_PATH, DST_URL))
+        old_image = image
+	image = old_image.replace(SRC_PATH, DST_URL))
 
 
         # Seems like these two lines might be redundant, but not sure
