@@ -2,13 +2,17 @@
 use warnings;
 use strict;
 use Image::ExifTool qw(ImageInfo);
-import os.path
 
 my $exifTool = new Image::ExifTool;
 
 
 
 my $filename = "/home3/cburkins/test.jpg";
+
+if (-e $filename)
+{ 
+    print "File exists\n";
+}
 
 # Load EXIF data for new Picture
 my $info = $exifTool->ImageInfo($filename);
