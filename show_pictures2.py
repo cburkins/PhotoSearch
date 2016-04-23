@@ -173,7 +173,7 @@ for filename in matching_filenames:
 	#matching_filenames_corrected.append(filename.replace(SRC_PATH, DST_URL))
 	matching_filenames_corrected.append(metadata_path)
 
-        console.log(metadata_path)
+        #console.log(metadata_path)
 
         # picture pathname is http://www.burkins.com/family/pictures/
 	# local_path = image.replace("http://www.burkins.com", "/home3/cburkins/public_html")
