@@ -217,7 +217,7 @@ print """
 for image in matching_filenames_corrected:
 
         old_image = image
-	image = old_image.replace(SRC_PATH, DST_URL))
+	image = old_image.replace(SRC_PATH, DST_URL)
 
 
         # Seems like these two lines might be redundant, but not sure
