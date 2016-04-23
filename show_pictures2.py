@@ -216,19 +216,21 @@ print """
 # Pathname of images is full URL on webserver (e.g. http://www.burkins.com/family/pictures)
 for image in matching_filenames_corrected:
 
-        old_image = image
-	image = old_image.replace(SRC_PATH, DST_URL)
+	metadata_path = image
+
+        #old_image = image
+	#image = old_image.replace(SRC_PATH, DST_URL)
 
 
         # Seems like these two lines might be redundant, but not sure
         # Chad, work on this
         # picture pathname is http://www.burkins.com/family/pictures/
 
-	local_path = image.replace("http://www.burkins.com", "/home3/cburkins/public_html")
+        #	local_path = image.replace("http://www.burkins.com", "/home3/cburkins/public_html")
+        temp = image.replace(SRC_PATH, DST_URL);
+        local_path = temp.replace("http://www.burkins.com", "/home3/cburkins/public_html")
 
-        # picture pathname is /home3/cburkins/public_html/family/pictures/
 
-	metadata_path = image.replace(DST_URL, SRC_PATH)
 
         # picture pathname is /mnt/ChadDocs/My Webs/www.burkins.com/01 - Web Albums/Family Pics - Turtle - Production/
 
