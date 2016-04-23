@@ -21,10 +21,10 @@ my $info = $exifTool->ImageInfo("$filename");
 my $pictureCaption = $exifTool->GetValue('Caption-Abstract');
 if (! defined $pictureCaption) { $pictureCaption = ""; };
 
-my $pictureImageDescription = $$info->GetValue('ImageDescription');
+my $pictureImageDescription = $exifTool->GetValue('ImageDescription');
 if (! defined $pictureImageDescription) { $pictureImageDescription = ""; };
 
-my $pictureDescription = $$info->GetValue('Description');
+my $pictureDescription = $exifTool->GetValue('Description');
 if (! defined $pictureDescription) { $pictureDescription = ""; };
 
 printf "Caption: $pictureCaption\n";
