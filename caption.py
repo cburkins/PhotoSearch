@@ -47,6 +47,8 @@ def convert_exif_to_dict(exif):
     if exif is None:
         return data
 
+    print "Hello Data"
+
     for k,v in exif.items():
        print k
        if k in tag_name_to_id:
