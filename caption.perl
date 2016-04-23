@@ -18,7 +18,8 @@ if (-e $filename)
 my $info = $exifTool->ImageInfo("$filename");
 
 # Get the caption from the picture
-my $Picture_Caption = $exifTool->GetValue('Caption-Abstract');
+#my $Picture_Caption = $exifTool->GetValue('Caption-Abstract');
+my $Picture_Caption = $$info->GetValue('Caption-Abstract');
 if (! defined $Picture_Caption) { $Picture_Caption = ""; };
 
 printf "Caption: $Picture_Caption\n";
