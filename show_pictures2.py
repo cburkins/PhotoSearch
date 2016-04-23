@@ -217,7 +217,7 @@ print """
 for imageHomeFile in matching_filenames_corrected:
         
         # Pathname on the web server (e.g. http://www.burkins.com)
-        imageWebURL = image.replace(SRC_PATH, DST_URL)
+        imageWebURL = imageHomeFile.replace(SRC_PATH, DST_URL)
 
         # keyword dictionary
         #      key : filename
