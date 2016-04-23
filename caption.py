@@ -61,5 +61,15 @@ def convert_exif_to_dict(exif):
 
 
 
+filename = "/home3/cburkins/test.jpg"
+
+im = Image.open(filename)
+im.verify()
+
+if im.format in ['JPG', 'TIFF']:
+    exif = convert_exif_to_dict(im._getexif())
+
+    print exif['XPTitle']
+
 # ----------------------------------------------------- End ------------------------------------------
 
