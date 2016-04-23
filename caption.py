@@ -3,6 +3,9 @@ use warnings;
 use strict;
 use Image::ExifTool qw(ImageInfo);
 
+my $exifTool = new Image::ExifTool;
+
+
 my $filename = "filename";
 
 # Load EXIF data for new Picture
