@@ -163,24 +163,7 @@ for filename in matching_filenames:
 	# SRC_PATH and DST_URL are defined in FS_common.py
 	# SRC_PATH is the full-pathname as defined on my home Linux machine before getting pushed up to webserver
 	# DST_URL is the full-pathname where the pictures are located on the Web server
-	SRCfilename = filename.replace(SRC_PATH, DST_URL)
-
-	local_path = SRCfilename.replace("http://www.burkins.com", "/home3/cburkins/public_html")
-
-	metadata_path = local_path.replace(DST_URL, SRC_PATH)
-        
-        
-	#matching_filenames_corrected.append(filename.replace(SRC_PATH, DST_URL))
-	matching_filenames_corrected.append(metadata_path)
-
-        #console.log(metadata_path)
-
-        # picture pathname is http://www.burkins.com/family/pictures/
-	# local_path = image.replace("http://www.burkins.com", "/home3/cburkins/public_html")
-        # picture pathname is /home3/cburkins/public_html/family/pictures/
-
-	#metadata_path = image.replace(DST_URL, SRC_PATH)
-        # picture pathname is /mnt/ChadDocs/My Webs/www.burkins.com/01 - Web Albums/Family Pics - Turtle - Production/
+	matching_filenames_corrected.append(filename.replace(SRC_PATH, DST_URL))
 
 
 
@@ -235,11 +218,11 @@ for image in matching_filenames_corrected:
         # Chad, work on this
         # picture pathname is http://www.burkins.com/family/pictures/
 
-	#local_path = image.replace("http://www.burkins.com", "/home3/cburkins/public_html")
+	local_path = image.replace("http://www.burkins.com", "/home3/cburkins/public_html")
 
         # picture pathname is /home3/cburkins/public_html/family/pictures/
 
-	#metadata_path = image.replace(DST_URL, SRC_PATH)
+	metadata_path = image.replace(DST_URL, SRC_PATH)
 
         # picture pathname is /mnt/ChadDocs/My Webs/www.burkins.com/01 - Web Albums/Family Pics - Turtle - Production/
 
@@ -248,8 +231,6 @@ for image in matching_filenames_corrected:
         #      value : dictionary
         #         key : cateogry (P=ListOfPeople, L=ListofLocations, Y=ListofYears, R=ListOfRatings)
         #         value : list matching the category                                          
-
-        metadata_path = image
 
         # Find the Year in the picture metadata
         if "Y" in keyword_dictionary[metadata_path]:
