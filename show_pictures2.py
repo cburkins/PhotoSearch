@@ -261,7 +261,7 @@ for imageHomeFile in matchingPictures:
         
         # Create the full multi-line title to be displayed in the overlay at the bottom of the picture
         # Use a single span so we can apply CSS, and insert line breaks
-        title = '<span class=caption>{0}<BR>{1}<BR>{2}<BR>{3}<BR>{4}</span>'.format(captionYear, captionPeople, captionLocations, captionEvents, captionDescr)
+        title = '<span class=caption>{0}<BR>{1}<BR>{2}<BR>{3}<BR>{4}<BR>{5}</span>'.format(captionFilename, captionYear, captionPeople, captionLocations, captionEvents, captionDescr)
     
         # Insert the complete HTML img tag for this picture into the slideshow <div>
         print '<img src="{0}", data-cycle-desc="{1}">'.format(imageWebURL, title)
