@@ -36,8 +36,9 @@ print "\n\n"
 json_string = '{"first_name": "Guido", "last_name":"Rossum"}'
 parsed_json = json.loads(json_string)
 print( json.dumps(parsed_json, sort_keys=True, indent=4, separators=(',', ': ')) )
+print "\n\n"
 print (parsed_json)
-
+print "\n\n"
 
 
 # ----------------------------------------------------- End ------------------------------------------
