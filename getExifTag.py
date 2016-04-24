@@ -61,16 +61,14 @@ print args.filename
 print args.tag
 sys.exit()
 
-# Verify that the number of command-line args is correct
-if (len(sys.argv) < 3):
-    print "\n   Incorrect number of args, exiting...\n\n"
-    sys.exit()
+filename = args.filename
+tag = args.tag
 
 # Get desired filename (e.g. "/home3/cburkins/test.jpg")
-filename = sys.argv[1]
+#filename = sys.argv[1]
 
 # Get desired tag (e.g. "XMP:Description")
-tag = sys.argv[2]
+#tag = sys.argv[2]
 
 # Get all photo tags and print them
 allTags = getPhotoAllTags(filename)
