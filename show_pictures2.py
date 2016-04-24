@@ -167,7 +167,7 @@ print """
 </head>
 """
 
-# CSS Setup, include jQuery library and Cycle plugin
+# Include jQuery library and Cycle plugin
 print """
 <body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
@@ -176,9 +176,6 @@ print """
 """
 
 print """
-<!-- empty element for caption (used for picture x/y count, CSS will place in top-right of picture -->
-<div class="cycle-caption"></div>
-
 <div class="cycle-slideshow"
      data-cycle-fx="scrollHorz"
      data-cycle-timeout="0"
@@ -276,6 +273,9 @@ for imageHomeFile in matchingPictures:
 # End of slideshow <div>
 print """
 </div>
+<!-- empty element for caption (used for picture x/y count, CSS will place in top-right of picture -->
+<div class="cycle-caption"></div>
+
 """
 
 # Enable the right-arrow and left-arrow keys to operate Next and Prev for the slideshow
