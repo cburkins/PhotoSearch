@@ -32,7 +32,7 @@ def getPhotoAllTags (filename)
 # Input: a filename and a desired tag
 # Output: Reads all EXIF/XMP/IPTC tags, returns the desired tag as a string
 
-def getPhotoTag(filename, tagName):
+def getPhotoTag(filename):
 
     jsonExif = getPhotoAlTags(filename)
 
