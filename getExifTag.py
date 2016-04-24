@@ -53,9 +53,12 @@ def getPhotoTag(filename, desiredTag):
 
 import argparse
 parser = argparse.ArgumentParser()
+# NOTE: Unless told otherwise, argparse always treats arguments as strings
 parser.add_argument("filename", help="JPG filename to parse for tags")
+parser.add_argument("-t", "--tag", action='store', dest='tag', help="destired EXIF/XMP tag")
 args = parser.parse_args()
 print args.filename
+print args.tag
 sys.exit()
 
 # Verify that the number of command-line args is correct
