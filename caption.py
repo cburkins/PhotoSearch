@@ -6,12 +6,6 @@ import cgi
 import json
 
 
-# Check for python v2.7 or better
-if sys.version_info < (2, 7):
-    print "\n   Must use python 2.7 or greater, exiting...\n"
-    sys.exit()
-
-
 # --------------------------------------------------------------------------------------------------
 
 def getTag(filename, tagName):
@@ -28,7 +22,8 @@ def getTag(filename, tagName):
     # Print out the entire JSON structure
     #print( json.dumps(jsonExif, sort_keys=True, indent=4, separators=(',', ': ')) )
 
-    print (jsonExif['XMP:Description'])
+    #print (jsonExif['XMP:Description'])
+    return jsonExif['XMP:Description']
 
 
 # --------------------------------------------------------------------------------------------------
@@ -37,10 +32,17 @@ ROOT = "/home3/cburkins/public_html/family/pictures/search/pyexifinfo/pyexifinfo
 sys.path.insert(0, ROOT)
 import pyexifinfo as p
 
+# Check for python v2.7 or better
+if sys.version_info < (2, 7):
+    print "\n   Must use python 2.7 or greater, exiting...\n"
+    sys.exit()
+
+
 
 filename = "/home3/cburkins/test.jpg"
 tag = "XMP:Description"
-getTag(filename, tag)
+tagContents = getTag(filename, tag)
+print "Tag Contents: {0}".format(tagContents)
 
 # ----------------------------------------------------- End ------------------------------------------
 
