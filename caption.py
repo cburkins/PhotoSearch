@@ -14,8 +14,18 @@ if sys.version_info < (2, 7):
 
 # --------------------------------------------------------------------------------------------------
 
-def getTag(tagName):
+def getTag(filename, tagName):
     print 'Hi there from getTag, tag name is {0}'.format(tagName)
+
+    # Extract all EXIF/XMP/IPTC from picture, seems to return a JSON structure as the first element of a list
+    datalist = p.get_json(filename)
+    # Get the first element of the list, which ends up being a JSON structure
+    jsonExif = datalist[0]
+
+    # Print out the entire JSON structure
+    #print( json.dumps(jsonExif, sort_keys=True, indent=4, separators=(',', ': ')) )
+
+    print (jsonExif['XMP:Description'])
 
 
 # --------------------------------------------------------------------------------------------------
@@ -42,7 +52,7 @@ jsonExif = datalist[0]
 
 print (jsonExif['XMP:Description'])
 
-getTag("Chad")
+getTag(filename, "XMP:Description")
 
 # ----------------------------------------------------- End ------------------------------------------
 
