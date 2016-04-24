@@ -56,7 +56,7 @@ tag = "XMP:Description"
 
 # Get all photo tags and print them
 allTags = getPhotoAllTags(filename)
-print( json.dumps(data, sort_keys=True, indent=4, separators=(',', ': ')) )
+print( json.dumps(allTags, sort_keys=True, indent=4, separators=(',', ': ')) )
 
 # Get a single EXIF/XMP tag from the picture, and print it
 tagContents = getPhotoTag(filename, tag)
