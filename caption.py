@@ -31,7 +31,8 @@ else:
 
 data = p.get_json(filename)
 print( json.dumps(data, sort_keys=True, indent=4, separators=(',', ': ')) )
-
+print "\n\n"
+print(data['XMP:Description'])
 
 
 
