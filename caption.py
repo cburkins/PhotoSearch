@@ -1,9 +1,10 @@
-#!/usr/local/bin/python
+#!/usr/local/bin/python2.7
 
 import os
 import sys
 import cgi
 
+# Check for python v2.7 or better
 if sys.version_info < (2, 7):
     print "\n   Must use python 2.7 or greater, exiting...\n"
     sys.exit()
