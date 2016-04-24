@@ -52,19 +52,15 @@ def getPhotoTag(filename, desiredTag):
 # --------------------------------------------- Main -----------------------------------------------
 
 
-
-print 'Number of arguments:', len(sys.argv), 'arguments.'
-print 'Argument List:', str(sys.argv)
-
+# Verify that the number of command-line args is correct
 if (len(sys.argv) < 3):
     print "\n   Incorrect number of args, exiting...\n\n"
     sys.exit()
 
-
-
-filename = "/home3/cburkins/test.jpg"
+# Get desired filename (e.g. "/home3/cburkins/test.jpg")
 filename = sys.argv[1]
-tag = "XMP:Description"
+
+# Get desired tag (e.g. "XMP:Description")
 tag = sys.argv[2]
 
 # Get all photo tags and print them
