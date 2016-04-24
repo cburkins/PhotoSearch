@@ -4,6 +4,7 @@
 import os
 import sys
 import json
+import argparse
 
 # import a local copy of pyexifinfo, which is just a wrapper for Phil Harvey's amazing EXIFTOOL
 # EXIFTOOL started out as maninpulating EXIF tags within JPG images, but can not do MUCH more
@@ -51,14 +52,18 @@ def getPhotoTag(filename, desiredTag):
 
 # --------------------------------------------- Main -----------------------------------------------
 
-import argparse
+# Create a command-line args parser
 parser = argparse.ArgumentParser()
-# NOTE: Unless told otherwise, argparse always treats arguments as strings
+# Add a mandatory positional argument to get the filename
 parser.add_argument("filename", help="JPG filename to parse for tags")
-parser.add_argument("-t", "--tag", action='store', dest='tag', help="destired EXIF/XMP tag")
+# Add an optional argument to get the desired tag
+parser.add_argument("-t", "--tag", action='store', dest='tag', help="Destired EXIF/XMP tag. If omitted, show all tags")
+
+sys.exit()
+
+# Parse the given command-line args.  If illegal args are passed, then program exits here
+# NOTE: Unless told otherwise, argparse always treats arguments as strings
 args = parser.parse_args()
-print args.filename
-print args.tag
 
 filename = args.filename
 tag = args.tag
