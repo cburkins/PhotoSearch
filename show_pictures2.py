@@ -176,6 +176,9 @@ print """
 """
 
 print """
+<!-- empty element for caption (used for picture x/y count, CSS will place in top-right of picture -->
+<div class="cycle-caption"></div>
+
 <div class="cycle-slideshow"
      data-cycle-fx="scrollHorz"
      data-cycle-timeout="0"
@@ -185,9 +188,6 @@ print """
      data-cycle-center-vert="true"
      data-cycle-caption-template="Slide {{slideNum}} of {{slideCount}}"
      >
-
-  <!-- empty element for caption, CSS will place in top-right of picture -->
-  <div class="cycle-caption"></div>
 
   <!-- empty elemen for overlay, CSS will place at bottom of picture -->
   <div class="cycle-overlay"></div>
