@@ -51,7 +51,6 @@ def getPhotoTag(filename, desiredTag):
 
 # --------------------------------------------- Main -----------------------------------------------
 
-
 # Verify that the number of command-line args is correct
 if (len(sys.argv) < 3):
     print "\n   Incorrect number of args, exiting...\n\n"
@@ -71,5 +70,7 @@ print( json.dumps(allTags, sort_keys=True, indent=4, separators=(',', ': ')) )
 tagContents = getPhotoTag(filename, tag)
 print "Tag Contents: {0}".format(tagContents)
 
-# ----------------------------------------------------- End ------------------------------------------
+# --------------------------------------------------------------------------------------------------
+# ----------------------------------------------------- End ----------------------------------------
+# --------------------------------------------------------------------------------------------------
 
