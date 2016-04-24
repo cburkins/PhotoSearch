@@ -1,6 +1,8 @@
 #!/usr/local/bin/python2.7
 
 import os
+import sys
+import json
 # import a local copy of pyexifinfo, which is just a wrapper for Phil Harvey's amazing EXIFTOOL
 # EXIFTOOL started out as maninpulating EXIF tags within JPG images, but can not do MUCH more
 # can read/write EXIF, IPTC, XMP, etc
@@ -59,8 +61,6 @@ def getPhotoTag(filename, desiredTag):
 if __name__ == "__main__":
 
     # Import system libs
-    import sys
-    import json
     import argparse
 
     # Create a command-line args parser
