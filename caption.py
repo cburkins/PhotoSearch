@@ -8,7 +8,15 @@ import json
 
 # --------------------------------------------------------------------------------------------------
 
-def getTag(filename, tagName):
+
+
+# --------------------------------------------------------------------------------------------------
+
+
+# Input: a filename and a desired tag
+# Output: Reads all EXIF/XMP/IPTC tags, returns the desired tag as a string
+
+def getPhotoTag(filename, tagName):
 
     if not (os.path.isfile(filename)):
         print 'file does NOT exist: {0}\n'.format(filename) 
@@ -41,7 +49,7 @@ if sys.version_info < (2, 7):
 
 filename = "/home3/cburkins/test.jpg"
 tag = "XMP:Description"
-tagContents = getTag(filename, tag)
+tagContents = getPhotoTag(filename, tag)
 print "Tag Contents: {0}".format(tagContents)
 
 # ----------------------------------------------------- End ------------------------------------------
