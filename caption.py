@@ -30,7 +30,6 @@ else:
 
 
 data = p.get_json(filename)
-print (type (data[0]))
 print "\n\n"
 print( json.dumps(data, sort_keys=True, indent=4, separators=(',', ': ')) )
 print "\n\n"
@@ -41,7 +40,8 @@ print( json.dumps(parsed_json, sort_keys=True, indent=4, separators=(',', ': '))
 print "\n\n"
 print (parsed_json)
 print "\n\n"
-
+print (type (data[0]))
+print (type (parsed_json))
 
 # ----------------------------------------------------- End ------------------------------------------
 
