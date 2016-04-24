@@ -34,8 +34,9 @@ print( json.dumps(data, sort_keys=True, indent=4, separators=(',', ': ')) )
 print "\n\n"
 
 json_string = '{"first_name": "Guido", "last_name":"Rossum"}'
-print( json.dumps(json_string, sort_keys=True, indent=4, separators=(',', ': ')) )
-print (json_string)
+parsed_json = json.loads(json_string)
+print( json.dumps(parsed_json, sort_keys=True, indent=4, separators=(',', ': ')) )
+print (parsed_json)
 
 
 
