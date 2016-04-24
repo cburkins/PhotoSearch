@@ -11,7 +11,7 @@ import json
 # Input: a filename and a desired tag
 # Output: Reads all EXIF/XMP/IPTC tags, returns the desired tag as a string
 
-def getPhotoAllTags (filename)
+def getPhotoAllTags (filename):
 
     if not (os.path.isfile(filename)):
         print 'file does NOT exist: {0}\n'.format(filename) 
