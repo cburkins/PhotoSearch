@@ -242,8 +242,8 @@ for imageHomeFile in matchingPictures:
                 events = 'Unknown'
 
         # Get the photo description (caption) from the photo itself (i.e. open the file, and read metadata)
-        descr = getPhotoTag(localPhotoFile, "XMP:Description")
-        #descr = "This is the photo descrioption"
+        #descr = getPhotoTag(localPhotoFile, "XMP:Description")
+        descr = localPhotoFile
 
         # Create a caption-line for each element, insert a span tag for CSS formatting
         captionYear = '<span class=caption-category>Year:</span> {0}'.format(year)
