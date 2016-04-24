@@ -186,6 +186,10 @@ print """
      data-cycle-caption-template="Slide {{slideNum}} of {{slideCount}}"
      >
 
+     <!-- empty element for caption (used for picture x/y count, CSS will place in top-right of picture -->
+     <div class="cycle-caption"></div>
+
+
   <!-- empty elemen for overlay, CSS will place at bottom of picture -->
   <div class="cycle-overlay"></div>
 """
@@ -273,9 +277,6 @@ for imageHomeFile in matchingPictures:
 # End of slideshow <div>
 print """
 </div>
-<!-- empty element for caption (used for picture x/y count, CSS will place in top-right of picture -->
-<div class="cycle-caption"></div>
-
 """
 
 # Enable the right-arrow and left-arrow keys to operate Next and Prev for the slideshow
