@@ -58,6 +58,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument("filename", help="JPG filename to parse for tags")
 # Add an optional argument to get the desired tag
 parser.add_argument("-t", "--tag", action='store', dest='tag', help="Destired EXIF/XMP tag. If omitted, show all tags")
+parser.add_argument("--verbose", help="increase output verbosity",
+                    action="store_true")
 
 # Parse the given command-line args.  If illegal args are passed, then program exits here
 # NOTE: Unless told otherwise, argparse always treats arguments as strings
@@ -65,8 +67,11 @@ args = parser.parse_args()
 # User gave correct command-line args
 filename = args.filename
 tag = args.tag
-print "Filename: {0}".format(filename)
-print "Desired tag: {0}".format(tag)
+
+if args.verbose:
+   print "verbosity turned on"
+   print "Filename: {0}".format(filename)
+   print "Desired tag: {0}".format(tag)
 
 
 
