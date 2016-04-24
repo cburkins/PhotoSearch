@@ -51,6 +51,12 @@ def getPhotoTag(filename, desiredTag):
 
 # --------------------------------------------- Main -----------------------------------------------
 
+
+
+print 'Number of arguments:', len(sys.argv), 'arguments.'
+print 'Argument List:', str(sys.argv)
+
+
 filename = "/home3/cburkins/test.jpg"
 tag = "XMP:Description"
 
