@@ -71,7 +71,7 @@ tag = args.tag
 if args.verbose:
    print "verbosity turned on"
 
-if args.verbose
+if args.verbose:
    print "Filename: {0}".format(filename)
    print "Desired tag: {0}".format(tag)
 
