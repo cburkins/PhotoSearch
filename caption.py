@@ -1,12 +1,15 @@
 #!/usr/local/bin/python2.7
 
+# Import system libs
 import os
 import sys
-import cgi
 import json
 
-ROOT = "/home3/cburkins/public_html/family/pictures/search/pyexifinfo/pyexifinfo"
-sys.path.insert(0, ROOT)
+# import a local copy of pyexifinfo, which is just a wrapper for Phil Harvey's amazing EXIFTOOL
+# EXIFTOOL started out as maninpulating EXIF tags within JPG images, but can not do MUCH more
+# can read/write EXIF, IPTC, XMP, etc
+LIBROOT = "/home3/cburkins/public_html/family/pictures/search/pyexifinfo/pyexifinfo"
+sys.path.insert(0, LIBROOT)
 import pyexifinfo as pyexifinfo
 
 # --------------------------------------------------------------------------------------------------
