@@ -59,7 +59,6 @@ parser.add_argument("-t", "--tag", action='store', dest='tag', help="destired EX
 args = parser.parse_args()
 print args.filename
 print args.tag
-sys.exit()
 
 filename = args.filename
 tag = args.tag
