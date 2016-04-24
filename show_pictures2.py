@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/local/bin/python2.7
 
 # ------------------------------------------------------------------------
 # Basic Description : This module gets called with a list of keywords,
