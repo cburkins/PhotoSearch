@@ -13,6 +13,15 @@ import json
 
 filename = "/home3/cburkins/test.jpg"
 
+if os.path.isfile(filename):
+    print 'file exists: {0}'.format(filename) 
+else:
+    print "no such file"
+
+data = p.get_xml(filename)
+print(data)
+
+
 #data = p.get_json(filename)
 # print( json.dumps(data, sort_keys=True, indent=4, separators=(',', ': ')) )
 
