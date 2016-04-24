@@ -51,17 +51,10 @@ import os
 import sys
 import cgi
 
-#ROOT = "/home3/cburkins/public_html/family/search"
-#sys.path.insert(0, ROOT)
-
-# This is our local working directory (current location)
-CWD = os.getcwd()
-# Add this to our library search path
-#sys.path.insert(0, CWD)
-
-
-# Import my local code
-from FS_commmon import *
+# Import my local code (which is located in the same directory as this script)
+# Needs a file called FS_common.py
+from FS_common import *
+# Needs a file called get_matching_pictures.py
 from get_matching_pictures import *
 
 
