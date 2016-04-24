@@ -48,7 +48,10 @@ def getPhotoTag(filename, desiredTag):
 
     jsonExif = getPhotoAllTags(filename)
 
-    return jsonExif[desiredTag]
+    if desiredTag in jsonExif.keys():
+        return jsonExif[desiredTag]
+    else:
+        return None
 
 # --------------------------------------------- Main -----------------------------------------------
 
@@ -75,14 +78,7 @@ if args.verbose:
    print "Filename: {0}".format(filename)
    print "Desired tag: {0}".format(tag)
 
-
-
-# Get desired filename (e.g. "/home3/cburkins/test.jpg")
-#filename = sys.argv[1]
-
-# Get desired tag (e.g. "XMP:Description")
-#tag = sys.argv[2]
-
+# Check to see if user requested a specific EXIF tag on the command-line
 if tag is None:
     # User did not request a specific EXIF tag, so get ALL photo tags and print them
     allTags = getPhotoAllTags(filename)
