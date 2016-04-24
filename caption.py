@@ -38,7 +38,8 @@ def getPhotoTag(filename, desiredTag):
     jsonExif = getPhotoAllTags(filename)
 
     #print (jsonExif['XMP:Description'])
-    return jsonExif['XMP:Description']
+    #return jsonExif['XMP:Description']
+    return jsonExif[desiredTag]
 
 
 # --------------------------------------------------------------------------------------------------
