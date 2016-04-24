@@ -29,7 +29,8 @@ else:
 #print(data)
 
 
-data = p.get_json(filename)
+datalist = p.get_json(filename)
+jsonExif = datalist[0]
 print "\n\n"
 print( json.dumps(data, sort_keys=True, indent=4, separators=(',', ': ')) )
 print "\n\n"
@@ -42,6 +43,7 @@ print (parsed_json)
 print "\n\n"
 print (type (data[0]))
 print (type (parsed_json))
+print (jsonExif['XMP:Description'])
 
 # ----------------------------------------------------- End ------------------------------------------
 
