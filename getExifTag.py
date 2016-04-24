@@ -65,8 +65,6 @@ args = parser.parse_args()
 # User gave correct command-line args
 filename = args.filename
 tag = args.tag
-
-
 print "Filename: {0}".format(filename)
 print "Desired tag: {0}".format(tag)
 
@@ -78,13 +76,14 @@ print "Desired tag: {0}".format(tag)
 # Get desired tag (e.g. "XMP:Description")
 #tag = sys.argv[2]
 
-# Get all photo tags and print them
-allTags = getPhotoAllTags(filename)
-print( json.dumps(allTags, sort_keys=True, indent=4, separators=(',', ': ')) )
-
-# Get a single EXIF/XMP tag from the picture, and print it
-tagContents = getPhotoTag(filename, tag)
-print "Tag Contents: {0}".format(tagContents)
+if tag is None:
+    # User did not request a specific EXIF tag, so get ALL photo tags and print them
+    allTags = getPhotoAllTags(filename)
+    print( json.dumps(allTags, sort_keys=True, indent=4, separators=(',', ': ')) )
+else:
+    # User requested a specific EXIF tag, so get EXIF/XMP tag from the picture, and print it
+    tagContents = getPhotoTag(filename, tag)
+    print "Tag Contents: {0}".format(tagContents)
 
 # --------------------------------------------------------------------------------------------------
 # ----------------------------------------------------- End ----------------------------------------
