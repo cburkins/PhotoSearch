@@ -30,7 +30,7 @@ else:
 
 
 data = p.get_json(filename)
-type (data)
+print (type (data))
 print "\n\n"
 print( json.dumps(data, sort_keys=True, indent=4, separators=(',', ': ')) )
 print "\n\n"
