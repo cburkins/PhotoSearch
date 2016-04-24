@@ -7,7 +7,7 @@ import json
 
 ROOT = "/home3/cburkins/public_html/family/pictures/search/pyexifinfo/pyexifinfo"
 sys.path.insert(0, ROOT)
-import pyexifinfo as pycall
+import pyexifinfo as pyexifinfo
 
 # --------------------------------------------------------------------------------------------------
 
@@ -27,7 +27,7 @@ def getPhotoAllTags (filename):
         sys.exit()
 
     # Extract all EXIF/XMP/IPTC from picture, seems to return a JSON structure as the first element of a list
-    datalist = pycall.get_json(filename)
+    datalist = pyexifinfo.get_json(filename)
     # Get the first element of the list, which ends up being a JSON structure
     jsonExif = datalist[0]
 
