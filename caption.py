@@ -61,8 +61,11 @@ if (len(sys.argv) < 3):
     sys.exit()
 
 
+
 filename = "/home3/cburkins/test.jpg"
+filename = sys.argv[1]
 tag = "XMP:Description"
+tag = sys.argv[2]
 
 # Get all photo tags and print them
 allTags = getPhotoAllTags(filename)
