@@ -53,7 +53,7 @@ def getPhotoTag(filename, desiredTag):
 
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument("filename")
+parser.add_argument("filename", help="JPG filename to parse for tags")
 args = parser.parse_args()
 print args.filename
 sys.exit()
