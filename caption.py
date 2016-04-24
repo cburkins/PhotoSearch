@@ -25,12 +25,12 @@ if os.path.isfile(filename):
 else:
     print "no such file"
 
-data = p.get_xml(filename)
-print(data)
+#data = p.get_xml(filename)
+#print(data)
 
 
-#data = p.get_json(filename)
-# print( json.dumps(data, sort_keys=True, indent=4, separators=(',', ': ')) )
+data = p.get_json(filename)
+print( json.dumps(data, sort_keys=True, indent=4, separators=(',', ': ')) )
 
 
 
