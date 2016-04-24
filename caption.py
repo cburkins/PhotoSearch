@@ -21,12 +21,12 @@ def getPhotoAllTags (filename):
 
     # Check for python v2.7 or better
     if sys.version_info < (2, 7):
-        print "\n   Must use python 2.7 or greater, exiting...\n"
+        print "\n   Must use python 2.7 or greater, exiting...\n\n"
         sys.exit()
 
     # Verify that given filename exists
     if not (os.path.isfile(filename)):
-        print 'file does NOT exist: {0}\n'.format(filename) 
+        print '\n\n  File does NOT exist: {0}\n   Exiting...\n\n'.format(filename) 
         sys.exit()
 
     # Extract all EXIF/XMP/IPTC from picture, seems to return a JSON structure as the first element of a list
@@ -47,8 +47,6 @@ def getPhotoTag(filename, desiredTag):
 
     jsonExif = getPhotoAllTags(filename)
 
-    #print (jsonExif['XMP:Description'])
-    #return jsonExif['XMP:Description']
     return jsonExif[desiredTag]
 
 # --------------------------------------------- Main -----------------------------------------------
