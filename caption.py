@@ -4,7 +4,7 @@ import os
 import sys
 import cgi
 
-ROOT = "/home3/cburkins/public_html/family/pictures/search/pyexifinfo"
+ROOT = "/home3/cburkins/public_html/family/pictures/search/pyexifinfo/pyexifinfo"
 sys.path.insert(0, ROOT)
 import pyexifinfo as p
 
