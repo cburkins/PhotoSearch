@@ -1,4 +1,4 @@
-#!/usr/local/bin/python2.7
+#!/usr/bin/python2.7
 
 # Import system libs
 import os
@@ -10,7 +10,10 @@ import argparse
 # EXIFTOOL started out as maninpulating EXIF tags within JPG images, but can not do MUCH more
 # can read/write EXIF, IPTC, XMP, etc
 LIBROOT = "/home3/cburkins/public_html/family/pictures/search/pyexifinfo/pyexifinfo"
+LIBROOT = "/home3/cburkins/public_html/family/pictures/search" + "/pyexifinfo/pyexifinfo" 
 sys.path.insert(0, LIBROOT)
+
+#sys.path.insert(0, os.getcwd())
 import pyexifinfo as pyexifinfo
 
 # --------------------------------------------------------------------------------------------------
