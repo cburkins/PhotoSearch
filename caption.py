@@ -3,6 +3,8 @@
 import os
 import sys
 import cgi
+import json
+
 
 # Check for python v2.7 or better
 if sys.version_info < (2, 7):
@@ -10,22 +12,24 @@ if sys.version_info < (2, 7):
     sys.exit()
 
 
+# --------------------------------------------------------------------------------------------------
+
+def getTag(tagName):
+    print 'Hi there from getTag, tag name is {0}'.format(tagName)
+
+
+# --------------------------------------------------------------------------------------------------
 
 ROOT = "/home3/cburkins/public_html/family/pictures/search/pyexifinfo/pyexifinfo"
 sys.path.insert(0, ROOT)
 import pyexifinfo as p
 
 
-import json
-
 filename = "/home3/cburkins/test.jpg"
 
 if not (os.path.isfile(filename)):
     print 'file does NOT exist: {0}\n'.format(filename) 
     sys.exit()
-
-#data = p.get_xml(filename)
-#print(data)
 
 # Extract all EXIF/XMP/IPTC from picture, seems to return a JSON structure as the first element of a list
 datalist = p.get_json(filename)
@@ -37,6 +41,8 @@ jsonExif = datalist[0]
 
 
 print (jsonExif['XMP:Description'])
+
+getTag("Chad")
 
 # ----------------------------------------------------- End ------------------------------------------
 
