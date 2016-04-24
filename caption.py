@@ -32,7 +32,7 @@ else:
 datalist = p.get_json(filename)
 jsonExif = datalist[0]
 print "\n\n"
-print( json.dumps(data, sort_keys=True, indent=4, separators=(',', ': ')) )
+print( json.dumps(jsonExif, sort_keys=True, indent=4, separators=(',', ': ')) )
 print "\n\n"
 
 json_string = '{"first_name": "Guido", "last_name":"Rossum"}'
@@ -41,7 +41,7 @@ print( json.dumps(parsed_json, sort_keys=True, indent=4, separators=(',', ': '))
 print "\n\n"
 print (parsed_json)
 print "\n\n"
-print (type (data[0]))
+print (type (jsonExif))
 print (type (parsed_json))
 print (jsonExif['XMP:Description'])
 
