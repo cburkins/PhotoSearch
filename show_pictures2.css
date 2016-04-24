@@ -23,7 +23,7 @@ html body { background:black }
 /*
 .cycle-caption { position: absolute; color: white; bottom: 15px; right: 30px; z-index: 700; }
 */
-.cycle-caption { position: fixed; color: white; bottom: 15px; right: 30px; z-index: 700; }
+.cycle-caption { position: fixed; color: white; bottom:0; right:0; z-index: 700; }
 
 /* overlay at the bottom of the image, displays picture metadata */
 .cycle-overlay { 
