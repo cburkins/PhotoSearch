@@ -11,7 +11,7 @@ import argparse
 # can read/write EXIF, IPTC, XMP, etc
 #LIBROOT = "/home3/cburkins/public_html/family/pictures/search/pyexifinfo/pyexifinfo"
 CWD = os.getcwd()
-LIBROOT = CWD + "/pyexifinfo/pyexifinfo" 
+LIBROOT = CWD + "/pyexifinfo/pyexifinfoo" 
 sys.path.insert(0, LIBROOT)
 
 #sys.path.insert(0, os.getcwd())
