@@ -57,7 +57,7 @@ import cgi
 # This is our local working directory (current location)
 CWD = os.getcwd()
 # Add this to our library search path
-sys.path.insert(0, CWD)
+#sys.path.insert(0, CWD)
 
 
 # Import my local code
