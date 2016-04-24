@@ -8,15 +8,10 @@ import json
 
 # --------------------------------------------------------------------------------------------------
 
-
-
-# --------------------------------------------------------------------------------------------------
-
-
 # Input: a filename and a desired tag
 # Output: Reads all EXIF/XMP/IPTC tags, returns the desired tag as a string
 
-def getPhotoTag(filename, tagName):
+def getPhotoAllTags (filename)
 
     if not (os.path.isfile(filename)):
         print 'file does NOT exist: {0}\n'.format(filename) 
@@ -29,6 +24,17 @@ def getPhotoTag(filename, tagName):
 
     # Print out the entire JSON structure
     #print( json.dumps(jsonExif, sort_keys=True, indent=4, separators=(',', ': ')) )
+
+
+# --------------------------------------------------------------------------------------------------
+
+
+# Input: a filename and a desired tag
+# Output: Reads all EXIF/XMP/IPTC tags, returns the desired tag as a string
+
+def getPhotoTag(filename, tagName):
+
+    jsonExif = getPhotoAlTags(filename)
 
     #print (jsonExif['XMP:Description'])
     return jsonExif['XMP:Description']
