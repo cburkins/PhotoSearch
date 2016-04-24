@@ -200,10 +200,13 @@ for imageHomeFile in matchingPictures:
         # Pathname on the web server (e.g. http://www.burkins.com/family/pictures/album/Pictures 2000s)
         imageWebURL = imageHomeFile.replace(SRC_PATH, DST_URL)
 
-        # /home3/cburkins/public_html/family/pictures/album/Pictures\ 2000s/
+        # Filesystem pathname on the web server (e.g. /home3/cburkins/public_html/family/pictures/album/Pictures\ 2000s)
         localPhotoFile = imageHomeFile.replace(SRC_PATH, Root)
 
-        # keyword dictionary
+        # Short filename
+        shortFilename = os.path.basename(localPhotoFile)
+
+       # keyword dictionary
         #      key : filename
         #      value : dictionary
         #         key : cateogry (P=ListOfPeople, L=ListofLocations, Y=ListofYears, R=ListOfRatings)
