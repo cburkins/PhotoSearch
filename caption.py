@@ -24,6 +24,7 @@ def getPhotoAllTags (filename):
 
     # Print out the entire JSON structure
     #print( json.dumps(jsonExif, sort_keys=True, indent=4, separators=(',', ': ')) )
+    return jsonExif
 
 
 # --------------------------------------------------------------------------------------------------
