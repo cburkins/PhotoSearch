@@ -247,7 +247,7 @@ for imageHomeFile in matchingPictures:
         # Get the photo description (caption) from the photo itself (i.e. open the file, and read metadata)
         if not (os.path.isfile(localPhotoFile)):
                 descr = "File missing: {0}".format(localPhotoFile)
-                temp = descr.replace("\"", "&quot")
+                temp = descr.replace('"', '&quot')
                 descr = temp
         else:
                 descr = getPhotoTag(localPhotoFile, "XMP:Description")
