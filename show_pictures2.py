@@ -56,8 +56,8 @@ import cgi
 from FS_common import *
 # Needs a file called get_matching_pictures.py
 from get_matching_pictures import *
-# Needs a file called getExifTag
-from getExifTag import getPhotoTag
+# Needs a file called getPhotoTag
+from getPhotoTag import *
 
 # ------------------------------------------------------------------------
 
