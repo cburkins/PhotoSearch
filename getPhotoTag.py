@@ -1,23 +1,5 @@
 #!/usr/local/bin/python2.7
 
-# Import system libs
-import os
-import sys
-import json
-import argparse
-
-# import a local copy of pyexifinfo, which is just a wrapper for Phil Harvey's amazing EXIFTOOL
-# EXIFTOOL started out as maninpulating EXIF tags within JPG images, but can not do MUCH more
-# can read/write EXIF, IPTC, XMP, etc
-# This is our local working directory (current location)
-CWD = os.getcwd()
-# Append the subdirectory for pyexifinfo
-LIBROOT = CWD + "/pyexifinfo/pyexifinfo" 
-# Add this to our library search path
-sys.path.insert(0, LIBROOT)
-# Import pyexifinfo library
-import pyexifinfo as pyexifinfo
-
 # --------------------------------------------------------------------------------------------------
 
 # Input: a filename
@@ -59,6 +41,24 @@ def getPhotoTag(filename, desiredTag):
         return None
 
 # --------------------------------------------- Main -----------------------------------------------
+
+# Import system libs
+import os
+import sys
+import json
+import argparse
+
+# import a local copy of pyexifinfo, which is just a wrapper for Phil Harvey's amazing EXIFTOOL
+# EXIFTOOL started out as maninpulating EXIF tags within JPG images, but can not do MUCH more
+# can read/write EXIF, IPTC, XMP, etc
+# This is our local working directory (current location)
+CWD = os.getcwd()
+# Append the subdirectory for pyexifinfo
+LIBROOT = CWD + "/pyexifinfo/pyexifinfo" 
+# Add this to our library search path
+sys.path.insert(0, LIBROOT)
+# Import pyexifinfo library
+import pyexifinfo as pyexifinfo
 
 # Create a command-line args parser
 parser = argparse.ArgumentParser()
