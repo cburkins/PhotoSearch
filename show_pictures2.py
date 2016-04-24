@@ -61,7 +61,7 @@ CWD = os.getcwd()
 
 
 # Import my local code
-from FS_common import *
+from FS_commmon import *
 from get_matching_pictures import *
 
 
