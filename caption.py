@@ -28,21 +28,15 @@ else:
 #data = p.get_xml(filename)
 #print(data)
 
-
+# Extract all EXIF/XMP/IPTC from picture, seems to return a JSON structure as the first element of a list
 datalist = p.get_json(filename)
+# Get the first element of the list, which ends up being a JSON structure
 jsonExif = datalist[0]
-print "\n\n"
-print( json.dumps(jsonExif, sort_keys=True, indent=4, separators=(',', ': ')) )
-print "\n\n"
 
-json_string = '{"first_name": "Guido", "last_name":"Rossum"}'
-parsed_json = json.loads(json_string)
-print( json.dumps(parsed_json, sort_keys=True, indent=4, separators=(',', ': ')) )
-print "\n\n"
-print (parsed_json)
-print "\n\n"
-print (type (jsonExif))
-print (type (parsed_json))
+# Print out the entire JSON structure
+#print( json.dumps(jsonExif, sort_keys=True, indent=4, separators=(',', ': ')) )
+
+
 print (jsonExif['XMP:Description'])
 
 # ----------------------------------------------------- End ------------------------------------------
