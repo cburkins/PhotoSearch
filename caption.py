@@ -33,8 +33,8 @@ data = p.get_json(filename)
 print( json.dumps(data, sort_keys=True, indent=4, separators=(',', ': ')) )
 print "\n\n"
 
-parsedData = json.loads(data)
-print(parsedData['XMP:Description'])
+json_string = '{"first_name": "Guido", "last_name":"Rossum"}'
+print( json.dumps(json_string, sort_keys=True, indent=4, separators=(',', ': ')) )
 
 
 
