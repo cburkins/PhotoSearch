@@ -9,12 +9,13 @@ import argparse
 # import a local copy of pyexifinfo, which is just a wrapper for Phil Harvey's amazing EXIFTOOL
 # EXIFTOOL started out as maninpulating EXIF tags within JPG images, but can not do MUCH more
 # can read/write EXIF, IPTC, XMP, etc
-#LIBROOT = "/home3/cburkins/public_html/family/pictures/search/pyexifinfo/pyexifinfo"
+# This is our local working directory (current location)
 CWD = os.getcwd()
-LIBROOT = CWD + "/pyexifinfo/pyexifinfoo" 
+# Append the subdirectory for pyexifinfo
+LIBROOT = CWD + "/pyexifinfo/pyexifinfo" 
+# Add this to our library search path
 sys.path.insert(0, LIBROOT)
-
-#sys.path.insert(0, os.getcwd())
+# Import pyexifinfo library
 import pyexifinfo as pyexifinfo
 
 # --------------------------------------------------------------------------------------------------
