@@ -19,7 +19,7 @@ else:
     print "no such file"
 
 data = p.get_xml(filename)
-#print(data)
+print(data)
 
 
 #data = p.get_json(filename)
