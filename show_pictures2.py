@@ -194,11 +194,14 @@ print """
 """
 
 # Loop through matching images, and contrsuct HTML to support the Cycle jQuery tool
-# Pathname on the home linux machine (e.g. /mnt/ChadDocs)
+# Pathname on the home linux machine (e.g. /mnt/ChadDocs/My Webs/www.burkins.com/01 - Web Albums/Family Pics - Turtle - Production/album/Pictures 2000s)
 for imageHomeFile in matchingPictures:
         
-        # Pathname on the web server (e.g. http://www.burkins.com)
+        # Pathname on the web server (e.g. http://www.burkins.com/family/pictures/album/Pictures 2000s)
         imageWebURL = imageHomeFile.replace(SRC_PATH, DST_URL)
+
+        # /home3/cburkins/public_html/family/pictures/album/Pictures\ 2000s/
+        localPhotoFile = imageHomeFile.replace(SRC_PATH, Root)
 
         # keyword dictionary
         #      key : filename
@@ -239,8 +242,8 @@ for imageHomeFile in matchingPictures:
                 events = 'Unknown'
 
         # Get the photo description (caption) from the photo itself (i.e. open the file, and read metadata)
-        #descr = getPhotoTag(filename, "XMP:Description")
-        descr = "This is the photo descrioption"
+        descr = getPhotoTag(localPhotoFile, "XMP:Description")
+        #descr = "This is the photo descrioption"
 
         # Create a caption-line for each element, insert a span tag for CSS formatting
         captionYear = '<span class=caption-category>Year:</span> {0}'.format(year)
