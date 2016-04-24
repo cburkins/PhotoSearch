@@ -244,7 +244,7 @@ for imageHomeFile in matchingPictures:
         # Get the photo description (caption) from the photo itself (i.e. open the file, and read metadata)
         #descr = getPhotoTag(localPhotoFile, "XMP:Description")
         #descr = localPhotoFile
-        if not (os.path.isfile(filename)):
+        if not (os.path.isfile(localPhotoFile)):
                 descr = "File missing: {0}".format(localPhotoFile)
 
         # Create a caption-line for each element, insert a span tag for CSS formatting
