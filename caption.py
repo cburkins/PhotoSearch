@@ -18,12 +18,11 @@ import pyexifinfo as p
 
 import json
 
-filename = "/home3/cburkins/test.jpg"
+filename = "/home3/cburkins/test.jpgg"
 
-if os.path.isfile(filename):
-    print 'file exists: {0}'.format(filename) 
-else:
-    print "no such file"
+if not (os.path.isfile(filename)):
+    print 'file does NOT exist: {0}\n'.format(filename) 
+    sys.exit()
 
 #data = p.get_xml(filename)
 #print(data)
