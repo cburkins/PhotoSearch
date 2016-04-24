@@ -53,8 +53,13 @@ def getPhotoTag(filename, desiredTag):
 
 filename = "/home3/cburkins/test.jpg"
 tag = "XMP:Description"
-tagContents = getPhotoTag(filename, tag)
 
+# Get all photo tags and print them
+allTags = getPhotoAllTags(filename)
+print( json.dumps(data, sort_keys=True, indent=4, separators=(',', ': ')) )
+
+# Get a single EXIF/XMP tag from the picture, and print it
+tagContents = getPhotoTag(filename, tag)
 print "Tag Contents: {0}".format(tagContents)
 
 # ----------------------------------------------------- End ------------------------------------------
