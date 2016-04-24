@@ -13,7 +13,7 @@ import json
 
 filename = "/home3/cburkins/test.jpg"
 
-data = p.get_json(filename)
+#data = p.get_json(filename)
 # print( json.dumps(data, sort_keys=True, indent=4, separators=(',', ': ')) )
 
 
