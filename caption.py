@@ -57,7 +57,7 @@ print 'Number of arguments:', len(sys.argv), 'arguments.'
 print 'Argument List:', str(sys.argv)
 
 if (len(sys.argv) < 3):
-    print "Incorrect number of args, exiting..."
+    print "\n   Incorrect number of args, exiting...\n\n"
     sys.exit()
 
 
