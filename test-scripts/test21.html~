@@ -1,0 +1,25 @@
+
+<html>
+<head>
+
+<!-- Get the Font Awesome, used to arrow symbols in Next and Prev -->
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<!-- Get the external CSS sytle sheet -->
+<link rel="stylesheet" type="text/css" href="test19.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+  <div class="inside">
+    This is your div with the specified aspect ratio.
+  </div>
+</div>
+
+</body>
+
+</html>
+
+<!--  ================================================================================ -->
+<!--  ================================= End ========================================== -->
+<!--  ================================================================================ -->
