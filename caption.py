@@ -25,7 +25,7 @@ if os.path.isfile(filename):
 else:
     print "no such file"
 
-data = p.get_json(filename)
+data = p.get_xml(filename)
 print(data)
 
 
