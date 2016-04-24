@@ -249,8 +249,8 @@ for imageHomeFile in matchingPictures:
                 descr = "File missing: {0}".format(localPhotoFile)
         else:
                 descr = getPhotoTag(localPhotoFile, "XMP:Description")
-                #temp = descr.replace('\"', '&quot')
-                temp = descr.replace('just says', 'just really says')
+                temp = descr.replace('\"', '&quot')
+                #temp = descr.replace('just says', 'just really says')
                 descr = temp
 
 
