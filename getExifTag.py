@@ -51,6 +51,11 @@ def getPhotoTag(filename, desiredTag):
 
 # --------------------------------------------- Main -----------------------------------------------
 
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('--foo', help='foo help')
+args = parser.parse_args()
+
 # Verify that the number of command-line args is correct
 if (len(sys.argv) < 3):
     print "\n   Incorrect number of args, exiting...\n\n"
