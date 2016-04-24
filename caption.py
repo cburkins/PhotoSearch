@@ -1,8 +1,12 @@
-#!/usr/local/bin/python2.7
+#!/usr/local/bin/python
 
 import os
 import sys
 import cgi
+
+if sys.version_info < (2, 7):
+    raise "must use python 2.7 or greater"
+
 
 ROOT = "/home3/cburkins/public_html/family/pictures/search/pyexifinfo/pyexifinfo"
 sys.path.insert(0, ROOT)
