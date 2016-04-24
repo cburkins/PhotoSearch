@@ -5,7 +5,7 @@ import sys
 import cgi
 
 if sys.version_info < (2, 7):
-    print "\nmust use python 2.7 or greater\n"
+    print "\n   Must use python 2.7 or greater, exiting...\n"
     sys.exit()
 
 
