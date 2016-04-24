@@ -252,6 +252,7 @@ for imageHomeFile in matchingPictures:
 
 
         # Create a caption-line for each element, insert a span tag for CSS formatting
+        captionFilename = '<span class=caption-category>Filename:</span> {0}'.format(captionFilename)
         captionYear = '<span class=caption-category>Year:</span> {0}'.format(year)
         captionPeople = '<span class=caption-category>People:</span> {0}'.format(people)
         captionLocations = '<span class=caption-category>Location:</span> {0}'.format(locations)
