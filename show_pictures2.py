@@ -73,7 +73,6 @@ theform = cgi.FieldStorage()
 params = []
 search_list = []
 
-
 # Using hidden value passed via form, build a search dictionary (used later)
 # Keywords (People, Places, Events) are in one big list associated with the key "Keyword"
 # Parse through that list, and create seperate lists in a dictionary called "search_dictionary"
@@ -239,15 +238,20 @@ for imageHomeFile in matchingPictures:
         else:
                 events = 'Unknown'
 
+        # Get the photo description (caption) from the photo itself (i.e. open the file, and read metadata)
+        #descr = getPhotoTag(filename, "XMP:Description")
+        descr = "This is the photo descrioption"
+
         # Create a caption-line for each element, insert a span tag for CSS formatting
         captionYear = '<span class=caption-category>Year:</span> {0}'.format(year)
         captionPeople = '<span class=caption-category>People:</span> {0}'.format(people)
         captionLocations = '<span class=caption-category>Location:</span> {0}'.format(locations)
         captionEvents = '<span class=caption-category>Event:</span> {0}'.format(events)
+        captionDescr = '<span class=caption-category>Caption:</span> {0}'.format(descr)
         
         # Create the full multi-line title to be displayed in the overlay at the bottom of the picture
         # Use a single span so we can apply CSS, and insert line breaks
-        title = '<span class=caption>{0}<BR>{1}<BR>{2}<BR>{3}</span>'.format(captionYear, captionPeople, captionLocations, captionEvents)
+        title = '<span class=caption>{0}<BR>{1}<BR>{2}<BR>{3}<BR>{4}</span>'.format(captionYear, captionPeople, captionLocations, captionEvents, captionDescr)
     
         # Insert the complete HTML img tag for this picture into the slideshow <div>
         print '<img src="{0}", data-cycle-desc="{1}">'.format(imageWebURL, title)
