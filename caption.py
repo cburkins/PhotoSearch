@@ -56,6 +56,10 @@ def getPhotoTag(filename, desiredTag):
 print 'Number of arguments:', len(sys.argv), 'arguments.'
 print 'Argument List:', str(sys.argv)
 
+if (len(sys.argv) < 3):
+    print "Incorrect number of args, exiting..."
+    sys.exit()
+
 
 filename = "/home3/cburkins/test.jpg"
 tag = "XMP:Description"
