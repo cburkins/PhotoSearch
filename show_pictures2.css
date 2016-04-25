@@ -30,6 +30,7 @@ html body { background:black }
     border: 1px;
     border-style: solid;
     border-color: #ff0000 #0000ff;
+    color:white;
 }
 
 /* overlay at the bottom of the image, displays picture metadata */
