@@ -12,20 +12,20 @@
 
 
 
-.inside {
+.slideshow {
     width: 70%;
     height: 0;
     padding-bottom: 52.63%;
     background: teal;
     float:left;
 }
-.metadata {
+.overlay{
     width: 30%;
     background: grey;
     float:right;
 }
 
-.slidenum {
+.caption {
     position: fixed;
     bottom:0;
     right:0;
