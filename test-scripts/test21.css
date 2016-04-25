@@ -24,4 +24,6 @@
     max-width:100px;
     background: yellow;
     border: 1px;
+    border-style: solid;
+    border-color: #ff0000 #0000ff;
 }
