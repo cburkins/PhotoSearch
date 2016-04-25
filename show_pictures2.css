@@ -26,10 +26,8 @@ html body { background:black }
     position: fixed;
     bottom:0;
     right:0;
-    max-width:100px;
+    max-width:200px;
     border: 1px;
-    border-style: solid;
-    border-color: #ff0000 #0000ff;
     color:white;
 }
 
