@@ -18,6 +18,12 @@
     background: teal;
     margin-left: 0;
 }
+.metadata {
+    width: 30%;
+    border: 1px;
+    background: grey;
+    margin-right:0;
+}
 
 .slidenum {
     position: fixed;
