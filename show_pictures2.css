@@ -46,10 +46,11 @@ html body { background:black }
     padding:15px; padding-left:15%; padding-right:15%; 
 }
 */
-.cycle-caption {
+.cycle-overlay {
     width: 30%;
     background: grey;
     float:right;
+    color:white;
 }
 
 
