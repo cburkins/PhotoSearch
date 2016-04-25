@@ -272,8 +272,8 @@ for imageHomeFile in matchingPictures:
 
 # End of slideshow <div>
 print """
-</div>
 <div class="cycle-overlay"></div>
+</div>
 """
 
 # Enable the right-arrow and left-arrow keys to operate Next and Prev for the slideshow
