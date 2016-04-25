@@ -48,10 +48,9 @@ html body { background:black }
 */
 .cycle-overlay {
     position:fixed; top:0; right:0;
-    width: 30%;
+    width: 25%;
     background: black;
     color:white;
-    margin:20px;
 
 }
 
