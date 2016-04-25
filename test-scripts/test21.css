@@ -20,9 +20,11 @@
     float:left;
 }
 .metadata{
+    position:fixed;
     width: 30%;
     background: grey;
-    float:right;
+    top:0;
+    right:0;
 }
 
 .slidenum {
