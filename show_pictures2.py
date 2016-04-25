@@ -273,7 +273,6 @@ for imageHomeFile in matchingPictures:
 # End of slideshow <div>
 print """
 </div>
-<!-- empty elemen for overlay, CSS will place at bottom of picture -->
 <div class="cycle-overlay"></div>
 """
 
