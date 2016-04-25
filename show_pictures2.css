@@ -40,7 +40,7 @@ html body { background:black }
 /* width: is content only, does not include padding/margin */
 .cycle-overlay {
     position:fixed; top:0; right:0;
-    width: 28%;
+    width: 29%;
     background: black;
     border-style: solid;
     border-width: 1px;
