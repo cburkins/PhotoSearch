@@ -5,12 +5,21 @@ html body { background:black }
 
 /* Apply style elements to the cycle-slideshow class */
 /* Creating a div that stays at a specific aspect ratio, and consums much of the screen */
-.cycle-slideshow {
+/* .cycle-slideshow {
     width: 80%; height: 0;
     padding-bottom: 50%;
     background: black;
     margin: auto;
+} */
+
+.cycle-slideshow {
+    width: 70%; height: 0;
+    padding-bottom: 52.63%;
+    background: black;
+    float:left;
 }
+
+
 
 /* the image itself, within the div container.  Not actually a div container, just an image */
 /* we're actually selecting all img elements within class=cycle-slideshow */
@@ -20,8 +29,6 @@ html body { background:black }
 .caption-category { font-weight: bold; color: green; }
 
 /* caption - hold the picture count */
-/* .cycle-caption { position: absolute; color: white; bottom: 15px; right: 30px; z-index: 700; }
-*/
 .cycle-caption {
     position: fixed;
     bottom:0;
@@ -32,10 +39,17 @@ html body { background:black }
 }
 
 /* overlay at the bottom of the image, displays picture metadata */
-.cycle-overlay { 
+/* .cycle-overlay { 
     font-family: tahoma, arial; 
     position: absolute; bottom:0; left:0; right:0; width:80%; margin:auto;
     z-index:600; background:black; color:white; opacity:.5;
     padding:15px; padding-left:15%; padding-right:15%; 
 }
+*/
+.cycle-caption {
+    width: 30%;
+    background: grey;
+    float:right;
+}
+
 
