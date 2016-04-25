@@ -19,13 +19,13 @@
     background: teal;
     float:left;
 }
-.overlay{
+.metadata{
     width: 30%;
     background: grey;
     float:right;
 }
 
-.caption {
+.slidenum {
     position: fixed;
     bottom:0;
     right:0;
