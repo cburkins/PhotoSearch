@@ -10,7 +10,7 @@
 /* ratio 80% to 45% is really 80:45 or 16:9 */
 /* ratio 70% to 52.63% is 4:3 */
 
-.wrapper {
+.inside {
     width: 70%;
     height: 0;
     padding-bottom: 52.63%;
