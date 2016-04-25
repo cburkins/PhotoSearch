@@ -14,15 +14,13 @@
     width: 70%;
     height: 0;
     padding-bottom: 52.63%;
-    border: 1px;
     background: teal;
-    margin-left: 0;
+    float:left;
 }
 .metadata {
     width: 15%;
-    border: 1px;
     background: grey;
-    margin-right:0;
+    float:right;
 }
 
 .slidenum {
