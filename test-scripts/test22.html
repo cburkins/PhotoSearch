@@ -38,7 +38,7 @@
 </div>
 
 <br>
-<button onclick="bump()">Click Me</button> 
+<button onclick="bump()">Add 10% to Progress Bar</button> 
 <br>
 <div id=console>Console</div>
 
@@ -51,22 +51,6 @@ function setProgress() {
   elem.style.width = '10%'; 
 }
 
-function move() {
-  var div = document.getElementById("console");
-  var elem = document.getElementById("myBar");   
-  div.innerHTML = div.innerHTML + "<br>Width: " + elem.style.width;
-  var width = 10;
-  var id = setInterval(frame, 10);
-  function frame() {
-    if (width >= 100) {
-      clearInterval(id);
-    } else {
-      width++; 
-      elem.style.width = width + '%'; 
-      document.getElementById("label").innerHTML = width * 1  + '%';
-    }
-  }
-}
 
 function bump() {
   var console = document.getElementById("console");
@@ -81,6 +65,7 @@ function bump() {
   console.innerHTML = console.innerHTML + "<br>Old Width: " + old_width;
   console.innerHTML = console.innerHTML + "<br>New Width: " + new_width;
   
+  document.getElementById("label").innerHTML = new_width * 1  + '%';
   elem.style.width = new_width + '%'; 
 }
 </script>
