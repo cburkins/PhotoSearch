@@ -56,14 +56,10 @@ function bump() {
   var console = document.getElementById("console");
   var elem = document.getElementById("myBar");   
 
-  console.innerHTML = console.innerHTML + "<br>Width: " + elem.style.width;
-
-
   var old_width_string = elem.style.width;
   var old_width = Number(old_width_string.slice(0,-1));
   var new_width = old_width + 10;
-  console.innerHTML = console.innerHTML + "<br>Old Width: " + old_width;
-  console.innerHTML = console.innerHTML + "<br>New Width: " + new_width;
+  console.innerHTML = console.innerHTML + "<br>Old Width: " + old_width + ",  New Width: " + new_width;
   
   document.getElementById("label").innerHTML = new_width * 1  + '%';
   elem.style.width = new_width + '%'; 
