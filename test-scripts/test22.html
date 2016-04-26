@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html>
-<style>
-#myProgress {
-  position: relative;
-  width: 100%;
-  height: 30px;
-  background-color: #ddd;
-}
 
 #myBar {
   position: absolute;
@@ -31,5 +22,26 @@
   </div>
 </div>
 
+<br>
+<button onclick="move()">Click Me</button> 
+
+<script>
+function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 10;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      document.getElementById("label").innerHTML = width * 1  + '%';
+    }
+  }
+}
+</script>
+
 </body>
 </html>
+
