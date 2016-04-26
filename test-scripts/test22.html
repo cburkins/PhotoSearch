@@ -75,8 +75,9 @@ function bump() {
   console.innerHTML = console.innerHTML + "<br>Width: " + elem.style.width;
 
 
-  var old_width = elem.style.width;
-  var new_width = Number(old_width.slice(-1)) + 10;  
+  var old_width_string = elem.style.width;
+  var old_width = Number(old_width_string.slice(-1));
+  console.innerHTML = console.innerHTML + "<br>Old Width: " + old_width;
   console.innerHTML = console.innerHTML + "<br>New Width: " + new_width;
   console.innerHTML = console.innerHTML + "<br>Sliced: " + 10;
   
