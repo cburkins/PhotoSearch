@@ -46,9 +46,8 @@
 <script>
 function move() {
   var div = document.getElementById("console");
-  div.innerHTML = div.innerHTML + "New content<br>";
   var elem = document.getElementById("myBar");   
-  div.innerHTML = div.innerHTML + elem.style.width + "<br>";
+  div.innerHTML = div.innerHTML + "<br>Width: " + elem.style.width;
   var width = 10;
   var id = setInterval(frame, 10);
   function frame() {
