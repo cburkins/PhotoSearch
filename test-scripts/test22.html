@@ -38,7 +38,7 @@
 </div>
 
 <br>
-<button onclick="move()">Click Me</button> 
+<button onclick="bump()">Click Me</button> 
 <br>
 <div id=console>Console</div>
 
@@ -66,6 +66,17 @@ function move() {
       document.getElementById("label").innerHTML = width * 1  + '%';
     }
   }
+}
+
+function bump() {
+  var console = document.getElementById("console");
+  var elem = document.getElementById("myBar");   
+  console.innerHTML = console.innerHTML + "<br>Width: " + elem.style.width;
+
+
+  var old_width = elem.style.width.slice(-1);
+  var new_width = Number(old_width) + 10;  
+  elem.style.width = new_width + '%'; 
 }
 </script>
 
