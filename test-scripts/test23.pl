@@ -1,4 +1,5 @@
 #!/usr/local/bin/perl
+#!/usr/bin/perl
 $|=1;
 print '<header>'; # placeholder for your whole HTML header block
 print '<span id=Progress>Working...</span>';
@@ -6,19 +7,19 @@ print '<footer>'; # placeholder for the rest of your document until but without 
 sleep 1; # Something is done here
 print <<_EOT_;
 <script language=JavaScript type=text/javascript><!--
-document.getElementById('Progress').innerHTML='Still working...';
+    document.getElementById('Progress').innerHTML='Still working...';
 //--></script>
 _EOT_
-sleep 1; # Something is done here
+    sleep 1; # Something is done here
 print <<_EOT_;
 <script language=JavaScript type=text/javascript><!--
-document.getElementById('Progress').innerHTML='Sorry, still not finished...';
+    document.getElementById('Progress').innerHTML='Sorry, still not finished...';
 //--></script>
 _EOT_
-sleep 1; # Something is done here
+    sleep 1; # Something is done here
 print <<_EOT_;
 <script language=JavaScript type=text/javascript><!--
-document.getElementById('Progress').style.display='none';
+    document.getElementById('Progress').style.display='none';
 //--></script>
 _EOT_
-print '</body></html>'; # Page finished
+    print '</body></html>'; # Page finished
