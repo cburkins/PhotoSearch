@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/local/bin/perl
 $|=1;
 print '<header>'; # placeholder for your whole HTML header block
 print '<span id=Progress>Working...</span>';
