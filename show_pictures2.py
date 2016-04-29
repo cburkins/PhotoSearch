@@ -170,7 +170,7 @@ print """
 <head>
 <title>Family Search</title>
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="show_pictures2.css?version=1.11">
+<link rel="stylesheet" type="text/css" href="show_pictures2.css?version=1.12">
 </head>
 """
 
