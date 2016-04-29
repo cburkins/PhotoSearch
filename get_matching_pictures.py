@@ -296,7 +296,7 @@ if __name__ == "__main__":
 	search_dictionary={}
         search_dictionary = dictionary_list_push('Chad Burkins', 'People', search_dictionary)
         search_dictionary = dictionary_list_push('Tom Burkins', 'People', search_dictionary)
-        search_dictionary = dictionary_list_push('1970', 'Years', search_dictionary)
+        search_dictionary = dictionary_list_push('1972', 'Years', search_dictionary)
         print "\nsearch_dictionary\n-------------------\n{0}".format(search_dictionary)
 
         # Slim down list of pictures to those that have all matching keywords (that were given in search form by users)
