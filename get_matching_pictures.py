@@ -262,6 +262,7 @@ if __name__ == "__main__":
 
         # Import system libs
         import argparse
+        from FS_common import *
 
         # Create a command-line args parser
         parser = argparse.ArgumentParser()
