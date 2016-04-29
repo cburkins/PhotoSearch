@@ -14,7 +14,9 @@ def get_matching_pictures_category (category, search_dictionary, pictures_dictio
 	#    Ratings : list of all the requested events
 	
 
-	# The keyword dictionary has a dictionary for each picture, that dictionary has several lists
+	# The pictures_dictionary 
+        #  Key: picture filename
+        #  Value: Dictionary using Keyword Category for key and value is a list of keywords
 	#    P : List of people in that picture
 	#    L : List of locations in that picture
 	#    E : List of events in that picture
@@ -36,7 +38,7 @@ def get_matching_pictures_category (category, search_dictionary, pictures_dictio
 		# Look through each search term
 		for search_term in search_list:
 		
-			matching_keyword_dictionary = {}
+                        matching_keyword_dictionary = {}
 	
 			# Loop through each filename in the available pictures
 			for filename in list(pictures_dictionary.keys()):
