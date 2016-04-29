@@ -67,7 +67,11 @@ search_list = []
 # -------------------------------------- Main  ------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------
 
+# Read HTML form from standard input, and put into a dictionary
 theform = cgi.FieldStorage()
+
+print "type of theform: {0}".format(type(theform))
+sys.exit()
 
 params = []
 search_list = []
