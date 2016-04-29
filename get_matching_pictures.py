@@ -291,6 +291,8 @@ if __name__ == "__main__":
         # Parses the static Image_Metadata file (which has one line per picture)
         # Pathname of each pic is the local path on my Linux machine at home (e.g. /mnt/ChadDocs/My Webs/www.burkins.com/)
         keyword_dictionary = get_keyword_dictionary(Image_Metadata)
+        print "Size of Keyword Dictionary: {0} lines".format(len(keyword_dictionary))
+
 	
         # Slim down list of pictures to those that have all matching keywords (that were given in search form by users)
         #matchingPictures = get_matching_pictures_advanced(search_dictionary, keyword_dictionary)
