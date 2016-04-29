@@ -255,7 +255,7 @@ for imageHomeFile in matchingPictures:
                 descr = getPhotoTag(localPhotoFile, "XMP:Description")
                 print "descr type: {0}".format(type(descr))
                 if type(descr) is int:
-                        descr = str(int)
+                        descr = str(descr)
                 temp = descr.encode('utf-8')
                 descr = temp
                 #.encode('utf-8')
