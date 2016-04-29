@@ -303,9 +303,12 @@ if __name__ == "__main__":
         matchingPictures = get_matching_pictures_advanced(search_dictionary, keyword_dictionary)
 
         if args.verbose:
-                for key,value in matchingPictures.items():
-                        print "{0}".format(key)
-                        #filename_year_hash[key] = value['Y'][0];
+                for filename in matchingPictures:
+                        print "{0}".format(filename)
+
+#                for key,value in matchingPictures.items():
+#                        print "{0}".format(key)
+#                        #filename_year_hash[key] = value['Y'][0];
 
         print "Size of Matching Dictionary: {0} lines".format(len(matchingPictures))
 
