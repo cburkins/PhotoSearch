@@ -75,6 +75,7 @@ def get_matching_pictures_category (category, search_dictionary, pictures_dictio
 
 					# One at a time, compare each keyword (for this picture) against our search term
 					if (keyword.lower().rfind(search_term.lower()) >= 0):
+                                                # Add this picture to our dict of matching pics
 						matching_keyword_dictionary[filename] = filename_dictionary
 
 
@@ -107,8 +108,6 @@ def get_matching_pictures_category_orig (category, search_dictionary, pictures_d
 	
 	
 	# This will eventually hold a list of all filenames that match up against the search dictionary
-	matching_filenames = [];
-			
 	matching_keyword_dictionary = {};
 	
 	# Make sure that the search dictionary actually contains the requested category, if not, we just exit
