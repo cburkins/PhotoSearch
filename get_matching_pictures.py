@@ -259,32 +259,41 @@ def get_matching_pictures_advanced (search_dictionary, pictures_dictionary):
 
 if __name__ == "__main__":
 
-    # Import system libs
-    import argparse
+        # Import system libs
+        import argparse
 
-    # Create a command-line args parser
-    parser = argparse.ArgumentParser()
-    # Add a mandatory positional argument to get the filename
-    parser.add_argument("filename", help="JPG filename to parse for tags")
-    # Add an optional argument to get the desired tag
-    parser.add_argument("-t", "--tag", action='store', dest='tag', help="Destired EXIF/XMP tag. If omitted, show all tags")
-    # Add an optional flag for verbose output
-    parser.add_argument("-v", "--verbose", action="store_true", help="increase output verbosity") 
+        # Create a command-line args parser
+        parser = argparse.ArgumentParser()
+        # Add a mandatory positional argument to get the filename
+        parser.add_argument("filename", help="JPG filename to parse for tags")
+        # Add an optional argument to get the desired tag
+        parser.add_argument("-t", "--tag", action='store', dest='tag', help="Destired EXIF/XMP tag. If omitted, show all tags")
+        # Add an optional flag for verbose output
+        parser.add_argument("-v", "--verbose", action="store_true", help="increase output verbosity") 
 
-    # Parse the given command-line args.  If illegal args are passed, then program exits here
-    # NOTE: Unless told otherwise, argparse always treats arguments as strings
-    args = parser.parse_args()
-    # User gave correct command-line args
-    filename = args.filename
-    tag = args.tag
+        # Parse the given command-line args.  If illegal args are passed, then program exits here
+        # NOTE: Unless told otherwise, argparse always treats arguments as strings
+        args = parser.parse_args()
+        # User gave correct command-line args
+        filename = args.filename
+        tag = args.tag
     
-    if args.verbose:
-        print "verbosity turned on"
-        
-    if args.verbose:
-        print "Filename: {0}".format(filename)
-        print "Desired tag: {0}".format(tag)
-            
+        if args.verbose:
+                print "verbosity turned on"
+	
+        if args.verbose:
+                print "Filename: {0}".format(filename)
+                print "Desired tag: {0}".format(tag)
+	    
+        # Get the dictionary of all keywords in my pictures (this is a big dictionary)
+        # Parses the static Image_Metadata file (which has one line per picture)
+        # Pathname of each pic is the local path on my Linux machine at home (e.g. /mnt/ChadDocs/My Webs/www.burkins.com/)
+        #keyword_dictionary = get_keyword_dictionary(Image_Metadata)
+	
+        # Slim down list of pictures to those that have all matching keywords (that were given in search form by users)
+        #matchingPictures = get_matching_pictures_advanced(search_dictionary, keyword_dictionary)
+
+
 # End of Main
 
 
