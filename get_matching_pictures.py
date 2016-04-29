@@ -302,8 +302,12 @@ if __name__ == "__main__":
         # Slim down list of pictures to those that have all matching keywords (that were given in search form by users)
         matchingPictures = get_matching_pictures_advanced(search_dictionary, keyword_dictionary)
 
-        print "Size of Matching Dictionary: {0} lines".format(len(matchingPictures))
+        if args.verbose:
+                for key,value in matchingPictures.items():
+                        print "{0}".format(key)
+                        #filename_year_hash[key] = value['Y'][0];
 
+        print "Size of Matching Dictionary: {0} lines".format(len(matchingPictures))
 
 
 # End of Main
