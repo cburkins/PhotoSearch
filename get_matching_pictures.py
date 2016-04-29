@@ -298,7 +298,10 @@ if __name__ == "__main__":
         print "\nsearch_dictionary\n-------------------\n{0}".format(search_dictionary)
 
         # Slim down list of pictures to those that have all matching keywords (that were given in search form by users)
-        #matchingPictures = get_matching_pictures_advanced(search_dictionary, keyword_dictionary)
+        matchingPictures = get_matching_pictures_advanced(search_dictionary, keyword_dictionary)
+
+        print "Size of Matching Dictionary: {0} lines".format(len(matchingPictures))
+
 
 
 # End of Main
