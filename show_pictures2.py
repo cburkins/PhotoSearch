@@ -251,8 +251,9 @@ for imageHomeFile in matchingPictures:
                 descr = "File missing: {0}".format(localPhotoFile)
         else:
                 descr = getPhotoTag(localPhotoFile, "XMP:Description")
+                if descr is None: descr="No caption"
+                # Replace double-quotes with HTML-friendly version of same
                 temp = descr.replace('\"', '&quot')
-                #temp = descr.replace('just says', 'just really says')
                 descr = temp
         descr="Test Description"
 
