@@ -16,9 +16,6 @@ html body { background:black }
 /* .cycle-slideshow img { max-height: 100%; max-width: 100%; opacity: 0; filter:alpha(opacity=0); } */
 .cycle-slideshow img { height: 100%; opacity: 0; filter:alpha(opacity=0); } 
 
-/* the span tag for the label for each line within the caption (e.g. People: ) */
-.caption-category { font-weight: bold; color: green; }
-
 /* caption in lower-right - hold the picture count */
 .cycle-caption {
     position: fixed;
@@ -40,5 +37,8 @@ html body { background:black }
     padding: 10px;
     font-size: 140%;
 }
+
+/* the span tag for the label for each line within the caption (e.g. People: ) */
+.caption-category { font-weight: bold; color: green; font-size: 140%; }
 
 
