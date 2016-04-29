@@ -149,7 +149,7 @@ for keyword in keyword_list:
 
 
 # Get the dictionary of all keywords in my pictures (this is a big dictionary)
-# This does NOT query each image, it just parses the static Image_Metadata file (which has one line per picture)
+# Parses the static Image_Metadata file (which has one line per picture)
 # Pathname of each pic is the local path on my Linux machine at home (e.g. /mnt/ChadDocs/My Webs/www.burkins.com/)
 keyword_dictionary = get_keyword_dictionary(Image_Metadata)
 	
