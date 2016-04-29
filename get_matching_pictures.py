@@ -4,22 +4,6 @@ from dictionary_list_push import *
 from get_keyword_dictionary import *
 
 
-# ----------------------------------------------------------------------
-
-def get_matching_pictures_deleteme(search_list, keyword_dictionary):
-
-	# search_list         = list of keywords to look for in metadata
-	# keyword_dictionary  = data dictionary, one entry for each picture, lists all keywords
-
-	matching_filenames = []	
-	
-	# Look for people keywords
-	for filename in list(keyword_dictionary.keys()):
-		if set([x.lower() for x in search_list]).issubset(set([x.lower() for x in keyword_dictionary[filename]])):
-			matching_filenames.append(filename)
-
-	return matching_filenames
-	
 # --------------------------------------------------------------------------
 def get_matching_pictures_category (category, search_dictionary, pictures_dictionary):
 
@@ -30,7 +14,7 @@ def get_matching_pictures_category (category, search_dictionary, pictures_dictio
 	#    Ratings : list of all the requested events
 	
 
-	# The keyword dictionary has several lists for each picture, with keys as follows
+	# The keyword dictionary has a dictionary for each picture, that dictionary has several lists
 	#    P : List of people in that picture
 	#    L : List of locations in that picture
 	#    E : List of events in that picture
@@ -54,7 +38,7 @@ def get_matching_pictures_category (category, search_dictionary, pictures_dictio
 		
 			matching_keyword_dictionary = {}
 	
-			# Loop through each filename
+			# Loop through each filename in the available pictures
 			for filename in list(pictures_dictionary.keys()):
 
 				# Get dictionary for just this one picture
@@ -101,31 +85,36 @@ def get_matching_pictures_category (category, search_dictionary, pictures_dictio
 
 def get_matching_pictures_advanced (search_dictionary, pictures_dictionary):
 
+        # Function starts with "pictures_dictionary" which contains a large number of pictures
+        # It then slims down that "pictures_dictionary" using desired search terms from "search_dictionary"
 
+
+        # Slim down the available pics based on desired People
 	pictures_dictionary = get_matching_pictures_category ("People", search_dictionary, pictures_dictionary)
 
+        # Slim down the available pics based on desired Events
 	pictures_dictionary = get_matching_pictures_category ("Events", search_dictionary, pictures_dictionary)
 
+        # Slim down the available pics based on desired Locations
 	pictures_dictionary = get_matching_pictures_category ("Locations", search_dictionary, pictures_dictionary)
 
+        # Slim down the available pics based on desired Artists
 	pictures_dictionary = get_matching_pictures_category ("Artists", search_dictionary, pictures_dictionary)
 
 	
+        # Slim down the available pics based on desired Ratings
 	# Handling a range of ratings is tricky.  We need to make a separate call for each rating, and add them up
+        # Ah, the trick is that the desired range of Ratings is actually a logical Or, rather than a logical And (like People)
 	category="Ratings";
 	if (category in search_dictionary):
 		search_list = search_dictionary[category];
 		desired_rating = search_list[0];
-		sys.stderr.write(desired_rating + "\n");
 		if (len(desired_rating) == 3):
 			# We're dealing with a range of ratings (e.g. 3-5, see, it's got 3 characters in the string)
 			first_rating = desired_rating[0:1]
 			last_rating = desired_rating[2:3]
-			sys.stderr.write("First rating = " + first_rating + "\n");
-			sys.stderr.write("Last rating = " + last_rating + "\n");
 			temp_dict = {};
 			for rating in range(int(first_rating), int(last_rating) + 1):
-				sys.stderr.write(str(rating) + "\n")
 				search_dictionary[category] = [str(rating)];
 				
 				# Call search for just this one rating, but then concatenate these results to all the other results using update method of dictionary
