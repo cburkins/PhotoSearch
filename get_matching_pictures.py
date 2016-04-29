@@ -1,7 +1,7 @@
 #!/usr/local/bin/python2.7
 
 import sys
-from dictionary_list_push import *
+#from dictionary_list_push import *
 from get_keyword_dictionary import *
 
 
