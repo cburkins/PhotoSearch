@@ -1,4 +1,4 @@
-#!/usr/local/bin/perl
+#!/usr/local/bin/python2.7
 
 import sys
 from dictionary_list_push import *
