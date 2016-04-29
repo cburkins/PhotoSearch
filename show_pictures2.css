@@ -27,6 +27,7 @@ html body { background:black }
     max-width:200px;
     border: 1px;
     color:white;
+    font-size: 140%;
 }
 /* metadata on right */
 /* position:fixed means width% is now relative to viewport rather than parent */
