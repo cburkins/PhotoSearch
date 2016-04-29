@@ -254,7 +254,7 @@ for imageHomeFile in matchingPictures:
                 temp = descr.replace('\"', '&quot')
                 #temp = descr.replace('just says', 'just really says')
                 descr = temp
-
+        descr="Test Description"
 
         # Create a caption-line for each element, insert a span tag for CSS formatting
         captionFilename = '<span class=caption-category>Filename:</span> {0}'.format(shortFilename)
