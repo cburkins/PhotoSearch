@@ -250,7 +250,9 @@ for imageHomeFile in matchingPictures:
         if not (os.path.isfile(localPhotoFile)):
                 descr = "File missing: {0}".format(localPhotoFile)
         else:
-                descr = getPhotoTag(localPhotoFile, "XMP:Description").encode('utf-8')
+                # Get the photo's caption, and convert to string by encoding with utf-8 character set
+                # Could use str() instead, but that sometimes fails with error if it can't encode correctly
+                descr = str(getPhotoTag(localPhotoFile, "XMP:Description")).encode('utf-8')
                 if descr is None:
                         descr="No caption" 
                 # Replace double-quotes with HTML-friendly version of same
