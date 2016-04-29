@@ -15,7 +15,7 @@ html body { background:black }
 .cycle-slideshow {
     width: 70%; height: 0;
     padding-bottom: 52.63%;
-    background: black;
+    background: yellow;
     float:left;
 }
 
