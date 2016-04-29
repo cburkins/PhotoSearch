@@ -256,7 +256,6 @@ for imageHomeFile in matchingPictures:
                 # Replace double-quotes with HTML-friendly version of same
                 temp = descr.replace('\"', '&quot')
                 descr = temp
-        descr="Test Description"
 
         # Create a caption-line for each element, insert a span tag for CSS formatting
         captionFilename = '<span class=caption-category>Filename:</span> {0}'.format(shortFilename)
