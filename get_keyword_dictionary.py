@@ -5,10 +5,6 @@ from dictionary_list_push import *
 
 def get_keyword_dictionary(Image_Metadata):
 
-	# old keyword dictionary
-	#     key : filename
-	#     value : list of keywords
-	#
 	# new keyword dictionary
 	#      key : filename
 	#      value : dictionary

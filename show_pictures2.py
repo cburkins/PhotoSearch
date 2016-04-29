@@ -25,7 +25,6 @@
 #
 # Output : 
 # - Produces an HTML file which calls the jQuery Cycle2 plugin
-# - Pretty sure there's a separate line for each photo, need to verify that
 #
 # Dependencies :
 # - JQuery library : http://www.burkins.com/family/pictures/search/jquery-1.10.2.min.js
@@ -74,20 +73,25 @@ params = []
 search_list = []
 
 # Using hidden value passed via form, build a search dictionary (used later)
-# Keywords (People, Places, Events) are in one big list associated with the key "Keyword"
-# Parse through that list, and create seperate lists in a dictionary called "search_dictionary"
+# Desired Keywords (e.g. People, Places, Events) are in one big list associated with the key "Keyword"
 # Careful, if there's only one term, it's a string, if more than one, it's a list.  
 # Need a list for next section of code, so if needed, convert single item to a list
+
+# From the HTML form, get value from the key "Keyword"
 keyword_item = theform.getvalue("Keyword");
+
 if (isinstance(keyword_item, str)):
+        # Convert single item to a list
 	keyword_list = [keyword_item]
 else:
+        # multiple desired keywords, so just copy the list
 	keyword_list = keyword_item;
 	
 
-# Clear the search dictionary	
+# Initialize the search dictionary to be the empty dictionary	
 search_dictionary = {}
 
+# Parse through desired keyword list, and create seperate lists in a dictionary called "search_dictionary"
 # Construct the search_dictionary (contains the keywords that we're searching for)
 # L = Location
 # E = Event
@@ -95,7 +99,8 @@ search_dictionary = {}
 # R = Rating
 # A = Artist
 # Everything else is a person
-	
+
+# Loop through desired keywords	
 for keyword in keyword_list:
 	
 	if (keyword.startswith("L:")):
