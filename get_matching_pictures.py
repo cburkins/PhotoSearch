@@ -294,7 +294,7 @@ if __name__ == "__main__":
         print "Size of Keyword Dictionary: {0} lines".format(len(keyword_dictionary))
 
 	search_dictionary={}
-        search_dictionary = dictionary_list_push(keyword, 'Locations', search_dictionary)
+        search_dictionary = dictionary_list_push('Chad Burkins', 'People', search_dictionary)
         print "\nsearch_dictionary\n-------------------\n{0}".format(search_sectionary)
 
         # Slim down list of pictures to those that have all matching keywords (that were given in search form by users)
