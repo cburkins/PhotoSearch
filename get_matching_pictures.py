@@ -6,7 +6,7 @@ from get_keyword_dictionary import *
 
 # ----------------------------------------------------------------------
 
-def get_matching_pictures(search_list, keyword_dictionary):
+def get_matching_pictures_deleteme(search_list, keyword_dictionary):
 
 	# search_list         = list of keywords to look for in metadata
 	# keyword_dictionary  = data dictionary, one entry for each picture, lists all keywords
