@@ -250,7 +250,7 @@ for imageHomeFile in matchingPictures:
         if not (os.path.isfile(localPhotoFile)):
                 descr = "File missing: {0}".format(localPhotoFile)
         else:
-                descr = getPhotoTag(localPhotoFile, "XMP:Description")
+                descr = str(getPhotoTag(localPhotoFile, "XMP:Description"))
                 if descr is None:
                         descr="No caption" 
                 else: 
