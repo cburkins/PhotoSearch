@@ -252,7 +252,11 @@ for imageHomeFile in matchingPictures:
         else:
                 # Get the photo's caption, and convert to string by encoding with utf-8 character set
                 # Could use str() instead, but that sometimes fails with error if it can't encode correctly
-                descr = str(getPhotoTag(localPhotoFile, "XMP:Description")).encode('utf-8')
+                descr = getPhotoTag(localPhotoFile, "XMP:Description")
+                print "descr type: {0}".format(type(descr))
+                temp = descr.encode('utf-8')
+                descr = temp
+                #.encode('utf-8')
                 if descr is None:
                         descr="No caption" 
                 # Replace double-quotes with HTML-friendly version of same
