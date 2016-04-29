@@ -21,7 +21,7 @@ html body { background:black }
 
 /* the image itself, within the div container.  Not actually a div container, just an image */
 /* we're actually selecting all img elements within class=cycle-slideshow */
-.cycle-slideshow img { width: auto; height: 100%; opacity: 0; filter:alpha(opacity=0); }
+.cycle-slideshow img { width: 100%; height: auto; opacity: 0; filter:alpha(opacity=0); }
 
 /* the span tag for the label for each line within the caption (e.g. People: ) */
 .caption-category { font-weight: bold; color: green; }
