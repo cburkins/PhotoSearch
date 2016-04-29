@@ -68,10 +68,8 @@ search_list = []
 # ---------------------------------------------------------------------------------------------------
 
 # Read HTML form from standard input, and put into a dictionary
+# returns a variable of type "instance"
 theform = cgi.FieldStorage()
-
-print "type of theform: {0}".format(type(theform))
-sys.exit()
 
 params = []
 search_list = []
@@ -81,14 +79,14 @@ search_list = []
 # Careful, if there's only one term, it's a string, if more than one, it's a list.  
 # Need a list for next section of code, so if needed, convert single item to a list
 
-# From the HTML form, get value from the key "Keyword"
+# From the HTML form, get value from the field "Keyword"
 keyword_item = theform.getvalue("Keyword");
 
 if (isinstance(keyword_item, str)):
         # Convert single item to a list
 	keyword_list = [keyword_item]
 else:
-        # multiple desired keywords, so just copy the list
+        # it's a list, so multiple desired keywords, so just copy the list
 	keyword_list = keyword_item;
 	
 
