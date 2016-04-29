@@ -1,7 +1,6 @@
 #!/usr/local/bin/python2.7
 
 import sys
-#from dictionary_list_push import *
 from get_keyword_dictionary import *
 
 
@@ -263,6 +262,7 @@ if __name__ == "__main__":
         # Import system libs
         import argparse
         from FS_common import *
+        from dictionary_list_push import *
 
         # Create a command-line args parser
         parser = argparse.ArgumentParser()
@@ -293,7 +293,10 @@ if __name__ == "__main__":
         keyword_dictionary = get_keyword_dictionary(Image_Metadata)
         print "Size of Keyword Dictionary: {0} lines".format(len(keyword_dictionary))
 
-	
+	search_dictionary={}
+        search_dictionary = dictionary_list_push(keyword, 'Locations', search_dictionary)
+        print "\nsearch_dictionary\n-------------------\n{0}".format(search_sectionary)
+
         # Slim down list of pictures to those that have all matching keywords (that were given in search form by users)
         #matchingPictures = get_matching_pictures_advanced(search_dictionary, keyword_dictionary)
 
