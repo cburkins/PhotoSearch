@@ -1,3 +1,4 @@
+#!/usr/local/bin/perl
 
 import sys
 from dictionary_list_push import *
