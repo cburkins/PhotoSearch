@@ -251,7 +251,7 @@ for imageHomeFile in matchingPictures:
                 descr = "File missing: {0}".format(localPhotoFile)
         else:
                 descr = getPhotoTag(localPhotoFile, "XMP:Description")
-                if descr is None: descr="No caption"
+                if descr is None: descr="No caption" else: print "descr: {0}".format(descr)
                 # Replace double-quotes with HTML-friendly version of same
                 temp = descr.replace('\"', '&quot')
                 descr = temp
