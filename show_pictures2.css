@@ -23,6 +23,7 @@ html body { background:black }
     height: 100%;
     border-style: solid; border-width: 2px; border-color: red;
     object-fit: contain;
+    padding:15px;
 } 
 
 /* Pic count x of y - in lower right */
