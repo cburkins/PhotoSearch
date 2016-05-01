@@ -17,7 +17,8 @@ html body { background:black }
 /* we're actually selecting all img elements within class=cycle-slideshow */
 
 /* .cycle-slideshow img { max-height: 100%; max-width: 100%; opacity: 0; filter:alpha(opacity=0); } */
-.cycle-slideshow img { height: 100%; opacity: 0; filter:alpha(opacity=0); } 
+/* .cycle-slideshow img { height: 100%; opacity: 0; filter:alpha(opacity=0); } */
+.cycle-slideshow img { opacity: 0; filter:alpha(opacity=0); } 
 
 /* Pic count x of y - in lower right */
 .cycle-caption {
