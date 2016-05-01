@@ -19,7 +19,7 @@ html body { background:black }
 /* .cycle-slideshow img { max-height: 100%; max-width: 100%; opacity: 0; filter:alpha(opacity=0); } */
 /* .cycle-slideshow img { height: 100%; opacity: 0; filter:alpha(opacity=0); } */
 .cycle-slideshow img { 
-    max-width: 100%; 
+    max-width: 130%; 
     max-height: 100%;
     width: auto;
     height: auto; 
