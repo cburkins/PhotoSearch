@@ -18,7 +18,12 @@ html body { background:black }
 
 /* .cycle-slideshow img { max-height: 100%; max-width: 100%; opacity: 0; filter:alpha(opacity=0); } */
 /* .cycle-slideshow img { height: 100%; opacity: 0; filter:alpha(opacity=0); } */
-.cycle-slideshow img { height: auto; max-width: 100%; opacity: 0; filter:alpha(opacity=0); } 
+.cycle-slideshow img { 
+    height: auto; max-width: 100%; 
+    opacity: 0; filter:alpha(opacity=0);
+    border-style: solid; border-width: 2px; border-color: white;
+
+} 
 
 /* Pic count x of y - in lower right */
 .cycle-caption {
