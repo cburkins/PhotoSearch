@@ -6,18 +6,13 @@ html body { background:black }
 /* contains the image slideshow  */
 .cycle-slideshow {
     width: 70%; height: 100%;
-   /*  padding-bottom: 52.63%;  */
     float:left;
     box-sizing: border-box;
     border-style: solid; border-width: 2px; border-color: white;
-    /* background: yellow; */
 }
 
 /* the image itself, within the div container.  Not actually a div container, just an image */
 /* we're actually selecting all img elements within class=cycle-slideshow */
-/*     opacity: 0; 
-    filter:alpha(opacity=0);
-*/
 .cycle-slideshow img { 
     width: 100%; 
     height: 100%;
@@ -49,7 +44,6 @@ html body { background:black }
     padding: 10px;
     font-size: 140%;
     box-sizing: border-box;
-
 }
 
 /* the span tag for the label for each line within the caption (e.g. People: ) */
