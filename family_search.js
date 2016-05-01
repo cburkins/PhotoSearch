@@ -1,6 +1,6 @@
 
 // var SearchRoot = "http://www.burkins.com/family/pictures/search/";
-var SearchRoot = "http://burkins.com/family/pictures/search/";
+var SearchRoot = "http://www.burkins.com/family/pictures/search/";
 
 // ----------------------------------------------------------------------------
 
