@@ -9,7 +9,7 @@ html body { background:black }
     padding-bottom: 52.63%;
     float:left;
     box-sizing: border-box;
-    /* border-style: solid; border-width: 2px; border-color: white; */
+    border-style: solid; border-width: 2px; border-color: white;
     /* background: yellow; */
 }
 
