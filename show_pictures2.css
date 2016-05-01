@@ -39,7 +39,7 @@ html body { background:black }
     color:white;
     padding: 10px;
     font-size: 140%;
-    margin: 2px;
+    margin: 5px;
 }
 
 /* the span tag for the label for each line within the caption (e.g. People: ) */
