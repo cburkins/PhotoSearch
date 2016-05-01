@@ -164,7 +164,8 @@ matchingPictures = get_matching_pictures_advanced(search_dictionary, keyword_dic
 # --------- Start of form ---------
 # ---------------------------------
 
-# Create the HTML header, get Font Awesome, get the local external CSS style sheet	
+# Create the HTML header, get Font Awesome, get the local external CSS style sheet
+# The CSS version is just a trick to force the browser to load CSS when I change that file	
 print """
 <html>
 <head>
