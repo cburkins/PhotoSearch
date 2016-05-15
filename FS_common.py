@@ -14,7 +14,7 @@ DST_URL = 'http://www.burkins.com/family/pictures/'
 # The local directory on webserver for key MetaData files
 Root = '/home3/cburkins/public_html/family/pictures/'
 Image_Metadata = Root + 'album/Image_Metadatav2'
-KM_Keyword_Cache = Root + 'album/.KM_keyword_cache'
+KM_Keyword_Cache = Root + 'album/KM_keyword_cache.txt'
 
 # --------------------------------------------------------------------------
 
