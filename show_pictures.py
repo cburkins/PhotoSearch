@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/local/bin/python2.7
 
 # ------------------------------------------------------------------------
 # Basic Description : This module gets called with a list of keywords,
@@ -24,8 +24,7 @@
 # - Display them with a JQuery applet called Cycle
 #
 # Output : 
-# - Produces an HTML file
-# - Pretty sure there's a separate line for each photo, need to verify that
+# - Produces an HTML file which calls the jQuery Cycle2 plugin
 #
 # Dependencies :
 # - JQuery library : http://www.burkins.com/family/pictures/search/jquery-1.10.2.min.js
@@ -51,93 +50,50 @@ import os
 import sys
 import cgi
 
-ROOT = "/home3/cburkins/public_html/cgi-bin/site-packages"
-sys.path.insert(0, ROOT)
-from PIL import Image
-
-ROOT = "/home3/cburkins/public_html/family/search"
-sys.path.insert(0, ROOT)
-
-# Import my local code
+# Import my local code (which is located in the same directory as this script)
+# Needs a file called FS_common.py
 from FS_common import *
-
+# Needs a file called get_matching_pictures.py
 from get_matching_pictures import *
-
+# Needs a file called getPhotoTag
+from getPhotoTag import *
 
 # ------------------------------------------------------------------------
 
 fileList = []
 search_list = []
-max_width = 800
-max_height = 600
-
-# ---------------------------------------------------------------------------------------------------
-
-# Get pixel dimensions of a picture
-
-def get_dimensions(filepath):
-    width, height = Image.open(open(filepath)).size
-    return width,height
-
-# ---------------------------------------------------------------------------------------------------
-
-# Given a max width and height, scale a picture to be contained inside that
-
-def scale_dimensions(width, height, max_width, max_height):
-
-    new_width = width * (max_height / float(height))
-    new_height = max_height
-
-    if (new_width > max_width):
-        new_width = max_width
-        new_height = height * (max_width / float(width))
-
-    return int(new_width), int(new_height)
 
 # ---------------------------------------------------------------------------------------------------
 # -------------------------------------- Main  ------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------
 
+# Read HTML form from standard input, and put into a dictionary
+# returns a variable of type "instance"
 theform = cgi.FieldStorage()
 
 params = []
 search_list = []
 
-
-# Set the default picture size (can be overridden in user-submitted form)
-picsize = 'Small'
-
-# Based on the user-selected radio button from previous page, set picture size
-# Ratio of 1.42 works well (e.g. 1000x700)
-picsize = theform.getvalue("picsize");
-if (picsize == 'Large'):
-    max_width = 1000
-    max_height = 700
-elif (picsize == 'Medium'):
-    max_width = 650
-    max_height = 457
-else : 
-    max_width = 500
-    max_height = 350
-
-
 # Using hidden value passed via form, build a search dictionary (used later)
-# Keywords (People, Places, Events) are in one big list associated with the key "Keyword"
-# Parse through that list, and create seperate lists in a dictionary called "search_dictionary"
-
-
+# Desired Keywords (e.g. People, Places, Events) are in one big list associated with the key "Keyword"
 # Careful, if there's only one term, it's a string, if more than one, it's a list.  
 # Need a list for next section of code, so if needed, convert single item to a list
+
+# From the HTML form, get value from the field "Keyword"
 keyword_item = theform.getvalue("Keyword");
+
 if (isinstance(keyword_item, str)):
+        # Convert single item to a list
 	keyword_list = [keyword_item]
 else:
+        # it's a list, so multiple desired keywords, so just copy the list
 	keyword_list = keyword_item;
 	
 
-# Clear the search dictionary	
+# Initialize the search dictionary to be the empty dictionary	
 search_dictionary = {}
 
+# Parse through desired keyword list, and create seperate lists in a dictionary called "search_dictionary"
 # Construct the search_dictionary (contains the keywords that we're searching for)
 # L = Location
 # E = Event
@@ -145,7 +101,8 @@ search_dictionary = {}
 # R = Rating
 # A = Artist
 # Everything else is a person
-	
+
+# Loop through desired keywords	
 for keyword in keyword_list:
 	
 	if (keyword.startswith("L:")):
@@ -193,112 +150,160 @@ for keyword in keyword_list:
 		search_dictionary = dictionary_list_push(keyword, 'People', search_dictionary)
 
 
-# go through list of filenames, and keep only filenames with "jpg" somewhere in filename
-# images = [elem for elem in fileList if 'jpg' in elem]
-
 # Get the dictionary of all keywords in my pictures (this is a big dictionary)
+# Parses the static Image_Metadata file (which has one line per picture)
+# Pathname of each pic is the local path on my Linux machine at home (e.g. /mnt/ChadDocs/My Webs/www.burkins.com/)
 keyword_dictionary = get_keyword_dictionary(Image_Metadata)
 	
-# Get list of pictures that have all matching keywords
-matching_filenames = get_matching_pictures_advanced(search_dictionary, keyword_dictionary)
+# Slim down list of pictures to those that have all matching keywords (that were given in search form by users)
+matchingPictures = get_matching_pictures_advanced(search_dictionary, keyword_dictionary)
 
-# At this point, matching_filenames is a simple list of full-path filenames
-	
-# Change the full path of each filename to match the web server
-matching_filenames_corrected = []
-for filename in matching_filenames:
-
-	# SRC_PATH and DST_URL are defined in FS_common.py
-	# SRC_PATH is the full-pathname as defined on my local computer before getting pushed up to webserver
-	# DST_URL is the full-pathname where the pictures are located on the Web server
-	matching_filenames_corrected.append(filename.replace(SRC_PATH, DST_URL))
-
+# OK, now ready to start construction the HTML page
 	
 # ---------------------------------
 # --------- Start of form ---------
 # ---------------------------------
-	
+
+# Create the HTML header, get Font Awesome, get the local external CSS style sheet
+# The CSS version is just a trick to force the browser to load CSS when I change that file	
 print """
-<!DOCTYPE html>
+<html>
 <head>
 <title>Family Search</title>
-<style type="text/css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="show_pictures.css?version=1.44">
+</head>
 """
 
-# img_src = '<img src="' + image + '" width=' + str(new_width) + ' height=' + str(new_height) + ' alt="' + caption + '" />'
-#print img_src
-
-slideshow_width = max_width + 32
-slideshow_height = max_height + 32
-print_string = '.slideshow {  width: ' + str(slideshow_width) + 'px; height: ' + str(slideshow_height) + 'px; margin: auto; containerResize: 0;  }'
-print print_string
+# Include jQuery library and Cycle plugin
+print """
+<body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script src="http://malsup.github.io/jquery.cycle2.js"></script>
+<script src="http://malsup.github.io/jquery.cycle2.center.js"></script>
+"""
 
 print """
-.slideshow img { padding: 15px; border: 1px solid #ccc; background-color: #eee; }
-</style>
+<div class="cycle-slideshow"
+     data-cycle-fx="scrollHorz"
+     data-cycle-timeout="0"
+     data-cycle-prev="#prev"
+     data-cycle-next="#next"
+     data-cycle-center-horz="true"
+     data-cycle-center-vert="true"
+     data-cycle-caption-template="Slide {{slideNum}} of {{slideCount}}"
+     >
 
-<!-- include jQuery library -->
-<script type="text/javascript" src="http://www.burkins.com/family/pictures/search/jquery-1.10.2.min.js"></script>
-
-
-<!-- include Cycle plugin -->
-
-<!-- On 2013-12-14, commented out v2.72 of the cycle jquery app, and added local copy of v3.03 -->
-<script type="text/javascript" src="http://www.burkins.com/family/pictures/search/jquery.cycle.all.3.03.js"></script>
-<script type="text/javascript">
-
-$.fn.cycle.defaults.nowrap = 1;
-
-$(document).ready(function() {
-    $('.slideshow').cycle({
-		fx: 'scrollHorz',  // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-        next:   '#next2', 
-        prev:   '#prev2',
-		timeout: 0,
-		after:     onAfter,
-		containerResize: 0
-		});
-});
-
-function onAfter(curr,next,opts) {
-	var caption = 'Image ' + (opts.currSlide + 1) + ' of ' + opts.slideCount + '<br>' + this.alt;
-	$('#caption').html(caption);
-<!--	$('#caption').html(this.alt);  -->
-}
-</script>
-</head>
-
-<body>
-
-    <center><div class="nav"><a id="prev2" href="#">Prev</a> -------- <a id="next2" href="#">Next</a></div></center>
-
-	<div class="slideshow">
+     <!-- empty element for caption (used for picture x/y count, CSS will place in top-right of picture -->
+     <div class="cycle-caption"></div>
 """
 
 # Loop through matching images, and contrsuct HTML to support the Cycle jQuery tool
-for image in matching_filenames_corrected:
-	local_path = image.replace("http://www.burkins.com", "/home3/cburkins/public_html")
-	metadata_path = image.replace(DST_URL, SRC_PATH)
-	width,height = get_dimensions(local_path)
-	new_width,new_height = scale_dimensions(width, height, max_width, max_height)
+# Pathname on the home linux machine (e.g. /mnt/ChadDocs/My Webs/www.burkins.com/01 - Web Albums/Family Pics - Turtle - Production/album/Pictures 2000s)
+for imageHomeFile in matchingPictures:
+        
+        # Pathname on the web server (e.g. http://www.burkins.com/family/pictures/album/Pictures 2000s)
+        imageWebURL = imageHomeFile.replace(SRC_PATH, DST_URL)
 
-        if "Y" in keyword_dictionary[metadata_path]:
-            year = str(((keyword_dictionary[metadata_path])["Y"])[0])
+        # Filesystem pathname on the web server (e.g. /home3/cburkins/public_html/family/pictures/album/Pictures\ 2000s)
+        localPhotoFile = imageHomeFile.replace(SRC_PATH, Root)
+
+        # Short filename
+        shortFilename = os.path.basename(localPhotoFile)
+
+       # keyword dictionary
+        #      key : filename
+        #      value : dictionary
+        #         key : cateogry (P=ListOfPeople, L=ListofLocations, Y=ListofYears, R=ListOfRatings)
+        #         value : list matching the category                                          
+
+        # Find the Year in the picture metadata
+        if "Y" in keyword_dictionary[imageHomeFile]:
+                year = str(((keyword_dictionary[imageHomeFile])["Y"])[0])
         else:
-            year = 'Unknown'
+                year = 'Unknown'
+                
+        # Find the people in the picture metadata
+        if "P" in keyword_dictionary[imageHomeFile]:
+                peopleList = (keyword_dictionary[imageHomeFile])["P"]
+                # Remove the flag element **PIK***
+                if '**PIK**' in peopleList: peopleList.remove('**PIK**')
+                # Convert the list of People into a comma-separated string
+                people = ", ".join(peopleList)
+        else:
+                people = 'Unknown'
 
-#	caption = "Local Path = " + local_path
-#	caption = "Metadata Path = " + metadata_path
-	caption = "Year = " + year + "<BR><BR><font color=#929292>Filename = " + local_path
+        # Find the locations in the picture metadata
+        if "L" in keyword_dictionary[imageHomeFile]:
+                locationList = (keyword_dictionary[imageHomeFile])["L"]
+                 # Convert the list of Locations into a comma-separated string
+                locations = ", ".join(locationList)
+        else:
+                locations = 'Unknown'
 
-	img_src = '<img src="' + image + '" width=' + str(new_width) + ' height=' + str(new_height) + ' alt="' + caption + '" />'
-	print img_src
+        # Find the events in the picture metadata
+        if "E" in keyword_dictionary[imageHomeFile]:
+                eventList = (keyword_dictionary[imageHomeFile])["E"]
+                 # Convert the list of Events into a comma-separated string
+                events = ", ".join(eventList)
+        else:
+                events = 'Unknown'
+
+        # Get the photo description (caption) from the photo itself (i.e. open the file, and read metadata)
+        if not (os.path.isfile(localPhotoFile)):
+                descr = "File missing: {0}".format(localPhotoFile)
+        else:
+                # Get the photo's caption
+                descr = getPhotoTag(localPhotoFile, "XMP:Description")
+                if descr is None:
+                        descr="No caption" 
+                # If caption is an integer, cast to a string
+                if type(descr) is int:
+                        descr = str(descr)
+                # convert to string by encoding with utf-8 character set
+                # Could use str() instead, but that sometimes fails with error if it can't encode correctly
+                descr = descr.encode('utf-8')
+                # Replace double-quotes with HTML-friendly version of same
+                temp = descr.replace('\"', '&quot')
+                descr = temp
+
+        # Create a caption-line for each element, insert a span tag for CSS formatting
+        captionFilename = '<span class=caption-category>Filename:</span> {0}'.format(shortFilename)
+        captionYear = '<span class=caption-category>Year:</span> {0}'.format(year)
+        captionPeople = '<span class=caption-category>People:</span> {0}'.format(people)
+        captionLocations = '<span class=caption-category>Location:</span> {0}'.format(locations)
+        captionEvents = '<span class=caption-category>Event:</span> {0}'.format(events)
+        captionDescr = '<span class=caption-category>Caption:</span> {0}'.format(descr)
+        
+        # Create the full multi-line title to be displayed in the overlay at the bottom of the picture
+        # Use a single span so we can apply CSS, and insert line breaks
+        title = '<span class=caption>{0}<BR>{1}<BR>{2}<BR>{3}<BR>{4}<BR>{5}</span>'.format(captionFilename, captionYear, captionPeople, captionLocations, captionEvents, captionDescr)
+    
+        # Insert the complete HTML img tag for this picture into the slideshow <div>
+        print '<img src="{0}", data-cycle-desc="{1}">'.format(imageWebURL, title)
+
+        # Example      <img src="http://malsup.github.io/images/p1.jpg">
+        # Complex Ex:  <img src="http://malsup.github.io/images/p1.jpg" data-cycle-desc="<span class=caption-category>People:</span> Bob Burkins, Chad Burkins, Tom Burkins<br><span class=caption-category>Location:</span> Walt Disney World<br>" >
 
 
+# End of slideshow <div>
 print """
-		</div>
-<center><p id="caption"></p></center>
+<div class="cycle-overlay"></div>
+</div>
+"""
 
+# Enable the right-arrow and left-arrow keys to operate Next and Prev for the slideshow
+print """
+<script type="text/javascript">
+  $(document.documentElement).keyup(function (e) {
+     if (e.keyCode == 39) { $('.cycle-slideshow').cycle('next'); }
+     if (e.keyCode == 37) { $('.cycle-slideshow').cycle('prev'); }
+  });
+</script>
+"""
+
+# end of body and html
+print """
 </body>
 </html>
 """
