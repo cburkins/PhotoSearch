@@ -43,7 +43,6 @@ Action :
 	
 Exit Parameters : 
 	- Description : On submission, show_pictures.py is called
-	- picsize : visible field from radio button, meant to select the desired picture size
 	- Keyword : A series of hidden objects, each one denoting a desired keyword
 
 	
@@ -85,9 +84,9 @@ In the corresponding javascript file (family_search.js), I setup javascript call
 <body onload=ClearForm()>
 
 
-<form name="familySearchForm" action="./show_pictures.py">
+<form name="familySearchForm" action="./show_pictures2.py">
 
-<H2>Burkins Family Pictures (Beta)</H2>
+<H2>Burkins Family Pictures (Cycle2)</H2>
 
 <br>
 <font size=+1>Directions: Just start typing in the search boxes, and it will make suggestions for you.  Use down arrow key to select from the suggested list</font>
@@ -145,14 +144,6 @@ In the corresponding javascript file (family_search.js), I setup javascript call
 <TR><TD COLSPAN=2><b>Current Search Terms</b></TD></TR>
 <TR id="totalRow"><TD>Total Matching Pics</TD><TD>0</TD></TR>
 </table>
-
-<!-- Create a radio box to select picture size -->
-<br><br>
-Select Picture Size<br />
-<input type="radio" name="picsize" value="Small">Small 
-<input type="radio" name="picsize" value="Medium" checked>Medium 
-<input type="radio" name="picsize" value="Large">Large 
-
 
 <br><br>
 &nbsp; &nbsp; &nbsp; 
