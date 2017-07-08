@@ -28,9 +28,7 @@ Subroutines :
 
 /* 
 Description : Called each time a key is pressed in Year field on html form
-
 Input : event
-
 */
 
 function YearKeypress(event)
@@ -42,10 +40,10 @@ function YearKeypress(event)
 	if (keyCode == undefined) {
 		keyCode = event.keyCode;
     }
+	// Check if "Enter" was pressed, return false
 	if (keyCode == 13) {
-		// Enter was pressed, return false
-//		alert (document.getElementById('year').value);
-	
+	    console.log(document.getElementById('year').value);
+	    
 		// Check to see if user entered a valid four digit year, or a valid range of years (e.g. 1972, 1972-1974 are both valid)
 		if (! ((/^[0-9][0-9][0-9][0-9]$/.test(document.getElementById('year').value)) ||
 				(/^[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]$/.test(document.getElementById('year').value)))) {
@@ -89,9 +87,6 @@ function YearKeypress(event)
 		}
 		return keyCode;
 	}
-
-	//	alert ("The Unicode key code of the released key: " + keyCode);
-	
 }
 
 // ------------------------------------------------------------------
@@ -181,7 +176,7 @@ UpdateScreenWithSelectedItem = function(elemID) {
 	y.innerHTML=elemID; 
 	z.innerHTML="No call";
 
-	// Call to find out how many pictures have this selected keyword
+	// Setup a generic AJAX call
 	if (window.XMLHttpRequest)  {
 		// code for IE7+, Firefox, Chrome, Opera, Safari
 		xmlhttp=new XMLHttpRequest();
@@ -190,12 +185,14 @@ UpdateScreenWithSelectedItem = function(elemID) {
 		// code for IE6, IE5
 		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 	}
+	// Setup the callback for when the AJAX call is returned
 	xmlhttp.onreadystatechange=function() {
 		if (xmlhttp.readyState==4 && xmlhttp.status==200) {
 			// Update the pic count in the correct row of the table
 			document.getElementById(elemID).cells[1].innerHTML=xmlhttp.responseText;
 		}
 	}
+	// Configure AJAX Call to find out how many pictures have this selected keyword
 	var ajax_call = SearchRoot + "/numPics.py?Keyword=" + elemID;
 	xmlhttp.open("GET",ajax_call,true);
 	xmlhttp.send();

@@ -102,14 +102,13 @@ search_dictionary = {}
 # A = Artist
 # Everything else is a person
 
-# Loop through desired keywords	
+# Loop through desired keywords, and construct a dictionary that will be used to search through all pictures	
 for keyword in keyword_list:
 	
 	if (keyword.startswith("L:")):
 
 		# Strip off the L: at beginning of keyword
 		keyword = keyword[2:]
-		
 		# Add keyword to search_dictionary
 		search_dictionary = dictionary_list_push(keyword, 'Locations', search_dictionary)
 
@@ -117,7 +116,6 @@ for keyword in keyword_list:
 
 		# Strip off the E: at beginning of keyword
 		keyword = keyword[2:]
-
 		# Add keyword to search_dictionary
 		search_dictionary = dictionary_list_push(keyword, 'Events', search_dictionary)
 
@@ -125,7 +123,6 @@ for keyword in keyword_list:
 
 		# Strip off the Y: at beginning of keyword
 		keyword = keyword[2:]
-
 		# Add keyword to search_dictionary
 		search_dictionary = dictionary_list_push(keyword, 'Years', search_dictionary)
 
@@ -133,7 +130,6 @@ for keyword in keyword_list:
 
 		# Strip off the R: at beginning of keyword
 		keyword = keyword[2:]
-
 		# Add keyword to search_dictionary
 		search_dictionary = dictionary_list_push(keyword, 'Ratings', search_dictionary)
 
@@ -141,10 +137,8 @@ for keyword in keyword_list:
 
 		# Strip off the A: at beginning of keyword
 		keyword = keyword[2:]
-
 		# Add keyword to search_dictionary
 		search_dictionary = dictionary_list_push(keyword, 'Artists', search_dictionary)
-
 
 	else:
 		search_dictionary = dictionary_list_push(keyword, 'People', search_dictionary)
@@ -223,6 +217,12 @@ for imageHomeFile in matchingPictures:
         else:
                 year = 'Unknown'
                 
+        # Find the Year in the picture metadata
+        if "X" in keyword_dictionary[imageHomeFile]:
+                dateTime = str(((keyword_dictionary[imageHomeFile])["X"])[0])
+        else:
+                dateTime = 'Unknown'
+                
         # Find the people in the picture metadata
         if "P" in keyword_dictionary[imageHomeFile]:
                 peopleList = (keyword_dictionary[imageHomeFile])["P"]
@@ -270,6 +270,7 @@ for imageHomeFile in matchingPictures:
         # Create a caption-line for each element, insert a span tag for CSS formatting
         captionFilename = '<span class=caption-category>Filename:</span> {0}'.format(shortFilename)
         captionYear = '<span class=caption-category>Year:</span> {0}'.format(year)
+        captionDateTime = '<span class=caption-category>Date Time:</span> {0}'.format(dateTime)
         captionPeople = '<span class=caption-category>People:</span> {0}'.format(people)
         captionLocations = '<span class=caption-category>Location:</span> {0}'.format(locations)
         captionEvents = '<span class=caption-category>Event:</span> {0}'.format(events)
@@ -277,7 +278,7 @@ for imageHomeFile in matchingPictures:
         
         # Create the full multi-line title to be displayed in the overlay at the bottom of the picture
         # Use a single span so we can apply CSS, and insert line breaks
-        title = '<span class=caption>{0}<BR>{1}<BR>{2}<BR>{3}<BR>{4}<BR>{5}</span>'.format(captionFilename, captionYear, captionPeople, captionLocations, captionEvents, captionDescr)
+        title = '<span class=caption>{0}<BR>{1}<BR>{2}<BR>{3}<BR>{4}<BR>{5}<BR>{6}</span>'.format(captionFilename, captionYear, captionDateTime, captionPeople, captionLocations, captionEvents, captionDescr)
     
         # Insert the complete HTML img tag for this picture into the slideshow <div>
         print '<img src="{0}", data-cycle-desc="{1}">'.format(imageWebURL, title)

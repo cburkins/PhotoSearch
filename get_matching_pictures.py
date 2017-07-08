@@ -66,7 +66,6 @@ def get_matching_pictures_category (category, search_dictionary, pictures_dictio
                         if ((category == "Artists") and('A' in filename_dictionary)):
                                 keywords.extend(filename_dictionary['A'])					
 
-
 			# Make sure there is at least one keyword
 			if (len(keywords) >0):
 				
@@ -170,7 +169,6 @@ def get_matching_pictures_advanced (search_dictionary, pictures_dictionary):
         # Function starts with "pictures_dictionary" which contains a large number of pictures
         # It then slims down that "pictures_dictionary" using desired search terms from "search_dictionary"
 
-
         # Slim down the available pics based on desired People
 	pictures_dictionary = get_matching_pictures_category ("People", search_dictionary, pictures_dictionary)
 
@@ -183,7 +181,6 @@ def get_matching_pictures_advanced (search_dictionary, pictures_dictionary):
         # Slim down the available pics based on desired Artists
 	pictures_dictionary = get_matching_pictures_category ("Artists", search_dictionary, pictures_dictionary)
 
-	
         # Slim down the available pics based on desired Ratings
 	# Handling a range of ratings is tricky.  We need to make a separate call for each rating, and add them up
         # Ah, the trick is that the desired range of Ratings is actually a logical Or, rather than a logical And (like People)
@@ -234,21 +231,19 @@ def get_matching_pictures_advanced (search_dictionary, pictures_dictionary):
 		else:
 			# Desired year is only a single year
 			pictures_dictionary = get_matching_pictures_category ("Years", search_dictionary, pictures_dictionary)
-
-	
 			
 	# We only need to return the list of pictures which match up, so extract that from the dictionary
 	matching_filenames = pictures_dictionary.keys();
 	
-	# If the year is missing from the picture, set it as 9999
+	# If the dateTime is missing from the picture, set it as 9999
 	for key,value in pictures_dictionary.items():
-		if not('Y' in value):
-			value['Y'] = ['9999'];
+		if not('X' in value):
+			value['X'] = ['99999999999999'];
 
-	# Extract a simple list of filenames and associated year
+	# Extract a simple list of filenames and associated dateTime
 	filename_year_hash = {};
 	for key,value in pictures_dictionary.items():
-		filename_year_hash[key] = value['Y'][0];
+		filename_year_hash[key] = value['X'][0];
 	
 	# Sort the list of filenames (key) by year (value)
 	matching_filenames = sorted(filename_year_hash, key=filename_year_hash.get);	
