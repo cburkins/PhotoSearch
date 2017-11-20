@@ -6,6 +6,15 @@ This is a rudimentary web application for searching through pictures based on th
 
 It's not meant to be production-ready, it's really just an exercise for me, and I might as well share the code in case it's useful to someone else.
 
+With that said, here how's to install it:
+- exiftool: Update the file "getPhotoTag.py", specifically the variable EXIFTOOLPATH
+
+Here's a good way to get exiftool
+<code>wget https://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-10.67.tar.gz</code>
+This can be copied into any directory (e.g. the directory right above this cloned repository)
+
+
+
 ## Usage
 
 This application doesn't actually search through all the EXIF tags, it's dependent on the presence of two files which contain the EXIF tag information.
@@ -20,5 +29,6 @@ I've been working on this program for years.  Very slowly.  It feels rather like
 ## Dependencies
 
 - jquery (included with code)
-- Python
-- JavaScript
+- Python 2.7 (likely already on the host machine)
+- JavaScript (certainly built into the browser)
+- exiftool (see Installation above)
