@@ -12,6 +12,17 @@ CWD = os.getcwd()
 LIBROOT = CWD + "/pyexifinfo/pyexifinfo" 
 # Add this to our library search path
 sys.path.insert(0, LIBROOT)
+
+EXIFTOOLPATH = "/home3/cburkins/public_html/family/pictures/Image-ExifTool-10.67"
+
+# pyexifinfo simply makes an OS call to find "exiftool" executable in the system PATH
+# Override that, and force it to find our local copy first by inserting our local dir first within the path
+oldPath = os.environ["PATH"]
+os.environ["PATH"] = EXIFTOOLPATH + os.pathsep + oldPath
+ 
+# And it turn, that "exiftool" command line will look for it's own library, so we have to update the LIB path
+os.environ["PERL5LIB"] = CWD + EXIFTOOLPATH + "/lib"
+
 # Import pyexifinfo library
 import pyexifinfo as pyexifinfo
 
