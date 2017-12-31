@@ -35,10 +35,16 @@ I've been working on this program for years.  Very slowly.  It feels rather like
 
 ## Tests of function functionality (sp directories)
 
+NOTE: Looks like I was doing a number of tests with AngularJS.
+
 - sp1
-- sp2
-- sp3
-- sp4
-- sp5
-- sp6
-- sp7
+- sp2 (Cycle)
+- sp3 (Bootstrap UI)
+- sp4 (Bootstrap UI)
+- sp5 (Bootstrap UI)
+- sp6 (Bootstrap UI - seems to work, maybe start here)
+- sp7 (Bootstrap UI - something complicated, but I can't remember what, was last year)
+
+```
+uib-caros
+```
