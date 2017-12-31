@@ -32,3 +32,13 @@ I've been working on this program for years.  Very slowly.  It feels rather like
 - Python 2.7 (likely already on the host machine)
 - JavaScript (certainly built into the browser)
 - exiftool (see Installation above)
+
+## Tests of function functionality (sp directories)
+
+- sp1
+- sp2
+- sp3
+- sp4
+- sp5
+- sp6
+- sp7
