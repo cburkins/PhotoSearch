@@ -36,3 +36,8 @@ a.right.carousel-control {
     /* background-image: none !important; */
     background-image: none;
 }
+
+/* Hide the small dots because I'm hoping to have way too many slides for a zillion small dots */
+.carousel-indicators li { visibility: hidden; }
+
+
