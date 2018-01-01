@@ -1,0 +1,18 @@
+/* #slides_control > div{ */
+/*   height: 400px; */
+/* } */
+
+.myclass1 {
+    border-style: solid;
+    border-width: 2px;
+    float: left;
+    /* Can be content-box (default) or border-box (incl contents, padding, border */
+    box-sizing: border-box;
+}
+
+.carousel-inner .item img{
+    object-fit: contain;
+    padding:0px;
+    max-height: 95vh;
+    max-width: 70vw;
+}
