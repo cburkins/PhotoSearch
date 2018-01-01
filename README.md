@@ -48,6 +48,7 @@ NOTE: Looks like I was doing a number of tests with AngularJS.
 - sp8 (Bootstrap UI Carousel - copy of sp6, cleaned up a bit, added 200+ pictures)
 - sp9 (Bootstrap UI Carousel - copy of sp8, trying to upgrade version of UI Bootstrap)
 - sp10 (Bootstrap UI Carousel - working copy using modern versions of Angular and UI Bootstrap 3)
+- sp11 (Bootstrap UI Carousel - uses longer list of photos, uses $index rather than id)
 ```
 
 
