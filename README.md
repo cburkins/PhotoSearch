@@ -40,6 +40,8 @@ NOTE: Looks like I was doing a number of tests with AngularJS.
 ```
 - test01: Uses latest AngularJS (1.6.8) and Bootstrap 3 (v3.3.7)
 - test02: Attempting Bootstrap 4.x, doesn't seem to work, back to Bootstrap3
+- test03: Successfully set transition-duration
+- test04: Enabled arrow keys by creating an angular directive
 ```
 
 

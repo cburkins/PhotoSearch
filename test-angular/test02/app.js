@@ -4,7 +4,7 @@ angular.module('ui.bootstrap.demo', ['ngAnimate', 'ngSanitize', 'ui.bootstrap'])
 angular.module('ui.bootstrap.demo').controller('CarouselDemoCtrl', function ($scope) {
   $scope.myInterval = 5000;
   $scope.noWrapSlides = false;
-  $scope.active = 0;
+  $scope.active = 1;
   var currIndex = 0;
 
 
