@@ -1,0 +1,66 @@
+<!doctype html>
+<html ng-app="ui.bootstrap.demo">
+<head>
+
+  <!-- Angular 1.6.8 (Dec 2017) -->
+  <script src="https://code.angularjs.org/1.6.8/angular.js"></script>
+  <script src="https://code.angularjs.org/1.6.8/angular-animate.js"></script>
+  <script src="https://code.angularjs.org/1.6.8/angular-sanitize.js"></script>
+
+  <!-- AngularJS UI Bootstrap 2.5.0 (Jan 2017) -->
+  <!--   <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script> -->
+  <!-- AngularJS UI Boostrap for Angular 1.x-->
+  <script src="node_modules/angular1-ui-bootstrap4/dist/ui-bootstrap-tpls.js"></script>
+
+
+
+
+  <!-- Angular App -->
+  <script src="app.js"></script>
+
+  <!-- Bootstrap 3.3.7  (July 2016) -->
+  <!--   <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <!-- Bootstrap 4.0.0 Beta 3 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" >
+
+
+  <!-- My own CSS -->
+  <link rel="stylesheet" type="text/css" href="index.css?v1.00">
+
+</head>
+
+
+<body>
+
+  <div ng-controller="CarouselDemoCtrl">
+
+
+    <div class="row">
+      <div class="col-sm-8">
+
+        <!-- UI Bootstrap Carousel -->
+        <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+          <div uib-slide ng-repeat="slide in slides" index="$index">
+            <div style="height: 600px">
+              <img ng-src="{{slide.image}}" style="margin:auto;">
+            </div>
+            <div class="carousel-caption">
+              <h4>Slide {{$index+1}} of {{slides.length}}</h4>
+              <p>The slide caption would go here if needed.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- End of column col-sm-4 -->
+      </div>
+
+      <!-- end of row -->
+    </div>
+
+    <!-- end of controller -->
+  </div>
+
+
+</body>
+</html>

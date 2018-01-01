@@ -33,22 +33,13 @@ I've been working on this program for years.  Very slowly.  It feels rather like
 - JavaScript (certainly built into the browser)
 - exiftool (see Installation above)
 
-## Tests of function functionality (sp directories)
+## Tests of function functionality (test-angular directory)
 
 NOTE: Looks like I was doing a number of tests with AngularJS.
 
 ```
-- sp1
-- sp2 (Cycle)
-- sp3 (Bootstrap UI)
-- sp4 (Bootstrap UI)
-- sp5 (Bootstrap UI)
-- sp6 (Bootstrap UI - seems to work, maybe start here)
-- sp7 (Bootstrap UI Carousel- something complicated, but I can't remember what, was last year)
-- sp8 (Bootstrap UI Carousel - copy of sp6, cleaned up a bit, added 200+ pictures)
-- sp9 (Bootstrap UI Carousel - copy of sp8, trying to upgrade version of UI Bootstrap)
-- sp10 (Bootstrap UI Carousel - working copy using modern versions of Angular and UI Bootstrap 3)
-- sp11 (Bootstrap UI Carousel - uses longer list of photos, uses $index rather than id)
+- test01: Uses latest AngularJS (1.6.8) and Bootstrap 3 (v3.3.7)
+- test02: Attempting Bootstrap 4.x, doesn't seem to work, back to Bootstrap3
 ```
 
 
