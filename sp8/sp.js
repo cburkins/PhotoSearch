@@ -4,12 +4,12 @@ app.config(function () {
 	angular.element(document).bind('keyup', function (e) {
 		if (e.keyCode === 39) {
 		    console.log("Right arrow");
-		    // jQuery ?
+		    // jQuery, but I think I'm not supposed to be using the full jQuery
 		    $(".carousel-control.right").click();
 		}
 		else if (e.keyCode === 37) {
 		    console.log("Left arrow");
-		    // jquery ?
+		    // jQuery, but I think I'm not supposed to be using the full jQuery
 		    $(".carousel-control.left").click();
 		}
 		else {
@@ -24,6 +24,17 @@ app.controller('CarouselDemoCtrl', function($scope, $location) {
 	
 	$scope.myInterval = 120000;
 	$scope.slides = [
+		     { image:"http://www.burkins.com/family/pictures/album/Pictures 2013/2013-01 Misc/slides/2013-06-16 18.52.51.jpg" },
+		     { image:"http://www.burkins.com/family/pictures/album/Pictures 2013/2013-01 Misc/slides/2013-06-17 13.11.10.jpg" },
+		     { image:"http://www.burkins.com/family/pictures/album/Pictures 2013/2013-01 Misc/slides/2013-06-18 14.02.22.jpg" },
+		     { image:"http://www.burkins.com/family/pictures/album/Pictures 2013/2013-01 Misc/slides/2013-06-16 18.44.43.jpg" },
+		     { image:"http://www.burkins.com/family/pictures/album/Pictures 2013/2013-01 Misc/slides/2013-06-17 13.11.26.jpg" },
+		     { image:"http://www.burkins.com/family/pictures/album/Pictures 2013/2013-12 Longwood Christmas/slides/2013-12 Longwood Christmas 04.jpg" },
+		     { image:"http://www.burkins.com/family/pictures/album/Pictures 2013/2013-12 Longwood Christmas/slides/2013-12 Longwood Christmas 03.jpg" },
+		     { image:"http://www.burkins.com/family/pictures/album/Pictures 2013/2013-08 Longwood with Owen/slides/Longwood w Owen 31-2.jpg" },
+		     { image:"http://www.burkins.com/family/pictures/album/Pictures 2013/2013-08 Longwood with Owen/slides/Longwood w Owen 21.jpg" }
+		     ];
+	$scope.slidesAll = [
 		     { image:"http://www.burkins.com/family/pictures/album/Pictures 2013/2013-01 Misc/slides/2013-06-16 18.52.51.jpg" },
 		     { image:"http://www.burkins.com/family/pictures/album/Pictures 2013/2013-01 Misc/slides/2013-06-17 13.11.10.jpg" },
 		     { image:"http://www.burkins.com/family/pictures/album/Pictures 2013/2013-01 Misc/slides/2013-06-18 14.02.22.jpg" },
@@ -228,8 +239,7 @@ app.controller('CarouselDemoCtrl', function($scope, $location) {
 		     { image:"http://www.burkins.com/family/pictures/album/Pictures 2013/2013-11 Owen/slides/2013-11-10 17.37.02.jpg" },
 		     { image:"http://www.burkins.com/family/pictures/album/Pictures 2013/2013-11 Owen/slides/2013-11-10 07.44.56 HDR.jpg" },
 		     { image:"http://www.burkins.com/family/pictures/album/Pictures 2013/2013-11 Owen/slides/2013-11-19 08.19.34.jpg" },
-		     { image:"http://www.burkins.com/family/pictures/album/Pictures 2013/2013-11 Owen/slides/2013-11-10 07.52.00 HDR.jpg" },
-
+		     { image:"http://www.burkins.com/family/pictures/album/Pictures 2013/2013-11 Owen/slides/2013-11-10 07.52.00 HDR.jpg" }
 		     ];
 
 

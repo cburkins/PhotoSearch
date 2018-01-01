@@ -52,3 +52,9 @@ NOTE: Looks like I was doing a number of tests with AngularJS.
 ```
 uib-caros
 ```
+
+## Test Plan for SP Directories
+
+1. Load 200+ pictures
+1. Click on left and right arrows at least 5 times
+1. Use left and right arrow keys at least 5 times
