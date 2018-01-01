@@ -45,7 +45,7 @@ NOTE: Looks like I was doing a number of tests with AngularJS.
 - sp5 (Bootstrap UI)
 - sp6 (Bootstrap UI - seems to work, maybe start here)
 - sp7 (Bootstrap UI Carousel- something complicated, but I can't remember what, was last year)
-- sp8 (Bootstrap Carousel - copy of sp6, starting here)
+- sp8 (Bootstrap    Carousel - copy of sp6, starting here)
 ```
 
 
