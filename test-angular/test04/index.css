@@ -1,0 +1,6 @@
+/* Hide the small dots because I'm hoping to have way too many slides for a zillion small dots */
+.carousel-indicators li { visibility: hidden; }
+
+.carousel-inner>.item {
+	transition-duration: 0.3s;
+}

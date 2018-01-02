@@ -1,0 +1,49 @@
+<!doctype html>
+<html ng-app="ui.bootstrap.demo">
+<head>
+
+<!-- Angular 1.6.8 (Dec 2017) -->
+  <script src="https://code.angularjs.org/1.6.8/angular.js"></script>
+  <script src="https://code.angularjs.org/1.6.8/angular-animate.js"></script>
+  <script src="https://code.angularjs.org/1.6.8/angular-sanitize.js"></script>
+
+  <!-- Angular UI Bootstrap 2.5.0 (Jan 2017) -->
+  <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+
+  <!-- Angular App -->
+  <script src="app.js"></script>
+
+  <!-- Bootstrap 3.3.7  (July 2016) -->
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- My own CSS -->
+  <link rel="stylesheet" type="text/css" href="index.css?v1.19">
+
+</head>
+
+<!-- Angular controller for Carousel is attached the html body, so occupies whole page -->
+<!-- ng-keydown and ng-keyup detect keyboard events anywhere on the page -->
+<body ng-controller="CarouselDemoCtrl" ng-keydown="keyPress($event);" ng-keyup="keyRelease($event);">
+
+    <!-- Bootstrap row -->
+    <div class="row">
+
+      <!-- UI Bootstrap Carousel -->
+      <!-- carousel-controls is a custom directive that allows us to access the private prev() and next() methods -->
+      <div uib-carousel carousel-controls active="active" interval="myInterval" no-wrap="noWrapSlides" template-url="carousel-template-custom.html">
+        <div uib-slide ng-repeat="slide in slides" index="$index">
+          <div style="height: 600px">
+            <img ng-src="{{slide.image}}" style="margin:auto;">
+          </div>
+          <div class="carousel-caption">
+            <h4>Slide {{$index+1}} of {{slides.length}}</h4>
+            <p>The slide caption would go here if needed.</p>
+          </div>
+        </div>
+      </div>
+
+    <!-- end of row -->
+    </div>
+
+</body>
+</html>
