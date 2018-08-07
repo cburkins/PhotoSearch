@@ -90,14 +90,9 @@ function YearKeypress(event)
 }
 
 // ------------------------------------------------------------------
-
-
 /* 
-
-Description : Called each time a key is pressed in Year field on html form
-
+Description : Called each time a key is pressed in Ratings field on html form
 Input : event
-
 */
 
 function RatingKeypress(event)
@@ -105,13 +100,19 @@ function RatingKeypress(event)
 	// I think this is for Internet Explorer (IE)
 	if (!event) event=window.event;
 
+	// Determine which key was pressed
 	var keyCode = event.which;
 	if (keyCode == undefined) {
 		keyCode = event.keyCode;
     }
+
+	console.log("The Unicode key code of the released key: " + keyCode);
+
 	if (keyCode == 13) {
-		// Enter was pressed, return false
-//		alert (document.getElementById('year').value);
+		// Enter key was pressed
+
+		// Show what's in the field right now
+		// console.log(document.getElementById('rating').value);
 	
 		// Check to see if user entered a valid four digit year, or a valid range of years (e.g. 3 or 3-5 are both valid)
 		if (! ((/^[1-5]$/.test(document.getElementById('rating').value)) ||
@@ -157,7 +158,78 @@ function RatingKeypress(event)
 		return keyCode;
 	}
 
-	//	alert ("The Unicode key code of the released key: " + keyCode);
+
+	
+}
+
+// --------------------------------------------------------------------------
+// ------------------------------------------------------------------
+/* 
+Description : Called each time a key is pressed in Ratings field on html form
+Input : event
+*/
+
+function NumberPeopleKeypress(event)
+{
+	// I think this is for Internet Explorer (IE)
+	if (!event) event=window.event;
+
+	// Determine which key was pressed
+	var keyCode = event.which;
+	if (keyCode == undefined) {
+		keyCode = event.keyCode;
+    }
+
+	console.log("NumberPeople: Unicode key code of the released key: " + keyCode);
+
+	if (keyCode == 13) {
+		// Enter key was pressed
+
+		// Show what's in the field right now
+		// console.log(document.getElementById('rating').value);
+	
+		// Check to see if user entered a valid four digit year, or a valid range of years (e.g. 3 or 3-5 are both valid)
+		if (! (/^[0-5]$/.test(document.getElementById('numberPeople').value))) {
+			alert ("You did not enter a valid number (e.g. 0-5)");
+			return false;
+		}
+
+		// Capture the value entered
+		search_term = "N:" + document.getElementById('numberPeople').value;
+		
+		// Insert the new keyword in the table on the bottom of form
+		UpdateScreenWithSelectedItem(search_term);
+
+		// Insert the new keyword as a hidden field in the form
+		InsertHiddenField(search_term);
+
+		// Update total row of table
+		UpdateTotal();	
+			
+		// Clear the field and turn background to white
+		document.getElementById('numberPeople').value = "";
+		document.familySearchForm.numberPeople.style.backgroundColor="#FFFFFF";
+		
+		// Return false, otherwise the form will see the <enter> key, and try to submit the form
+		return false;
+	}
+	else {
+		
+		// New keystroke has not been added to field yet, so need to figure it out
+		value = document.getElementById('rating').value + String.fromCharCode(keyCode);
+				
+		// Change background color (green for valid rating, red for partial or invalid rating)
+		if (! (/^[0-5]$/.test(value))) {
+			// Input field currently *does not* contain a valid rating, so turn background to red
+			document.familySearchForm.numberPeople.style.backgroundColor="#FF6666";
+		}
+		else {
+			// Input field currently contains a valid year, so turn background to green
+			document.familySearchForm.numberPeople.style.backgroundColor="#99FF66";
+		}
+		return keyCode;
+	}
+
 
 	
 }

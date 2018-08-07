@@ -23,8 +23,7 @@ def get_matching_pictures_category (category, search_dictionary, pictures_dictio
 	#    Y : List of years in that picture
 	#    R : List of ratings in that picture
 	#    A : List of artists for that picture
-	
-	
+		
 	# This will eventually hold a list of all filenames that match up against the search dictionary
 	matching_filenames = [];
 			
@@ -84,83 +83,15 @@ def get_matching_pictures_category (category, search_dictionary, pictures_dictio
 	# Now return the dictionary for the pictures that matched up
 	return pictures_dictionary
 
-
 # --------------------------------------------------------------------------
-def get_matching_pictures_category_orig (category, search_dictionary, pictures_dictionary):
-
-	# At the moment, the search dictionary has several lists for each picture, with the following keys
-	#    People : list of all the requested people
-	#    Locations : list of all the requested places
-	#    Events : list of all the requested events
-	#    Ratings : list of all the requested events
-	
-
-	# The pictures_dictionary 
-        #  Key: picture filename
-        #  Value: Dictionary using Keyword Category for key and value is a list of keywords
-	#    P : List of people in that picture
-	#    L : List of locations in that picture
-	#    E : List of events in that picture
-	#    Y : List of years in that picture
-	#    R : List of ratings in that picture
-	#    A : List of artists for that picture
-	
-	
-	# This will eventually hold a list of all filenames that match up against the search dictionary
-	matching_keyword_dictionary = {};
-	
-	# Make sure that the search dictionary actually contains the requested category, if not, we just exit
-	if (category in search_dictionary):
-
-		search_list = search_dictionary[category];
-
-		# Look through each search term
-		for search_term in search_list:
-		
-                        matching_keyword_dictionary = {}
-	
-			# Loop through each filename in the available pictures
-			for filename in list(pictures_dictionary.keys()):
-
-				# Get dictionary for just this one picture
-				filename_dictionary = pictures_dictionary[filename]
-				
-				# Zero out the keywords list
-				keywords = [];
-				
-				# Flatten out the dictionary.  We're looking through each possible part of
-				# dictionary (P, L, E, Y), and putting all keywords into one list
-				if ((category == "People") and ('P' in filename_dictionary)):
-					keywords.extend(filename_dictionary['P'])
-				if ((category == "Locations") and ('L' in filename_dictionary)):
-					keywords.extend(filename_dictionary['L'])
-				if ((category == "Events") and('E' in filename_dictionary)):
-					keywords.extend(filename_dictionary['E'])					
-				if ((category == "Years") and('Y' in filename_dictionary)):
-					keywords.extend(filename_dictionary['Y'])					
-				if ((category == "Ratings") and('R' in filename_dictionary)):
-					keywords.extend(filename_dictionary['R'])					
-				if ((category == "Artists") and('A' in filename_dictionary)):
-					keywords.extend(filename_dictionary['A'])					
-
-
-				# Make sure there is at least one keyword
-				if (len(keywords) >0):
-				
-					# Loop through all the keywords for this picture
-					for keyword in keywords:			
-
-						# One at a time, compare each keyword (for this picture) against our search term
-						if (keyword.lower().rfind(search_term.lower()) >= 0):
-							matching_keyword_dictionary[filename] = filename_dictionary
-
-
-			# OK, done with looping through filenames, so save off the resulting (smaller) dictionary of pictures
-			pictures_dictionary = matching_keyword_dictionary
-		
-	# Now return the dictionary for the pictures that matched up
-	return pictures_dictionary
-
+def getNumberPeopleInPicture(pictureDict):
+	if ('P' not in pictureDict.keys()):
+		return 0;
+	else:
+		peopleList = pictureDict['P']
+		if ('**PIK**' in peopleList):
+			peopleList.remove('**PIK**')
+		return len(peopleList)
 
 # --------------------------------------------------------------------------
 
@@ -231,7 +162,27 @@ def get_matching_pictures_advanced (search_dictionary, pictures_dictionary):
 		else:
 			# Desired year is only a single year
 			pictures_dictionary = get_matching_pictures_category ("Years", search_dictionary, pictures_dictionary)
-			
+
+	# print (pictures_dictionary);
+
+
+	category="numberPeople"
+        matching_keyword_dictionary = {}
+	if (category in search_dictionary):
+		desiredNumberPeople = int(search_dictionary[category][0]);
+		# Loop through each filename in the available pictures
+		for filename in list(pictures_dictionary.keys()):
+
+			numberPeopleInPicture = getNumberPeopleInPicture(pictures_dictionary[filename]);
+
+			if (desiredNumberPeople == numberPeopleInPicture):
+				# Add this picture to our dict of matching pics
+				matching_keyword_dictionary[filename] = filename_dictionary = pictures_dictionary[filename]
+
+		# OK, done with looping through filenames, so save off the resulting (smaller) dictionary of pictures
+		pictures_dictionary = matching_keyword_dictionary
+
+
 	# We only need to return the list of pictures which match up, so extract that from the dictionary
 	matching_filenames = pictures_dictionary.keys();
 	

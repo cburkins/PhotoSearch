@@ -140,6 +140,16 @@ for keyword in keyword_list:
 		# Add keyword to search_dictionary
 		search_dictionary = dictionary_list_push(keyword, 'Artists', search_dictionary)
 
+       	elif (keyword.startswith("N:")):
+
+		# Strip off the N: at beginning of keyword
+		keyword = keyword[2:]
+
+		# Add keyword to search_dictionary
+		search_dictionary = dictionary_list_push(keyword, 'numberPeople', search_dictionary)
+
+
+
 	else:
 		search_dictionary = dictionary_list_push(keyword, 'People', search_dictionary)
 
