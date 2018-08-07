@@ -43,7 +43,6 @@ def search_keywords(type, search_term, keyword_file):
 		all_keywords = PlacesList
 	elif (type == "artists"):
 		all_keywords = ArtistsList;
-		all_keywords = ['A:Chad Burkins', 'A:Jim Heimbecker', 'A:Tom Burkins', 'A:Art Powl', 'A:Meghan Burkins'];
 
 	
 	for keyword in all_keywords:
