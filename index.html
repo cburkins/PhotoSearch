@@ -56,7 +56,7 @@ In the corresponding javascript file (family_search.js), I setup javascript call
 <link rel="stylesheet" type="text/css" href="jquery-ui-1.8.9.custom/css/ui-lightness/jquery-ui-1.8.9.custom.css">
 
 <!-- Load my own javascript library -->
-<script src="family_search.js"></script>
+<script src="family_search.js?v<?php echo filemtime('family_search.js') ?>"></script>
 
  </head>
 
