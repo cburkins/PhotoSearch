@@ -189,8 +189,8 @@ function NumberPeopleKeypress(event)
 		// console.log(document.getElementById('rating').value);
 	
 		// Check to see if user entered a valid four digit year, or a valid range of years (e.g. 3 or 3-5 are both valid)
-		if (! (/^[0-5]$/.test(document.getElementById('numberPeople').value))) {
-			alert ("You did not enter a valid number (e.g. 0-5)");
+		if (! (/^[0-9]$/.test(document.getElementById('numberPeople').value))) {
+			alert ("You did not enter a valid number (e.g. 0-9)");
 			return false;
 		}
 
@@ -219,7 +219,7 @@ function NumberPeopleKeypress(event)
 		value = document.getElementById('rating').value + String.fromCharCode(keyCode);
 				
 		// Change background color (green for valid rating, red for partial or invalid rating)
-		if (! (/^[0-5]$/.test(value))) {
+		if (! (/^[0-9]$/.test(value))) {
 			// Input field currently *does not* contain a valid rating, so turn background to red
 			document.familySearchForm.numberPeople.style.backgroundColor="#FF6666";
 		}
